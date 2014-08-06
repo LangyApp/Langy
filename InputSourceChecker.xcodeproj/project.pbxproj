@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EEA4F49F19927BD500A4DF95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F49E19927BD500A4DF95 /* Cocoa.framework */; };
+		EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */; };
+		EEA4F4AB19927BD500A4DF95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA4F4AA19927BD500A4DF95 /* main.m */; };
+		EEA4F4AF19927BD500A4DF95 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4AD19927BD500A4DF95 /* Credits.rtf */; };
+		EEA4F4B219927BD500A4DF95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA4F4B119927BD500A4DF95 /* AppDelegate.m */; };
+		EEA4F4B519927BD500A4DF95 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4B319927BD500A4DF95 /* MainMenu.xib */; };
+		EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4B619927BD500A4DF95 /* Images.xcassets */; };
+		EEA4F4BE19927BD500A4DF95 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F4BD19927BD500A4DF95 /* XCTest.framework */; };
+		EEA4F4BF19927BD500A4DF95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F49E19927BD500A4DF95 /* Cocoa.framework */; };
+		EEA4F4C719927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4C519927BD500A4DF95 /* InfoPlist.strings */; };
+		EEA4F4C919927BD500A4DF95 /* InputSourceCheckerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA4F4C819927BD500A4DF95 /* InputSourceCheckerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EEA4F4C019927BD500A4DF95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EEA4F49319927BD500A4DF95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEA4F49A19927BD500A4DF95;
+			remoteInfo = InputSourceChecker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EEA4F49B19927BD500A4DF95 /* InputSourceChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputSourceChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEA4F49E19927BD500A4DF95 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EEA4F4A119927BD500A4DF95 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EEA4F4A219927BD500A4DF95 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EEA4F4A319927BD500A4DF95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EEA4F4A619927BD500A4DF95 /* InputSourceChecker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InputSourceChecker-Info.plist"; sourceTree = "<group>"; };
+		EEA4F4A819927BD500A4DF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EEA4F4AA19927BD500A4DF95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EEA4F4AC19927BD500A4DF95 /* InputSourceChecker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InputSourceChecker-Prefix.pch"; sourceTree = "<group>"; };
+		EEA4F4AE19927BD500A4DF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EEA4F4B019927BD500A4DF95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EEA4F4B119927BD500A4DF95 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EEA4F4B419927BD500A4DF95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EEA4F4B619927BD500A4DF95 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EEA4F4BC19927BD500A4DF95 /* InputSourceCheckerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputSourceCheckerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEA4F4BD19927BD500A4DF95 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EEA4F4C419927BD500A4DF95 /* InputSourceCheckerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InputSourceCheckerTests-Info.plist"; sourceTree = "<group>"; };
+		EEA4F4C619927BD500A4DF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EEA4F4C819927BD500A4DF95 /* InputSourceCheckerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputSourceCheckerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEA4F49819927BD500A4DF95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEA4F49F19927BD500A4DF95 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEA4F4B919927BD500A4DF95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEA4F4BF19927BD500A4DF95 /* Cocoa.framework in Frameworks */,
+				EEA4F4BE19927BD500A4DF95 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EEA4F49219927BD500A4DF95 = {
+			isa = PBXGroup;
+			children = (
+				EEA4F4A419927BD500A4DF95 /* InputSourceChecker */,
+				EEA4F4C219927BD500A4DF95 /* InputSourceCheckerTests */,
+				EEA4F49D19927BD500A4DF95 /* Frameworks */,
+				EEA4F49C19927BD500A4DF95 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEA4F49C19927BD500A4DF95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEA4F49B19927BD500A4DF95 /* InputSourceChecker.app */,
+				EEA4F4BC19927BD500A4DF95 /* InputSourceCheckerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEA4F49D19927BD500A4DF95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEA4F49E19927BD500A4DF95 /* Cocoa.framework */,
+				EEA4F4BD19927BD500A4DF95 /* XCTest.framework */,
+				EEA4F4A019927BD500A4DF95 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEA4F4A019927BD500A4DF95 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEA4F4A119927BD500A4DF95 /* AppKit.framework */,
+				EEA4F4A219927BD500A4DF95 /* CoreData.framework */,
+				EEA4F4A319927BD500A4DF95 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EEA4F4A419927BD500A4DF95 /* InputSourceChecker */ = {
+			isa = PBXGroup;
+			children = (
+				EEA4F4B019927BD500A4DF95 /* AppDelegate.h */,
+				EEA4F4B119927BD500A4DF95 /* AppDelegate.m */,
+				EEA4F4B319927BD500A4DF95 /* MainMenu.xib */,
+				EEA4F4B619927BD500A4DF95 /* Images.xcassets */,
+				EEA4F4A519927BD500A4DF95 /* Supporting Files */,
+			);
+			path = InputSourceChecker;
+			sourceTree = "<group>";
+		};
+		EEA4F4A519927BD500A4DF95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEA4F4A619927BD500A4DF95 /* InputSourceChecker-Info.plist */,
+				EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */,
+				EEA4F4AA19927BD500A4DF95 /* main.m */,
+				EEA4F4AC19927BD500A4DF95 /* InputSourceChecker-Prefix.pch */,
+				EEA4F4AD19927BD500A4DF95 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EEA4F4C219927BD500A4DF95 /* InputSourceCheckerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EEA4F4C819927BD500A4DF95 /* InputSourceCheckerTests.m */,
+				EEA4F4C319927BD500A4DF95 /* Supporting Files */,
+			);
+			path = InputSourceCheckerTests;
+			sourceTree = "<group>";
+		};
+		EEA4F4C319927BD500A4DF95 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEA4F4C419927BD500A4DF95 /* InputSourceCheckerTests-Info.plist */,
+				EEA4F4C519927BD500A4DF95 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEA4F49A19927BD500A4DF95 /* InputSourceChecker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEA4F4CC19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "InputSourceChecker" */;
+			buildPhases = (
+				EEA4F49719927BD500A4DF95 /* Sources */,
+				EEA4F49819927BD500A4DF95 /* Frameworks */,
+				EEA4F49919927BD500A4DF95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InputSourceChecker;
+			productName = InputSourceChecker;
+			productReference = EEA4F49B19927BD500A4DF95 /* InputSourceChecker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EEA4F4BB19927BD500A4DF95 /* InputSourceCheckerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEA4F4CF19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "InputSourceCheckerTests" */;
+			buildPhases = (
+				EEA4F4B819927BD500A4DF95 /* Sources */,
+				EEA4F4B919927BD500A4DF95 /* Frameworks */,
+				EEA4F4BA19927BD500A4DF95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EEA4F4C119927BD500A4DF95 /* PBXTargetDependency */,
+			);
+			name = InputSourceCheckerTests;
+			productName = InputSourceCheckerTests;
+			productReference = EEA4F4BC19927BD500A4DF95 /* InputSourceCheckerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEA4F49319927BD500A4DF95 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Nicolas Santangelo";
+				TargetAttributes = {
+					EEA4F4BB19927BD500A4DF95 = {
+						TestTargetID = EEA4F49A19927BD500A4DF95;
+					};
+				};
+			};
+			buildConfigurationList = EEA4F49619927BD500A4DF95 /* Build configuration list for PBXProject "InputSourceChecker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEA4F49219927BD500A4DF95;
+			productRefGroup = EEA4F49C19927BD500A4DF95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEA4F49A19927BD500A4DF95 /* InputSourceChecker */,
+				EEA4F4BB19927BD500A4DF95 /* InputSourceCheckerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEA4F49919927BD500A4DF95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */,
+				EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */,
+				EEA4F4AF19927BD500A4DF95 /* Credits.rtf in Resources */,
+				EEA4F4B519927BD500A4DF95 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEA4F4BA19927BD500A4DF95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEA4F4C719927BD500A4DF95 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEA4F49719927BD500A4DF95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEA4F4B219927BD500A4DF95 /* AppDelegate.m in Sources */,
+				EEA4F4AB19927BD500A4DF95 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEA4F4B819927BD500A4DF95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEA4F4C919927BD500A4DF95 /* InputSourceCheckerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EEA4F4C119927BD500A4DF95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EEA4F49A19927BD500A4DF95 /* InputSourceChecker */;
+			targetProxy = EEA4F4C019927BD500A4DF95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEA4F4A819927BD500A4DF95 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EEA4F4AD19927BD500A4DF95 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEA4F4AE19927BD500A4DF95 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EEA4F4B319927BD500A4DF95 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEA4F4B419927BD500A4DF95 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		EEA4F4C519927BD500A4DF95 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEA4F4C619927BD500A4DF95 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEA4F4CA19927BD500A4DF95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EEA4F4CB19927BD500A4DF95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EEA4F4CD19927BD500A4DF95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InputSourceChecker/InputSourceChecker-Prefix.pch";
+				INFOPLIST_FILE = "InputSourceChecker/InputSourceChecker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EEA4F4CE19927BD500A4DF95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InputSourceChecker/InputSourceChecker-Prefix.pch";
+				INFOPLIST_FILE = "InputSourceChecker/InputSourceChecker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EEA4F4D019927BD500A4DF95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InputSourceChecker.app/Contents/MacOS/InputSourceChecker";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InputSourceChecker/InputSourceChecker-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "InputSourceCheckerTests/InputSourceCheckerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EEA4F4D119927BD500A4DF95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InputSourceChecker.app/Contents/MacOS/InputSourceChecker";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InputSourceChecker/InputSourceChecker-Prefix.pch";
+				INFOPLIST_FILE = "InputSourceCheckerTests/InputSourceCheckerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEA4F49619927BD500A4DF95 /* Build configuration list for PBXProject "InputSourceChecker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEA4F4CA19927BD500A4DF95 /* Debug */,
+				EEA4F4CB19927BD500A4DF95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEA4F4CC19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "InputSourceChecker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEA4F4CD19927BD500A4DF95 /* Debug */,
+				EEA4F4CE19927BD500A4DF95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EEA4F4CF19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "InputSourceCheckerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEA4F4D019927BD500A4DF95 /* Debug */,
+				EEA4F4D119927BD500A4DF95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEA4F49319927BD500A4DF95 /* Project object */;
+}
