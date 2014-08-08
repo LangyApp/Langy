@@ -12,7 +12,13 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    InputSource *inputSource = [[InputSource alloc] initWithSources:@[@"com.apple.keylayout.US"]];
+    
+    OSStatus status = [inputSource setInputSource:0];
+    
+    if (status != noErr) {
+        NSLog(@"Error!!");
+    }
 }
 
 @end

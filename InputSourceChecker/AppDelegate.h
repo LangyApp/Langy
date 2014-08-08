@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "InputSource.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
