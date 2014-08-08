@@ -20,6 +20,7 @@
 		EEA4F4C719927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4C519927BD500A4DF95 /* InfoPlist.strings */; };
 		EEA4F4C919927BD500A4DF95 /* InputSourceCheckerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA4F4C819927BD500A4DF95 /* InputSourceCheckerTests.m */; };
 		EEAF4F2319951FB90009C061 /* InputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F2219951FB90009C061 /* InputSource.m */; };
+		EEAF4F2519952A450009C061 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAF4F2419952A450009C061 /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		EEA4F4C819927BD500A4DF95 /* InputSourceCheckerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputSourceCheckerTests.m; sourceTree = "<group>"; };
 		EEAF4F2119951FB90009C061 /* InputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSource.h; sourceTree = "<group>"; };
 		EEAF4F2219951FB90009C061 /* InputSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSource.m; sourceTree = "<group>"; };
+		EEAF4F2419952A450009C061 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEAF4F2519952A450009C061 /* ScriptingBridge.framework in Frameworks */,
 				EE16A304199340780056FC60 /* Carbon.framework in Frameworks */,
 				EEA4F49F19927BD500A4DF95 /* Cocoa.framework in Frameworks */,
 			);
@@ -101,6 +104,7 @@
 		EEA4F49D19927BD500A4DF95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EEAF4F2419952A450009C061 /* ScriptingBridge.framework */,
 				EE16A303199340780056FC60 /* Carbon.framework */,
 				EEA4F49E19927BD500A4DF95 /* Cocoa.framework */,
 				EEA4F4BD19927BD500A4DF95 /* XCTest.framework */,
