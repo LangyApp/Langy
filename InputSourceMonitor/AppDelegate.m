@@ -17,7 +17,24 @@
 
 @implementation AppDelegate
 
-- (void)awakeFromNib {
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    if([self isAccesibilityEnabled]) {
+        [UserDefaultsManager registerDefaults];
+        appObserver = [ApplicationObserver start];
+        [self startStatusBar];
+    } else {
+        [NSApp terminate:self];
+    }
+}
+
+- (BOOL)isAccesibilityEnabled {
+    NSDictionary *options = @{(__bridge id)kAXTrustedCheckOptionPrompt: @YES};
+    return AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
+}
+
+// Status bar
+
+- (void)startStatusBar {
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:self.menu];
     [statusItem setHighlightMode:YES];
@@ -31,19 +48,6 @@
 
 - (IBAction)quit:(id)sender {
     [NSApp terminate:self];
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    if([self isAccesibilityEnabled]) {
-        appObserver = [ApplicationObserver start];
-    } else {
-        [NSApp terminate:self];
-    }
-}
-
-- (BOOL)isAccesibilityEnabled {
-    NSDictionary *options = @{(__bridge id)kAXTrustedCheckOptionPrompt: @YES};
-    return AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
 }
 
 @end

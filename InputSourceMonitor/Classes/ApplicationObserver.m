@@ -75,13 +75,7 @@
         NSString *applicationName = [applicationInfo objectForKey:@"NSApplicationName"];
         OSStatus status;
         
-        // TODO: Save the app names and input sources as user selections
-        // TODO: Don't do anything if currentInputSource == desiredInputSource
-        if ([applicationName isEqualToString:@"Sublime Text"] || [applicationName isEqualToString:@"Xcode"]) {
-            status = [inputSource setInputSource:@"com.apple.keylayout.US"];
-        } else {
-            status = [inputSource setInputSource:@"com.apple.keylayout.USInternational-PC"];
-        }
+        status = [inputSource setInputSource:[UserDefaultsManager objectForKey:applicationName]];
         
         if (status != noErr) {
             NSLog(@"Error changing the input source");

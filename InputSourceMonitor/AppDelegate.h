@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ApplicationObserver.h"
+#import "UserDefaultsManager.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 

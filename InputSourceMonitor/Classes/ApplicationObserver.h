@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "InputSource.h"
+#import "UserDefaultsManager.h"
 
 @interface ApplicationObserver : NSObject
 

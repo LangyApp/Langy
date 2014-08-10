@@ -24,6 +24,7 @@
 }
 
 - (OSStatus)setInputSource:(NSString *)key {
+    // TODO: Don't do anything if currentInputSource == desiredInputSource
     NSArray *sources = [self toInputSourceArray:key];
     TISInputSourceRef source = (__bridge TISInputSourceRef)sources[0];
     
