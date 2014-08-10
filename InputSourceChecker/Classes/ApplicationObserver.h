@@ -1,5 +1,5 @@
 //
-//  InputSource.h
+//  ApplicationObserver.h
 //  InputSourceChecker
 //
 //  Created by Nicolas Santangelo on 8/8/14.
@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Carbon/Carbon.h>
+#import "InputSource.h"
 
-@interface InputSource : NSObject
+@interface ApplicationObserver : NSObject
 
-- (id) initWithSources:(NSArray *)inputSourceKeys;
++ (id) start;
 
-- (OSStatus) setInputSource:(NSString *)key;
+- (id) startWatching;
 
 @end
