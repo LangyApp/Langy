@@ -22,6 +22,7 @@
 		EEAF4F2319951FB90009C061 /* InputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F2219951FB90009C061 /* InputSource.m */; };
 		EEAF4F2519952A450009C061 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAF4F2419952A450009C061 /* ScriptingBridge.framework */; };
 		EEAF4F28199587DC0009C061 /* ApplicationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F27199587DC0009C061 /* ApplicationObserver.m */; };
+		EEE245A2199727B500283BF7 /* iconx25.png in Resources */ = {isa = PBXBuildFile; fileRef = EEE245A1199727B500283BF7 /* iconx25.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		EEAF4F2419952A450009C061 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		EEAF4F26199587DC0009C061 /* ApplicationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationObserver.h; sourceTree = "<group>"; };
 		EEAF4F27199587DC0009C061 /* ApplicationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationObserver.m; sourceTree = "<group>"; };
+		EEE245A1199727B500283BF7 /* iconx25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconx25.png; path = Assets/iconx25.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		EEA4F4A519927BD500A4DF95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EEE245A1199727B500283BF7 /* iconx25.png */,
 				EEA4F4A619927BD500A4DF95 /* InputSourceChecker-Info.plist */,
 				EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */,
 				EEA4F4AA19927BD500A4DF95 /* main.m */,
@@ -256,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE245A2199727B500283BF7 /* iconx25.png in Resources */,
 				EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */,
 				EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */,
 				EEA4F4AF19927BD500A4DF95 /* Credits.rtf in Resources */,
