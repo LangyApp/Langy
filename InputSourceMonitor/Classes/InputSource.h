@@ -11,8 +11,6 @@
 
 @interface InputSource : NSObject
 
-- (id)initWithSources:(NSArray *)inputSourceKeys;
-
 - (OSStatus)setInputSource:(NSString *)key;
 
 @end

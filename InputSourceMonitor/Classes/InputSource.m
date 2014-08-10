@@ -15,14 +15,6 @@
 
 @implementation InputSource
 
-- (id)initWithSources:(NSArray *)inputSourceKeys {
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (OSStatus)setInputSource:(NSString *)key {
     // TODO: Don't do anything if currentInputSource == desiredInputSource
     NSArray *sources = [self toInputSourceArray:key];
