@@ -11,8 +11,8 @@
 
 @interface ApplicationObserver : NSObject
 
-+ (id) start;
++ (id)start;
 
-- (id) startWatching;
+- (id)startWatching;
 
 @end

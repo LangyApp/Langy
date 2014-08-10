@@ -15,19 +15,20 @@
     pid_t                    _currentPid;
 }
 
-- (void) applicationSwitched;
-- (void) applicationLaunched:(NSNotification *)notification;
-- (void) applicationTerminated:(NSNotification *)notification;
-- (void) registerForAppSwitchNotificationFor:(NSDictionary *)application;
+- (void)applicationSwitched;
+- (void)applicationLaunched:(NSNotification *)notification;
+- (void)applicationTerminated:(NSNotification *)notification;
+- (void)registerForAppSwitchNotificationFor:(NSDictionary *)application;
+
 @end
 
 @implementation ApplicationObserver
 
-+ (id) start {
++ (id)start {
     return [[[ApplicationObserver alloc] init] startWatching];
 }
 
-- (id) init {
+- (id)init {
     self = [super init];
     if (self) {
         _observers = [[NSMutableDictionary alloc] init];
@@ -37,7 +38,7 @@
     return self;
 }
 
-- (id) startWatching {
+- (id)startWatching {
     [self registerApplicationNotification:NSWorkspaceDidLaunchApplicationNotification callback:@selector(applicationLaunched:)];
     [self registerApplicationNotification:NSWorkspaceDidTerminateApplicationNotification callback:@selector(applicationTerminated:)];
 
@@ -48,14 +49,14 @@
     return self;
 }
 
-- (void) registerApplicationNotification:(NSString *)notificationName callback:(SEL)callback {
+- (void)registerApplicationNotification:(NSString *)notificationName callback:(SEL)callback {
     [[workspace notificationCenter] addObserver:self
                                        selector:callback
                                            name:notificationName
                                           object:workspace];
 }
 
-- (void) registerActivationNotificationForRunningApps {
+- (void)registerActivationNotificationForRunningApps {
     for(NSRunningApplication *application in [workspace runningApplications]) {
         // TODO: Create a RunningApp class that returns a Dict and it's compatible with other versions of MacOS
         int pid = (int)application.processIdentifier;
@@ -65,7 +66,7 @@
 
 #pragma mark application switches
 
-- (void) applicationSwitched {
+- (void)applicationSwitched {
     /* Get information and process id about the current active application, if it changed, do some work */
     NSDictionary *applicationInfo = [workspace activeApplication];
     pid_t switchedPid = (pid_t)[[applicationInfo valueForKey:@"NSApplicationProcessIdentifier"] integerValue];
@@ -91,13 +92,13 @@
     }
 }
 
-- (void) applicationLaunched:(NSNotification *)notification {
+- (void)applicationLaunched:(NSNotification *)notification {
     /* A new application has launched. Make sure we get notifications when it activates. */
     [self registerForAppSwitchNotificationFor:[notification userInfo]];
     [self applicationSwitched];
 }
 
-- (void) applicationTerminated:(NSNotification *)notification {
+- (void)applicationTerminated:(NSNotification *)notification {
     /* Get the application's process id and the observer associated to this application */
     NSNumber *pidNumber = [[notification userInfo] valueForKey:@"NSApplicationProcessIdentifier"];
     AXObserverRef observer = (__bridge AXObserverRef)[_observers objectForKey:pidNumber];
@@ -115,7 +116,7 @@
     }
 }
 
-- (void) registerForAppSwitchNotificationFor:(NSDictionary *)application {
+- (void)registerForAppSwitchNotificationFor:(NSDictionary *)application {
     NSNumber *pidNumber = [application valueForKey:@"NSApplicationProcessIdentifier"];
     
     /* Don't sign up for our own switch events (that will fail). */
@@ -151,15 +152,15 @@
     }
 }
 
-- (BOOL) applicationChanged:(pid_t)switchedPid {
+- (BOOL)applicationChanged:(pid_t)switchedPid {
     return switchedPid != _currentPid && switchedPid != getpid();
 }
 
-- (BOOL) isBeingObserved:(NSNumber *)pid {
+- (BOOL)isBeingObserved:(NSNumber *)pid {
    return !![_observers objectForKey:pid];
 }
 
-- (AXObserverRef) createObserver:(pid_t)pid {
+- (AXObserverRef)createObserver:(pid_t)pid {
     AXObserverRef observer;
     return AXObserverCreate(pid, applicationSwitched, &observer) == kAXErrorSuccess ? observer : nil;
 }
