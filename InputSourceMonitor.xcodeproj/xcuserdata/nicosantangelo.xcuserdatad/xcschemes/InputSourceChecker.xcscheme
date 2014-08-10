@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEA4F49A19927BD500A4DF95"
                BuildableName = "InputSourceChecker.app"
-               BlueprintName = "InputSourceChecker"
-               ReferencedContainer = "container:InputSourceChecker.xcodeproj">
+               BlueprintName = "InputSourceMonitor"
+               ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEA4F4BB19927BD500A4DF95"
                BuildableName = "InputSourceCheckerTests.xctest"
-               BlueprintName = "InputSourceCheckerTests"
-               ReferencedContainer = "container:InputSourceChecker.xcodeproj">
+               BlueprintName = "InputSourceMonitorTests"
+               ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEA4F49A19927BD500A4DF95"
             BuildableName = "InputSourceChecker.app"
-            BlueprintName = "InputSourceChecker"
-            ReferencedContainer = "container:InputSourceChecker.xcodeproj">
+            BlueprintName = "InputSourceMonitor"
+            ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEA4F49A19927BD500A4DF95"
             BuildableName = "InputSourceChecker.app"
-            BlueprintName = "InputSourceChecker"
-            ReferencedContainer = "container:InputSourceChecker.xcodeproj">
+            BlueprintName = "InputSourceMonitor"
+            ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEA4F49A19927BD500A4DF95"
             BuildableName = "InputSourceChecker.app"
-            BlueprintName = "InputSourceChecker"
-            ReferencedContainer = "container:InputSourceChecker.xcodeproj">
+            BlueprintName = "InputSourceMonitor"
+            ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
