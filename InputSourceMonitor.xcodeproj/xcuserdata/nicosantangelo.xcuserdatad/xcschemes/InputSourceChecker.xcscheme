@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEA4F49A19927BD500A4DF95"
-               BuildableName = "InputSourceChecker.app"
+               BuildableName = "InputSourceMonitor.app"
                BlueprintName = "InputSourceMonitor"
                ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EEA4F4BB19927BD500A4DF95"
-               BuildableName = "InputSourceCheckerTests.xctest"
+               BuildableName = "InputSourceMonitorTests.xctest"
                BlueprintName = "InputSourceMonitorTests"
                ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEA4F49A19927BD500A4DF95"
-            BuildableName = "InputSourceChecker.app"
+            BuildableName = "InputSourceMonitor.app"
             BlueprintName = "InputSourceMonitor"
             ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEA4F49A19927BD500A4DF95"
-            BuildableName = "InputSourceChecker.app"
+            BuildableName = "InputSourceMonitor.app"
             BlueprintName = "InputSourceMonitor"
             ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EEA4F49A19927BD500A4DF95"
-            BuildableName = "InputSourceChecker.app"
+            BuildableName = "InputSourceMonitor.app"
             BlueprintName = "InputSourceMonitor"
             ReferencedContainer = "container:InputSourceMonitor.xcodeproj">
          </BuildableReference>

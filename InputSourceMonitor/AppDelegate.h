@@ -14,5 +14,6 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *menu;
+@property (weak) IBOutlet NSScrollView *textarea;
 
 @end

@@ -22,6 +22,9 @@
         [UserDefaultsManager registerDefaults];
         appObserver = [ApplicationObserver start];
         [self startStatusBar];
+        
+        
+        [self showInstalledApps];
     } else {
         [NSApp terminate:self];
     }
@@ -30,6 +33,21 @@
 - (BOOL)isAccesibilityEnabled {
     NSDictionary *options = @{(__bridge id)kAXTrustedCheckOptionPrompt: @YES};
     return AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
+}
+
+- (void)showInstalledApps {
+    CFMutableArrayRef appsRef;
+    
+    _LSCopyAllApplicationURLs(&appsRef);
+    
+    for (int i = 0; i < CFArrayGetCount(appsRef); i++) {
+        CFURLRef appURL = (CFURLRef) CFArrayGetValueAtIndex(appsRef, i);
+        CFStringRef appName;
+        LSCopyDisplayNameForURL(appURL, &appName);
+        NSLog(@"%@", appName);
+    }
+    
+    
 }
 
 // Status bar
