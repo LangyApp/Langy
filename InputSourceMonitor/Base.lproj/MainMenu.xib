@@ -13,8 +13,8 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
-                <outlet property="image" destination="ABq-ZY-ioM" id="9NX-Rr-Vg0"/>
                 <outlet property="menu" destination="4r5-Nh-soy" id="vCd-tc-532"/>
+                <outlet property="preferencesViewController" destination="hjv-Ah-688" id="Kax-YV-VpO"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -28,11 +28,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABq-ZY-ioM">
-                        <rect key="frame" x="210" y="187" width="48" height="48"/>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ff-Cn-Vgo">
+                        <rect key="frame" x="118" y="277" width="246" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="HnF-ef-AgC"/>
-                    </imageView>
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="VJr-Eg-3ih" id="QVJ-6d-NNg">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" title="OtherViews" id="KXO-qF-5uW">
+                                <items>
+                                    <menuItem title="All Applications" id="dgh-1J-Zg7"/>
+                                    <menuItem isSeparatorItem="YES" state="on" id="VJr-Eg-3ih"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
                 </subviews>
             </view>
         </window>
@@ -52,5 +61,11 @@
                 </menuItem>
             </items>
         </menu>
+        <viewController id="hjv-Ah-688" customClass="PreferencesViewController">
+            <connections>
+                <outlet property="appsPopupButton" destination="8Ff-Cn-Vgo" id="fbe-f9-Rbg"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="ru1-bj-hop"/>
+            </connections>
+        </viewController>
     </objects>
 </document>

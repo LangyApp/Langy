@@ -9,13 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import "ApplicationObserver.h"
 #import "UserDefaultsManager.h"
+#import "PreferencesViewController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSMenu *menu;
-@property (weak) IBOutlet NSScrollView *textarea;
 
-@property (weak) IBOutlet NSImageView *image;
+@property (assign) IBOutlet NSMenu *menu;
 
 @end

@@ -22,9 +22,6 @@
         [UserDefaultsManager registerDefaults];
         appObserver = [ApplicationObserver start];
         [self startStatusBar];
-        
-        
-        [self showInstalledApps];
     } else {
         [NSApp terminate:self];
     }
@@ -35,19 +32,6 @@
     return AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
 }
 
-- (void)showInstalledApps {
-    NSString *sourcePath = @"/Applications";
-    NSArray* dirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:sourcePath error:NULL];
-    
-    [dirs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSString *filename = (NSString *)obj;
-        NSString *extension = [[filename pathExtension] lowercaseString];
-        if ([extension isEqualTo:@"app"]) {
-            NSLog(@"%@", [filename stringByDeletingPathExtension]);
-            [self.image setImage:[[NSWorkspace sharedWorkspace] iconForFile:[sourcePath stringByAppendingPathComponent:filename]]];
-        }
-    }];
-}
 
 // Status bar
 
