@@ -36,18 +36,17 @@
 }
 
 - (void)showInstalledApps {
-    CFMutableArrayRef appsRef;
+    NSString *sourcePath = @"/Applications";
+    NSArray* dirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:sourcePath error:NULL];
     
-    _LSCopyAllApplicationURLs(&appsRef);
-    
-    for (int i = 0; i < CFArrayGetCount(appsRef); i++) {
-        CFURLRef appURL = (CFURLRef) CFArrayGetValueAtIndex(appsRef, i);
-        CFStringRef appName;
-        LSCopyDisplayNameForURL(appURL, &appName);
-        NSLog(@"%@", appName);
-    }
-    
-    
+    [dirs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSString *filename = (NSString *)obj;
+        NSString *extension = [[filename pathExtension] lowercaseString];
+        if ([extension isEqualTo:@"app"]) {
+            NSLog(@"%@", [filename stringByDeletingPathExtension]);
+            [self.image setImage:[[NSWorkspace sharedWorkspace] iconForFile:[sourcePath stringByAppendingPathComponent:filename]]];
+        }
+    }];
 }
 
 // Status bar
