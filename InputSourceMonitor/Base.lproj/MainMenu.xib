@@ -28,19 +28,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ff-Cn-Vgo">
-                        <rect key="frame" x="118" y="277" width="246" height="26"/>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ff-Cn-Vgo" customClass="AppsPopUpButton">
+                        <rect key="frame" x="118" y="306" width="246" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="VJr-Eg-3ih" id="QVJ-6d-NNg">
+                        <popUpButtonCell key="cell" type="push" title="All Applications" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="dgh-1J-Zg7" id="QVJ-6d-NNg">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="KXO-qF-5uW">
                                 <items>
-                                    <menuItem title="All Applications" id="dgh-1J-Zg7"/>
-                                    <menuItem isSeparatorItem="YES" state="on" id="VJr-Eg-3ih"/>
+                                    <menuItem title="All Applications" state="on" id="dgh-1J-Zg7"/>
+                                    <menuItem isSeparatorItem="YES" id="VJr-Eg-3ih"/>
                                 </items>
                             </menu>
                         </popUpButtonCell>
+                        <connections>
+                            <action selector="appSelected:" target="hjv-Ah-688" id="r0g-3c-qe2"/>
+                        </connections>
                     </popUpButton>
                 </subviews>
             </view>

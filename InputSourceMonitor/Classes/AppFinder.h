@@ -16,4 +16,6 @@
 
 - (void)forEachInstalledApp:(void (^)(NSDictionary *app))fn;
 
+- (void)openDialog:(void (^)(NSDictionary *app))fn;
+
 @end

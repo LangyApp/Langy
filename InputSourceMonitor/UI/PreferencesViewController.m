@@ -11,19 +11,11 @@
 @implementation PreferencesViewController
 
 - (void)awakeFromNib {
-    AppFinder *appFinder = [[AppFinder alloc] init];
-    
-    [appFinder forEachInstalledApp:^(NSDictionary *app) {
-        NSMenuItem *appMenuItem = [[NSMenuItem alloc] init];
-        [appMenuItem setTitle:app[@"name"]];
-        [appMenuItem setImage:app[@"icon"]];
-        
-        [[self.appsPopupButton menu] addItem:appMenuItem];
-    }];
+    [self.appsPopupButton populate];
+}
 
-    
-    [self.appsPopupButton addItemWithTitle:@"Other..."];
-    [self.appsPopupButton selectItemAtIndex:0];
+- (IBAction)appSelected:(id)sender {
+    [self.appsPopupButton triggerSelection];
 }
 
 @end

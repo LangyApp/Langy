@@ -8,10 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "AppFinder.h"
+#import "AppsPopUpButton.h"
 
 @interface PreferencesViewController : NSViewController
 
+@property (weak) IBOutlet AppsPopUpButton *appsPopupButton;
 
-@property (weak) IBOutlet NSPopUpButton *appsPopupButton;
+- (IBAction)appSelected:(id)sender;
 
 @end

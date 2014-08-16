@@ -29,6 +29,19 @@
     return self;
 }
 
+- (void)openDialog:(void (^)(NSDictionary *app))fn {
+    NSOpenPanel* openDialog = [NSOpenPanel openPanel];
+    
+    if ([openDialog runModal] == NSOKButton) {
+        NSArray* files = [openDialog URLs];
+        
+        for(int i = 0; i < [files count]; i++) {
+            NSString* filename = [[[files objectAtIndex:i] path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            [self passAppToFn:filename callback:fn];
+        }
+    }
+}
+
 - (NSArray *)getInstalledApps {
     NSMutableArray *apps = [[NSMutableArray alloc] init];
     [self forEachInstalledApp:^(NSDictionary *app) {
@@ -40,9 +53,7 @@
 - (void)forEachInstalledApp:(void (^)(NSDictionary *app))fn {
     [[self sourcePathContents] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *filename = (NSString *)obj;
-        if ([self pathIsApp:filename]) {
-            fn(@{ @"name": [filename stringByDeletingPathExtension], @"icon":[self getIcon:filename] });
-        }
+        [self passAppToFn:[sourcePath stringByAppendingPathComponent:filename] callback:fn];
     }];
 }
 
@@ -50,13 +61,19 @@
     return [[NSFileManager defaultManager] contentsOfDirectoryAtPath:sourcePath error:NULL];
 }
 
+- (void)passAppToFn:(NSString *)path callback:(void (^)(NSDictionary *app))fn {
+    if ([self pathIsApp:path]) {
+        fn(@{ @"name": [[path lastPathComponent] stringByDeletingPathExtension], @"icon":[self getIcon:path] });
+    }
+}
+
 - (BOOL)pathIsApp:(NSString *)path {
     NSString *extension = [[path pathExtension] lowercaseString];
     return [extension isEqualTo:@"app"];
 }
 
-- (NSImage *) getIcon:(NSString *) path {
-    NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:[sourcePath stringByAppendingPathComponent:path]];
+- (NSImage *)getIcon:(NSString *) path {
+    NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:path];
     [icon setSize:CGSizeMake(20, 20)];
     return icon;
 }
