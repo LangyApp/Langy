@@ -10,17 +10,24 @@
 
 @interface PreferencesViewController() {
     NSArray *apps;
+    InputSource *inputSource;
 }
 @end
 
 @implementation PreferencesViewController
 
 - (void)awakeFromNib {
-    [self.appsPopupButton populate];
+    if (!inputSource) {
+        inputSource = [[InputSource alloc] init];
+    }
 }
 
 - (void)appear {
     apps = [UserDefaultsManager allValues];
+    
+    [self.appsPopupButton populate];
+    [self.inputSourcePopupButton populate];
+    
     [self.preferencesTableView reloadData];
 }
 
@@ -41,20 +48,22 @@
     NSDictionary *app = apps[row];
     NSTableCellView *cell = nil;
     
+    // TODO: Refactor this (CustomCell?)
     if ([identifier isEqualToString:@"AppCell"]) {
         cell = [tableView makeViewWithIdentifier:@"AppCell" owner:self];
-        
         [cell.textField setStringValue:app[@"name"]];
-        [cell.imageView setImage:[self getIcon:app[@"path"]]];
-    } else if ([identifier isEqualToString:@"InputSourceCell"]) {
+        [cell.imageView setImage:[self _getIcon:app[@"path"]]];
+    }
+    else if ([identifier isEqualToString:@"InputSourceCell"]) {
         cell = [tableView makeViewWithIdentifier:@"InputSourceCell" owner:self];
-        [cell.textField setStringValue:[InputSource normalizeName:app[@"language"]]];
+        [cell.textField setStringValue:[inputSource localizedName:app[@"language"]]];
+        [cell.imageView setImage:[inputSource icon:app[@"language"]]];
     }
     
     return cell;
 }
 
-- (NSImage *)getIcon:(NSString *) path {
+- (NSImage *)_getIcon:(NSString *) path {
     NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:path];
     [icon setSize:CGSizeMake(20, 20)];
     return icon;

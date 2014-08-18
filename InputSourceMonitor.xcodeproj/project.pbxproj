@@ -24,6 +24,7 @@
 		EEA92E1D199FACBE00A5A22B /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E1C199FACBE00A5A22B /* PreferencesViewController.m */; };
 		EEA92E20199FBB7B00A5A22B /* AppMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E1F199FBB7B00A5A22B /* AppMenuItem.m */; };
 		EEA92E23199FC69500A5A22B /* AppsPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E22199FC69500A5A22B /* AppsPopUpButton.m */; };
+		EEAEA19B19A26BC000CCA51E /* InputSourcePopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAEA19A19A26BC000CCA51E /* InputSourcePopUpButton.m */; };
 		EEAF4F2319951FB90009C061 /* InputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F2219951FB90009C061 /* InputSource.m */; };
 		EEAF4F2519952A450009C061 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAF4F2419952A450009C061 /* ScriptingBridge.framework */; };
 		EEAF4F28199587DC0009C061 /* ApplicationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F27199587DC0009C061 /* ApplicationObserver.m */; };
@@ -71,6 +72,8 @@
 		EEA92E1F199FBB7B00A5A22B /* AppMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMenuItem.m; sourceTree = "<group>"; };
 		EEA92E21199FC69500A5A22B /* AppsPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsPopUpButton.h; sourceTree = "<group>"; };
 		EEA92E22199FC69500A5A22B /* AppsPopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsPopUpButton.m; sourceTree = "<group>"; };
+		EEAEA19919A26BC000CCA51E /* InputSourcePopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourcePopUpButton.h; sourceTree = "<group>"; };
+		EEAEA19A19A26BC000CCA51E /* InputSourcePopUpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourcePopUpButton.m; sourceTree = "<group>"; };
 		EEAF4F2119951FB90009C061 /* InputSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSource.h; sourceTree = "<group>"; };
 		EEAF4F2219951FB90009C061 /* InputSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSource.m; sourceTree = "<group>"; };
 		EEAF4F2419952A450009C061 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
@@ -197,6 +200,8 @@
 				EEA92E1F199FBB7B00A5A22B /* AppMenuItem.m */,
 				EEA92E21199FC69500A5A22B /* AppsPopUpButton.h */,
 				EEA92E22199FC69500A5A22B /* AppsPopUpButton.m */,
+				EEAEA19919A26BC000CCA51E /* InputSourcePopUpButton.h */,
+				EEAEA19A19A26BC000CCA51E /* InputSourcePopUpButton.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */,
 				EEA4F4B219927BD500A4DF95 /* AppDelegate.m in Sources */,
 				EEA92E13199FA65800A5A22B /* AppFinder.m in Sources */,
+				EEAEA19B19A26BC000CCA51E /* InputSourcePopUpButton.m in Sources */,
 				EEA92E20199FBB7B00A5A22B /* AppMenuItem.m in Sources */,
 				EEA92E1D199FACBE00A5A22B /* PreferencesViewController.m in Sources */,
 				EEA4F4AB19927BD500A4DF95 /* main.m in Sources */,

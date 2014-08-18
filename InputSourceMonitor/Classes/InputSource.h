@@ -11,8 +11,14 @@
 
 @interface InputSource : NSObject
 
-- (OSStatus)setInputSource:(NSString *)key;
+- (id)initWithInstalledSources;
 
-+ (NSString *)normalizeName:(NSString *)appleKey;
+- (NSArray *)installed;
+
+- (NSString *)localizedName:(NSString *)key;
+- (NSImage *)icon:(NSString *)key;
+
+- (OSStatus)set:(NSString *)key;
+- (BOOL)selected:(NSString *)key;
 
 @end

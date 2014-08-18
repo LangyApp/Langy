@@ -20,7 +20,9 @@
     appFinder = [[AppFinder alloc] init];
     
     [appFinder forEachInstalledApp:^(NSDictionary *app) {
-        [[self menu] addItem:[[AppMenuItem alloc] initWithApp:app]];
+        if ([self itemWithTitle:app[@"name"]] == nil) {
+            [[self menu] addItem:[[AppMenuItem alloc] initWithApp:app]];
+        }
     }];
     
     [self addLastMenuItem];

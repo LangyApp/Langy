@@ -169,7 +169,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <popUpButton verticalHuggingPriority="750" id="aE1-8v-j15" customClass="AppsPopUpButton">
+                    <popUpButton verticalHuggingPriority="750" id="aE1-8v-j15" customClass="InputSourcePopUpButton">
                         <rect key="frame" x="266" y="237" width="158" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Btg-zP-pwF">
@@ -229,6 +229,7 @@
         <viewController id="hjv-Ah-688" customClass="PreferencesViewController">
             <connections>
                 <outlet property="appsPopupButton" destination="8Ff-Cn-Vgo" id="fbe-f9-Rbg"/>
+                <outlet property="inputSourcePopupButton" destination="aE1-8v-j15" id="ceA-rd-YLf"/>
                 <outlet property="preferencesTableView" destination="Lnq-Jj-fXa" id="wVL-fR-tYD"/>
                 <outlet property="tableView" destination="4sg-Ay-xIo" id="l69-n5-XvZ"/>
                 <outlet property="view" destination="EiT-Mj-1SZ" id="ru1-bj-hop"/>

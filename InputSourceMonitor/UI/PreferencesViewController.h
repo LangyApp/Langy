@@ -8,13 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 #import "UserDefaultsManager.h"
+
 #import "AppFinder.h"
 #import "AppsPopUpButton.h"
+
+#import "InputSourcePopUpButton.h"
 #import "InputSource.h"
 
 @interface PreferencesViewController : NSViewController<NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet AppsPopUpButton *appsPopupButton;
+@property (weak) IBOutlet InputSourcePopUpButton *inputSourcePopupButton;
 @property (weak) IBOutlet NSTableView *preferencesTableView;
 
 - (void)appear;
