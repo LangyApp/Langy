@@ -60,7 +60,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn width="209.84375" minWidth="40" maxWidth="1000" id="1q9-Cp-h8a">
+                                        <tableColumn identifier="AppCell" width="209.84375" minWidth="40" maxWidth="1000" id="1q9-Cp-h8a">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -99,7 +99,7 @@
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
-                                        <tableColumn width="222" minWidth="40" maxWidth="1000" id="ylR-cB-L0s">
+                                        <tableColumn identifier="InputSourceCell" width="222" minWidth="40" maxWidth="1000" id="ylR-cB-L0s">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -139,6 +139,10 @@
                                             </prototypeCellViews>
                                         </tableColumn>
                                     </tableColumns>
+                                    <connections>
+                                        <outlet property="dataSource" destination="hjv-Ah-688" id="3Oo-4A-dBh"/>
+                                        <outlet property="delegate" destination="hjv-Ah-688" id="zTq-8I-FJc"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

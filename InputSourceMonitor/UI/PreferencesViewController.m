@@ -21,6 +21,7 @@
 
 - (void)appear {
     apps = [UserDefaultsManager allValues];
+    [self.preferencesTableView reloadData];
 }
 
 // Apps ComboBox
@@ -43,7 +44,7 @@
         cell = [tableView makeViewWithIdentifier:@"AppCell" owner:self];
         
         [cell.textField setStringValue:app[@"name"]];
-        [cell.imageView setImage:app[@"path"]];
+        [cell.imageView setImage:[self getIcon:app[@"path"]]];
     } else if ([identifier isEqualToString:@"InputSourceCell"]) {
 //        cell = [tableView makeViewWithIdentifier:@"InputSourceCell" owner:self];
     }
