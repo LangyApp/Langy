@@ -72,13 +72,15 @@
     pid_t switchedPid = (pid_t)[[applicationInfo valueForKey:@"NSApplicationProcessIdentifier"] integerValue];
 
     if([self applicationChanged:switchedPid]) {
-        NSString *applicationName = [applicationInfo objectForKey:@"NSApplicationName"];
-        OSStatus status;
-        
-        status = [inputSource setInputSource:[UserDefaultsManager objectForKey:applicationName]];
-        
-        if (status != noErr) {
-            NSLog(@"Error changing the input source");
+        if ([UserDefaultsManager isOn]) {
+            NSString *applicationName = [applicationInfo objectForKey:@"NSApplicationName"];
+            NSDictionary *app = [UserDefaultsManager objectForKey:applicationName];
+            
+            OSStatus status = [inputSource setInputSource:app[@"language"]];
+            
+            if (status != noErr) {
+                NSLog(@"Error changing the input source for %@", applicationName);
+            }
         }
         
         /* Store this application's process id so we can compare it with the process id of the next frontmost application */

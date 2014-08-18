@@ -14,7 +14,9 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-
 @property (assign) IBOutlet NSMenu *menu;
+@property (weak) IBOutlet NSMenuItem *toggleUseButton;
+
+@property (unsafe_unretained) IBOutlet PreferencesViewController *preferencesViewController;
 
 @end

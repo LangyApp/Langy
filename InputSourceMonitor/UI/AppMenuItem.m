@@ -13,8 +13,11 @@
 - (id)initWithApp:(NSDictionary *)app {
     self = [super init];
     if (self) {
+        NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:app[@"path"]];
+        [icon setSize:CGSizeMake(20, 20)];
+
         [self setTitle:app[@"name"]];
-        [self setImage:app[@"icon"]];
+        [self setImage:icon];
     }
     return self;
 }

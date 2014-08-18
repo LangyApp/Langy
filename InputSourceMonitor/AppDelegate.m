@@ -19,8 +19,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     if([self isAccesibilityEnabled]) {
-        [UserDefaultsManager registerDefaults];
         appObserver = [ApplicationObserver start];
+        [UserDefaultsManager registerDefaults];
         [self startStatusBar];
     } else {
         [NSApp terminate:self];
@@ -42,7 +42,14 @@
     [statusItem setImage:[NSImage imageNamed:@"iconx25"]];
 }
 
+- (IBAction)toggleUse:(id)sender {
+    NSString *buttonTitle = [NSString stringWithFormat:@"Turn %@", ([UserDefaultsManager isOn] ? @"On" : @"Off")];
+    [self.toggleUseButton setTitle:buttonTitle];
+    [UserDefaultsManager toggleIsOn];
+}
+
 - (IBAction)showPreferences:(id)sender {
+    [self.preferencesViewController appear];
     [NSApp activateIgnoringOtherApps:YES];
     [self.window makeKeyAndOrderFront:nil];
 }

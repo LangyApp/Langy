@@ -63,19 +63,13 @@
 
 - (void)passAppToFn:(NSString *)path callback:(void (^)(NSDictionary *app))fn {
     if ([self pathIsApp:path]) {
-        fn(@{ @"name": [[path lastPathComponent] stringByDeletingPathExtension], @"icon":[self getIcon:path] });
+        fn(@{ @"name": [[path lastPathComponent] stringByDeletingPathExtension], @"path":path });
     }
 }
 
 - (BOOL)pathIsApp:(NSString *)path {
     NSString *extension = [[path pathExtension] lowercaseString];
     return [extension isEqualTo:@"app"];
-}
-
-- (NSImage *)getIcon:(NSString *) path {
-    NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:path];
-    [icon setSize:CGSizeMake(20, 20)];
-    return icon;
 }
 
 @end

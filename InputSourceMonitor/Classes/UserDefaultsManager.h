@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppFinder.h"
 
 @interface UserDefaultsManager : NSObject
 
 + (void)registerDefaults;
 
-+ (NSString *)objectForKey:(NSString *)key;
++ (NSDictionary *)objectForKey:(NSString *)key;
++ (NSArray *)allValues;
+
++ (void)toggleIsOn;
++ (BOOL)isOn;
  
 @end

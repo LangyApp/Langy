@@ -7,12 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "UserDefaultsManager.h"
 #import "AppFinder.h"
 #import "AppsPopUpButton.h"
 
-@interface PreferencesViewController : NSViewController
+@interface PreferencesViewController : NSViewController<NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet AppsPopUpButton *appsPopupButton;
+@property (weak) IBOutlet NSTableView *preferencesTableView;
+
+- (void)appear;
 
 - (IBAction)appSelected:(id)sender;
 
