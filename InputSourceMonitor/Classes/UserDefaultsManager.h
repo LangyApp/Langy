@@ -14,6 +14,9 @@
 + (void)registerDefaults;
 
 + (NSDictionary *)objectForKey:(NSString *)key;
++ (void)removeObjectForKey:(NSString *)key;
++ (BOOL)exists:(NSString *)key;
+
 + (NSArray *)allValues;
 
 + (void)toggleIsOn;

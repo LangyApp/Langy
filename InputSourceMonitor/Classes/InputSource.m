@@ -18,7 +18,7 @@
 - (OSStatus)setInputSource:(NSString *)key {
     // TODO: Don't do anything if currentInputSource == desiredInputSource
     NSArray *sources = [self toInputSourceArray:key];
-    TISInputSourceRef source = (__bridge TISInputSourceRef)sources[0];
+    TISInputSourceRef source = [sources count] > 0 ? (__bridge TISInputSourceRef)sources[0] : nil;
     
     return TISSelectInputSource(source);
 }
@@ -28,6 +28,15 @@
     CFArrayRef inputSourceList = TISCreateInputSourceList(inputSourceAuxDict, FALSE);
     
     return CFBridgingRelease(inputSourceList);
+}
+
++ (NSString *)normalizeName:(NSString *)appleKey {
+    NSRange lastDot = [appleKey rangeOfString:@"." options:NSBackwardsSearch];
+    
+    if(lastDot.location != NSNotFound) {
+        appleKey = [appleKey substringFromIndex:lastDot.location + 1];
+    }
+    return appleKey;
 }
 
 @end

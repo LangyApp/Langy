@@ -10,6 +10,7 @@
 #import "UserDefaultsManager.h"
 #import "AppFinder.h"
 #import "AppsPopUpButton.h"
+#import "InputSource.h"
 
 @interface PreferencesViewController : NSViewController<NSTableViewDataSource, NSTableViewDelegate>
 
@@ -19,5 +20,6 @@
 - (void)appear;
 
 - (IBAction)appSelected:(id)sender;
+- (IBAction)removePreference:(id)sender;
 
 @end

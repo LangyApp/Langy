@@ -13,4 +13,6 @@
 
 - (OSStatus)setInputSource:(NSString *)key;
 
++ (NSString *)normalizeName:(NSString *)appleKey;
+
 @end

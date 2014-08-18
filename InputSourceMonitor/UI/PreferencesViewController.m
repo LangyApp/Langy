@@ -25,6 +25,7 @@
 }
 
 // Apps ComboBox
+
 - (IBAction)appSelected:(id)sender {
     [self.appsPopupButton triggerSelection];
 }
@@ -46,7 +47,8 @@
         [cell.textField setStringValue:app[@"name"]];
         [cell.imageView setImage:[self getIcon:app[@"path"]]];
     } else if ([identifier isEqualToString:@"InputSourceCell"]) {
-//        cell = [tableView makeViewWithIdentifier:@"InputSourceCell" owner:self];
+        cell = [tableView makeViewWithIdentifier:@"InputSourceCell" owner:self];
+        [cell.textField setStringValue:[InputSource normalizeName:app[@"language"]]];
     }
     
     return cell;
@@ -56,6 +58,14 @@
     NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFile:path];
     [icon setSize:CGSizeMake(20, 20)];
     return icon;
+}
+
+- (IBAction)removePreference:(id)sender {
+    NSInteger selectedRow = [self.preferencesTableView selectedRow];
+    if (selectedRow >= 0 && selectedRow < [apps count]) {
+        [UserDefaultsManager removeObjectForKey:apps[selectedRow][@"name"]];
+        [self.preferencesTableView removeRowsAtIndexes:[self.preferencesTableView selectedRowIndexes] withAnimation:NSTableViewAnimationSlideUp];
+    }
 }
 
 @end

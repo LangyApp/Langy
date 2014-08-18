@@ -19,8 +19,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     if([self isAccesibilityEnabled]) {
-        appObserver = [ApplicationObserver start];
         [UserDefaultsManager registerDefaults];
+        appObserver = [ApplicationObserver start];
         [self startStatusBar];
     } else {
         [NSApp terminate:self];

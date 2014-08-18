@@ -15,22 +15,29 @@
 
 + (void)registerDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults registerDefaults:@{kisOn:@1, kDefaultInputSource: @{@"language": @"com.apple.keylayout.USInternational-PC"}}];
+    [defaults registerDefaults:@{ kDefaultInputSource: @{@"language": @"com.apple.keylayout.USInternational-PC"} }];
     
     [[[AppFinder alloc] init] forEachInstalledApp:^(NSDictionary *app) {
         if ([app[@"name"] isEqualToString:@"Sublime Text"] || [app[@"name"] isEqualToString:@"Xcode"]) {
             [defaults setObject:@{@"name":app[@"name"], @"language": @"com.apple.keylayout.US", @"path":app[@"path"]} forKey:app[@"name"]];
         }
     }];
+    
+    [defaults setObject:@1 forKey:kisOn];
 }
 
 + (NSDictionary *)objectForKey:(NSString *)key {
-    NSDictionary *object = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-    if (object) {
-        return object;
-    } else {
-        return [[NSUserDefaults standardUserDefaults] objectForKey:kDefaultInputSource];
+    return [[NSUserDefaults standardUserDefaults] objectForKey:[self exists:key] ? key : kDefaultInputSource];
+}
+
++ (void)removeObjectForKey:(NSString *)key {
+    if ([self exists:key]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
     }
+}
+
++ (BOOL)exists:(NSString *)key {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:key] != nil;
 }
 
 + (NSArray *)allValues {
