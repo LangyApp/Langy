@@ -18,12 +18,19 @@
 @interface PreferencesViewController : NSViewController<NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet AppsPopUpButton *appsPopupButton;
+
 @property (weak) IBOutlet InputSourcePopUpButton *inputSourcePopupButton;
+@property (weak) IBOutlet InputSourcePopUpButton *defaultInputSourcePopupButton;
+
 @property (weak) IBOutlet NSTableView *preferencesTableView;
 
 - (void)appear;
 
 - (IBAction)appSelected:(id)sender;
+- (IBAction)inputSourceSelected:(id)sender;
+- (IBAction)defatultInputSourceSelected:(id)sender;
+
+- (IBAction)addPreference:(id)sender;
 - (IBAction)removePreference:(id)sender;
 
 @end

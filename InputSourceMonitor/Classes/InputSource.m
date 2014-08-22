@@ -38,6 +38,7 @@
         TISInputSourceRef source = (__bridge TISInputSourceRef)installedInputSources[i];
         [sources addObject:@{
                             @"name": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyLocalizedName),
+                            @"layout": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyInputSourceID),
                             @"icon": [self _getImageForIcon:TISGetInputSourceProperty(source, kTISPropertyIconRef)]
                             }];
     }
@@ -76,6 +77,10 @@
 }
 
 - (NSArray *)toArray:(NSString *)key {
+    if (!key) {
+        return @[];
+    }
+    
     CFDictionaryRef inputSourceAuxDict = (__bridge CFDictionaryRef)@{ (__bridge NSString*)kTISPropertyInputSourceID: key };
     CFArrayRef inputSourceList = TISCreateInputSourceList(inputSourceAuxDict, FALSE);
     

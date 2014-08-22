@@ -76,7 +76,7 @@
             NSString *applicationName = [applicationInfo objectForKey:@"NSApplicationName"];
             NSDictionary *app = [UserDefaultsManager objectForKey:applicationName];
             
-            OSStatus status = [inputSource set:app[@"language"]];
+            OSStatus status = [inputSource set:app[@"layout"]];
             
             if (status != noErr) {
                 NSLog(@"Error changing the input source for %@", applicationName);

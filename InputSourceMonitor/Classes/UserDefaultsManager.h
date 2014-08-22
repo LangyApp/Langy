@@ -13,13 +13,19 @@
 
 + (void)registerDefaults;
 
-+ (NSDictionary *)objectForKey:(NSString *)key;
-+ (void)removeObjectForKey:(NSString *)key;
-+ (BOOL)exists:(NSString *)key;
++ (void)setDefaultLayout:(NSString *)value;
++ (NSString *)getDefaultLayout;
 
 + (NSArray *)allValues;
 
 + (void)toggleIsOn;
 + (BOOL)isOn;
- 
+
+
++ (void)setObject:(id)object forKey:(NSString *)key;
++ (NSDictionary *)objectForKey:(NSString *)key;
++ (void)removeObjectForKey:(NSString *)key;
++ (BOOL)exists:(NSString *)key;
+
+
 @end

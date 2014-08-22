@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE16A304199340780056FC60 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE16A303199340780056FC60 /* Carbon.framework */; };
 		EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3745C31997FA8600485137 /* UserDefaultsManager.m */; };
+		EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */; };
 		EEA4F49F19927BD500A4DF95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F49E19927BD500A4DF95 /* Cocoa.framework */; };
 		EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */; };
 		EEA4F4AB19927BD500A4DF95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA4F4AA19927BD500A4DF95 /* main.m */; };
@@ -45,6 +46,8 @@
 		EE16A303199340780056FC60 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		EE3745C21997FA8600485137 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		EE3745C31997FA8600485137 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceMenuItem.h; sourceTree = "<group>"; };
+		EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceMenuItem.m; sourceTree = "<group>"; };
 		EEA4F49B19927BD500A4DF95 /* InputSourceMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputSourceMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA4F49E19927BD500A4DF95 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EEA4F4A119927BD500A4DF95 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -202,6 +205,8 @@
 				EEA92E22199FC69500A5A22B /* AppsPopUpButton.m */,
 				EEAEA19919A26BC000CCA51E /* InputSourcePopUpButton.h */,
 				EEAEA19A19A26BC000CCA51E /* InputSourcePopUpButton.m */,
+				EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */,
+				EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				EEA92E20199FBB7B00A5A22B /* AppMenuItem.m in Sources */,
 				EEA92E1D199FACBE00A5A22B /* PreferencesViewController.m in Sources */,
 				EEA4F4AB19927BD500A4DF95 /* main.m in Sources */,
+				EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

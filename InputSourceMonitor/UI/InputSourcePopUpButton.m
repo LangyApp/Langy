@@ -15,23 +15,40 @@
 
 @implementation InputSourcePopUpButton
 
+- (void)populateAndSelectByLayout:(NSString *)inputSourceId {
+    [self populate];
+    [self selectByLayout:inputSourceId];
+}
+
 - (void)populate {
     inputSource = [[InputSource alloc] initWithInstalledSources];
     NSArray *installedSources = [inputSource installed];
     
     for (int i = 0; i < [installedSources count]; i++) {
-        NSString *name = installedSources[i][@"name"];
-        NSImage *icon = installedSources[i][@"icon"];
+        NSDictionary *source = installedSources[i];
         
-        if ([self itemWithTitle:name] == nil) {
-            NSMenuItem *item = [[NSMenuItem alloc] init];
-            [item setTitle:name];
-            [item setImage:icon];
-            [[self menu] addItem:item];
+        if ([self itemWithTitle:source[@"name"]] == nil) {
+            [[self menu] addItem:[[InputSourceMenuItem alloc] initWithInputSource:source]];
         }
     }
     
     [self selectItemAtIndex:0];
+}
+
+- (void)selectByLayout:(NSString *)inputSourceId {
+    NSArray *menuItems = [self itemArray];
+    for (int i = 0; i < [menuItems count]; i++) {
+        InputSourceMenuItem *menuItem = (InputSourceMenuItem *)menuItems[i];
+        if ([menuItem.layout isEqualToString:inputSourceId]) {
+            [self selectItemAtIndex:i];
+            break;
+        }
+    }
+}
+
+- (NSString *)selectedLayout {
+    InputSourceMenuItem *menuItem = (InputSourceMenuItem *)[self selectedItem];
+    return menuItem ? menuItem.layout : @"";
 }
 
 @end

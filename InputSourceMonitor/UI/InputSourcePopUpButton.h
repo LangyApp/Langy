@@ -8,9 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import "InputSource.h"
+#import "InputSourceMenuItem.h"
 
 @interface InputSourcePopUpButton : NSPopUpButton
 
+- (void)populateAndSelectByLayout:(NSString *)inputSourceId;
+
 - (void)populate;
+
+- (NSString *)selectedLayout;
 
 @end
