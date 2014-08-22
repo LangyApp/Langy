@@ -16,6 +16,11 @@
 
 @implementation InputSource
 
++ (NSDictionary *)current{
+    TISInputSourceRef source = TISCopyCurrentKeyboardInputSource();
+    return [[[InputSource alloc] init] _build:source];
+}
+
 - (id)initWithInstalledSources {
     self = [super init];
     if (self) {
@@ -36,11 +41,7 @@
     NSMutableArray *sources = [[NSMutableArray alloc] initWithCapacity:[installedInputSources count]];
     for (int i = 0; i < [installedInputSources count]; i++) {
         TISInputSourceRef source = (__bridge TISInputSourceRef)installedInputSources[i];
-        [sources addObject:@{
-                            @"name": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyLocalizedName),
-                            @"layout": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyInputSourceID),
-                            @"icon": [self _getImageForIcon:TISGetInputSourceProperty(source, kTISPropertyIconRef)]
-                            }];
+        [sources addObject:[self _build:source]];
     }
     return sources;
 }
@@ -87,8 +88,16 @@
     return CFBridgingRelease(inputSourceList);
 }
 
+- (NSDictionary *)_build:(TISInputSourceRef)source {
+    return @{
+             @"name": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyLocalizedName),
+             @"layout": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyInputSourceID),
+             @"icon": [self _getImageForIcon:TISGetInputSourceProperty(source, kTISPropertyIconRef)]
+             };
+}
+
 - (NSImage *)_getImageForIcon:(IconRef)iconRef {
-    CGRect rect = CGRectMake(0,0,20,20);
+    CGRect rect = CGRectMake(0, 0, 20, 20);
     NSImage* image = [[NSImage alloc] initWithSize:rect.size];
     [image lockFocus];
     PlotIconRefInContext((CGContextRef)[[NSGraphicsContext currentContext] graphicsPort],

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AppFinder.h"
+#import "InputSource.h"
 
 @interface UserDefaultsManager : NSObject
 

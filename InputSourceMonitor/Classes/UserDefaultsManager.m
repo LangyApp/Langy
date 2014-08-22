@@ -15,7 +15,7 @@
 
 + (void)registerDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults registerDefaults:@{ kDefaultLayout: @{@"layout": @"com.apple.keylayout.USInternational-PC"} }];
+    [defaults registerDefaults:@{ kDefaultLayout: @{@"layout": [InputSource current][@"layout"]} }];
     
     [[[AppFinder alloc] init] forEachInstalledApp:^(NSDictionary *app) {
         if ([app[@"name"] isEqualToString:@"Sublime Text"] || [app[@"name"] isEqualToString:@"Xcode"]) {

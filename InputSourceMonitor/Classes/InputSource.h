@@ -11,6 +11,8 @@
 
 @interface InputSource : NSObject
 
++ (NSDictionary *)current;
+
 - (id)initWithInstalledSources;
 
 - (NSArray *)installed;
