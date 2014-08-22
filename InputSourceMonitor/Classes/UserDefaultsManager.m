@@ -14,16 +14,9 @@
 @implementation UserDefaultsManager
 
 + (void)registerDefaults {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults registerDefaults:@{ kDefaultLayout: @{@"layout": [InputSource current][@"layout"]} }];
-    
-    [[[AppFinder alloc] init] forEachInstalledApp:^(NSDictionary *app) {
-        if ([app[@"name"] isEqualToString:@"Sublime Text"] || [app[@"name"] isEqualToString:@"Xcode"]) {
-            [defaults setObject:@{@"name":app[@"name"], @"layout": @"com.apple.keylayout.US", @"path":app[@"path"]} forKey:app[@"name"]];
-        }
-    }];
-    
-    [defaults setObject:@1 forKey:kisOn];
+    NSDictionary *currentInputSource = [InputSource current];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ kDefaultLayout: @{@"layout": currentInputSource[@"layout"]} }];
+    [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:kisOn];
 }
 
 

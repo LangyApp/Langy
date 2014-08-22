@@ -27,7 +27,6 @@
 - (void)appear;
 
 - (IBAction)appSelected:(id)sender;
-- (IBAction)inputSourceSelected:(id)sender;
 - (IBAction)defatultInputSourceSelected:(id)sender;
 
 - (IBAction)addPreference:(id)sender;

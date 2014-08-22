@@ -10,6 +10,8 @@
 
 @interface AppMenuItem : NSMenuItem
 
+@property (strong, nonatomic) NSDictionary *app;
+
 - (id)initWithApp:(NSDictionary *)app;
 
 @end

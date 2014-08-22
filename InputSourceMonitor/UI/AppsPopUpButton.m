@@ -58,4 +58,9 @@
     return [self numberOfItems] - 1;
 }
 
+- (NSDictionary *)selectedApp {
+    AppMenuItem *menuItem = (AppMenuItem *)[self selectedItem];
+    return menuItem ? menuItem.app : @{ };
+}
+
 @end

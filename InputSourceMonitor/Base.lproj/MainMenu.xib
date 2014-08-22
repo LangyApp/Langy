@@ -172,9 +172,6 @@
                             <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="OZk-5j-xHw"/>
                         </popUpButtonCell>
-                        <connections>
-                            <action selector="inputSourceSelected:" target="hjv-Ah-688" id="yFI-Og-mcl"/>
-                        </connections>
                     </popUpButton>
                     <button id="PGi-6v-WOi">
                         <rect key="frame" x="421" y="302" width="25" height="25"/>

@@ -18,6 +18,7 @@
 
         [self setTitle:app[@"name"]];
         [self setImage:icon];
+        self.app = app;
     }
     return self;
 }

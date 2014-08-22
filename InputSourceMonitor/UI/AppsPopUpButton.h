@@ -16,4 +16,6 @@
 
 - (void)triggerSelection;
 
+- (NSDictionary *)selectedApp;
+
 @end
