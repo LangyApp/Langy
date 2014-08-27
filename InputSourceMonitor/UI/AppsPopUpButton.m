@@ -29,11 +29,6 @@
     [self selectItemAtIndex:0];
 }
 
-- (void)addLastMenuItem {
-    [[self menu] addItem:[NSMenuItem separatorItem]];
-    [self addItemWithTitle:kOther];
-}
-
 - (void)triggerSelection {
     NSMenuItem *appMenuItem = [self selectedItem];
     
@@ -45,8 +40,7 @@
 }
 
 - (void)appendToAppsPopupButton:(NSDictionary *)app {
-    [self removeItemWithTitle:kOther];
-    [self removeItemAtIndex:[self count]];
+    [self removeLastMenuItem];
     
     [[self menu] addItem:[[AppMenuItem alloc] initWithApp:app]];
     [self selectItemAtIndex:[self count]];
@@ -61,6 +55,18 @@
 - (NSDictionary *)selectedApp {
     AppMenuItem *menuItem = (AppMenuItem *)[self selectedItem];
     return menuItem ? menuItem.app : @{ };
+}
+
+- (void)addLastMenuItem {
+    if ([self itemWithTitle:kOther] == nil) {
+        [[self menu] addItem:[NSMenuItem separatorItem]];
+        [self addItemWithTitle:kOther];
+    }
+}
+
+- (void)removeLastMenuItem {
+    [self removeItemWithTitle:kOther];
+    [self removeItemAtIndex:[self count]];
 }
 
 @end
