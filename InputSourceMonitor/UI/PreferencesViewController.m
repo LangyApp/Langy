@@ -9,7 +9,7 @@
 #import "PreferencesViewController.h"
 
 @interface PreferencesViewController() {
-    NSMutableArray *apps;
+    StoredApps *apps;
     InputSource *inputSource;
 }
 @end
@@ -23,14 +23,16 @@
 }
 
 - (void)appear {
+    apps = [[StoredApps alloc] init];
+
     [self.appsPopupButton populate];
     [self.inputSourcePopupButton populate];
     
     [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]];
     
-    apps = [[NSMutableArray alloc] initWithArray:[UserDefaultsManager allValues]];
     [self.preferencesTableView reloadData];
 }
+
 
 // Apps ComboBox
 
@@ -46,24 +48,18 @@
 // Add and remove preferences
 
 - (IBAction)addPreference:(id)sender {
-    NSString *layout = [self.inputSourcePopupButton selectedLayout];
-    NSMutableDictionary *app =  [[NSMutableDictionary alloc] initWithDictionary:[self.appsPopupButton selectedApp]];
-    [app setObject:layout forKey:@"layout"];
+    NSUInteger newIndex = [apps addApp:[self.appsPopupButton selectedApp] withLayout:[self.inputSourcePopupButton selectedLayout]];
+
+    [self.preferencesTableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:newIndex] withAnimation:NSTableViewAnimationSlideDown];
     
-    [UserDefaultsManager setObject:app forKey:app[@"name"]];
-    [apps addObject:app];
-    
-    [self.preferencesTableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:[apps count]] withAnimation:NSTableViewAnimationSlideDown];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [self.preferencesTableView scrollRowToVisible:[self.preferencesTableView numberOfRows]];
+        [self.preferencesTableView scrollRowToVisible:newIndex];
     }];
 }
 
 - (IBAction)removePreference:(id)sender {
-    NSInteger selectedRow = [self.preferencesTableView selectedRow];
-    if (selectedRow >= 0 && selectedRow < [apps count]) {
-        [UserDefaultsManager removeObjectForKey:apps[selectedRow][@"name"]];
-        [apps removeObjectAtIndex:selectedRow];
+    BOOL wasDeleted = [apps removeAtIndex:[self.preferencesTableView selectedRow]];
+    if (wasDeleted) {
         [self.preferencesTableView removeRowsAtIndexes:[self.preferencesTableView selectedRowIndexes] withAnimation:NSTableViewAnimationSlideUp];
     }
 }
@@ -77,7 +73,7 @@
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     NSString *identifier = [tableColumn identifier];
-    NSDictionary *app = apps[row];
+    NSDictionary *app = [apps objectAtIndex:row];
     NSTableCellView *cell = nil;
     
     // TODO: Refactor this (CustomCell?)

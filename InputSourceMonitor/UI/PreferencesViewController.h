@@ -15,6 +15,8 @@
 #import "InputSourcePopUpButton.h"
 #import "InputSource.h"
 
+#import "StoredApps.h"
+
 @interface PreferencesViewController : NSViewController<NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet AppsPopUpButton *appsPopupButton;
