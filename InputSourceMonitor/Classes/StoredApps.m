@@ -57,6 +57,17 @@ typedef NSComparisonResult(^AppComparator)(NSDictionary *firstApp, NSDictionary 
     return (NSRange){0, [apps count]};
 }
 
+
+- (NSDictionary *)objectAtIndex:(NSUInteger)index {
+    return [apps objectAtIndex:index];
+}
+
+- (NSUInteger)indexOf:(NSDictionary *)searchedApp {
+    return [apps indexOfObjectPassingTest:^BOOL(NSDictionary *app, NSUInteger idx, BOOL *stop) {
+        return [[app objectForKey:@"name"] isEqual:searchedApp[@"name"]];
+    }];
+}
+
 - (BOOL)removeAtIndex:(NSInteger)index {
     if (index >= 0 && index < [apps count]) {
         [UserDefaultsManager removeObjectForKey:apps[index][@"name"]];
@@ -64,10 +75,6 @@ typedef NSComparisonResult(^AppComparator)(NSDictionary *firstApp, NSDictionary 
         return YES;
     }
     return NO;
-}
-
-- (NSDictionary *)objectAtIndex:(NSUInteger)index {
-    return [apps objectAtIndex:index];
 }
 
 - (NSInteger)count {

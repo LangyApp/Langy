@@ -48,7 +48,15 @@
 // Add and remove preferences
 
 - (IBAction)addPreference:(id)sender {
-    NSUInteger newIndex = [apps addApp:[self.appsPopupButton selectedApp] withLayout:[self.inputSourcePopupButton selectedLayout]];
+    NSDictionary *app = [self.appsPopupButton selectedApp];
+    NSUInteger oldIndex = [apps indexOf:app];
+    
+    if (oldIndex != NSNotFound) {
+        [apps removeAtIndex:oldIndex];
+        [self.preferencesTableView removeRowsAtIndexes:[[NSIndexSet alloc] initWithIndex:oldIndex] withAnimation:NSTableViewAnimationSlideUp];
+    }
+    
+    NSUInteger newIndex = [apps addApp:app withLayout:[self.inputSourcePopupButton selectedLayout]];
 
     [self.preferencesTableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:newIndex] withAnimation:NSTableViewAnimationSlideDown];
     

@@ -13,9 +13,10 @@
 
 - (NSUInteger)addApp:(NSDictionary *)appWithoutLayout withLayout:(NSString *)layout;
 
-- (BOOL)removeAtIndex:(NSInteger)index;
-
 - (NSDictionary *)objectAtIndex:(NSUInteger)index;
+- (NSUInteger)indexOf:(NSDictionary *)app;
+
+- (BOOL)removeAtIndex:(NSInteger)index;
 
 - (NSInteger)count;
 
