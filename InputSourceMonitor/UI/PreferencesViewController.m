@@ -20,6 +20,7 @@
     if (!inputSource) {
         inputSource = [[InputSource alloc] init];
     }
+    [self.preferencesTableView.window setNextResponder:self];
 }
 
 - (void)appear {
@@ -69,6 +70,15 @@
     BOOL wasDeleted = [apps removeAtIndex:[self.preferencesTableView selectedRow]];
     if (wasDeleted) {
         [self.preferencesTableView removeRowsAtIndexes:[self.preferencesTableView selectedRowIndexes] withAnimation:NSTableViewAnimationSlideUp];
+    }
+}
+
+-(void)keyDown:(NSEvent *)theEvent {
+    NSString *escapeKey = [NSString stringWithFormat:@"%c", NSDeleteCharacter];
+    if( [[theEvent characters] isEqualToString:escapeKey]){
+        [self removePreference:nil];
+    } else {
+        [super keyDown:theEvent];
     }
 }
 
