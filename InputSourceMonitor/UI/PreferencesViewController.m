@@ -34,7 +34,6 @@
     [self.preferencesTableView reloadData];
 }
 
-
 // Apps ComboBox
 
 - (IBAction)appSelected:(id)sender {
@@ -74,9 +73,17 @@
 }
 
 -(void)keyDown:(NSEvent *)theEvent {
-    NSString *escapeKey = [NSString stringWithFormat:@"%c", NSDeleteCharacter];
-    if( [[theEvent characters] isEqualToString:escapeKey]){
+    NSString *deleteKey = [NSString stringWithFormat:@"%c", NSDeleteCharacter];
+    NSString *key = [theEvent characters];
+    
+    if( [key isEqualToString:deleteKey]) {
         [self removePreference:nil];
+    } else if ([theEvent modifierFlags] & NSCommandKeyMask) {
+        if ([key isEqualToString:@"w"]) {
+            [self.view.window close];
+        } else if ([key isEqualToString:@"q"]) {
+            [NSApp terminate:self];
+        }
     } else {
         [super keyDown:theEvent];
     }
