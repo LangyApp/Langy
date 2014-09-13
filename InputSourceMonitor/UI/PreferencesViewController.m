@@ -108,8 +108,11 @@
         [cell.imageView setImage:[self _getIcon:app[@"path"]]];
     }
     else if ([identifier isEqualToString:@"InputSourceCell"]) {
+        NSString *localizedName = [NSString stringWithFormat:@"%@ %@",
+                                   [inputSource localizedName:app[@"layout"]],
+                                   [inputSource fromEnabledKey:app[@"layout"]] ? @"" : @"(disabled)"];
         cell = [tableView makeViewWithIdentifier:@"InputSourceCell" owner:self];
-        [cell.textField setStringValue:[inputSource localizedName:app[@"layout"]]];
+        [cell.textField setStringValue:localizedName];
         [cell.imageView setImage:[inputSource icon:app[@"layout"]]];
     }
     
