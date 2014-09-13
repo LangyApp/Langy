@@ -7,11 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "InputSource.h"
 
 @interface InputSourceMenuItem : NSMenuItem
 
+@property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *layout;
 
 - (id)initWithInputSource:(NSDictionary *)inputSource;
+
+- (void)updateStatus;
 
 @end

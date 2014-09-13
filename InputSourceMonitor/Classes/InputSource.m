@@ -72,6 +72,10 @@
     return TISGetInputSourceProperty(source, property);
 }
 
+- (NSString *)addStatusTo:(NSString *)str fromKey:(NSString *)key {
+    return [self fromEnabledKey:key] ? str : [NSString stringWithFormat:@"%@ %@", str, @"(disabled)"];
+}
+
 - (TISInputSourceRef)fromEnabledKey:(NSString *)key {
     return [self _get:[self toArray:key includeInstalledKeys:FALSE]];
 }

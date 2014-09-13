@@ -26,8 +26,8 @@
     
     for (int i = 0; i < [installedSources count]; i++) {
         NSDictionary *source = installedSources[i];
-        
-        if ([self itemWithTitle:source[@"name"]] == nil) {
+        InputSourceMenuItem *menuItem = [self inputSourceIndex:source[@"layout"]];
+        if (menuItem == nil) {
             [[self menu] addItem:[[InputSourceMenuItem alloc] initWithInputSource:source]];
         }
     }
@@ -36,14 +36,22 @@
 }
 
 - (void)selectByLayout:(NSString *)inputSourceId {
+    InputSourceMenuItem *menuItem = [self inputSourceIndex:inputSourceId];
+    if (menuItem) {
+        [menuItem updateStatus];
+        [self selectItem:menuItem];
+    }
+}
+
+- (InputSourceMenuItem *)inputSourceIndex:(NSString *)inputSourceId {
     NSArray *menuItems = [self itemArray];
     for (int i = 0; i < [menuItems count]; i++) {
         InputSourceMenuItem *menuItem = (InputSourceMenuItem *)menuItems[i];
         if ([menuItem.layout isEqualToString:inputSourceId]) {
-            [self selectItemAtIndex:i];
-            break;
+            return menuItem;
         }
     }
+    return nil;
 }
 
 - (NSString *)selectedLayout {

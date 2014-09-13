@@ -10,15 +10,21 @@
 
 @implementation InputSourceMenuItem
 
-- (id)initWithInputSource:(NSDictionary *)inputSource {
+- (id)initWithInputSource:(NSDictionary *)inputSourceData {
     self = [super init];
     if (self) {
-        [self setTitle:inputSource[@"name"]];
-        [self setImage:inputSource[@"icon"]];
+        self.name = inputSourceData[@"name"];
+        self.layout = inputSourceData[@"layout"];
         
-        self.layout = inputSource[@"layout"];
+        [self updateStatus];
+        [self setImage:inputSourceData[@"icon"]];
     }
     return self;
+}
+
+- (void)updateStatus {
+    NSString *title = [[[InputSource alloc] init] addStatusTo:self.name fromKey:self.layout];
+    [self setTitle:title];
 }
 
 @end
