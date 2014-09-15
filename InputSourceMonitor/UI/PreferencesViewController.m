@@ -24,13 +24,15 @@
 }
 
 - (void)appear {
-    apps = [[StoredApps alloc] init];
+    if (!apps) {
+        apps = [[StoredApps alloc] init];
+        
+        [self.appsPopupButton populate];
+        
+        [self.inputSourcePopupButton populate];
+        [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]];
+    }
 
-    [self.appsPopupButton populate];
-    [self.inputSourcePopupButton populate];
-    
-    [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]];
-    
     [self.preferencesTableView reloadData];
 }
 
@@ -125,7 +127,6 @@
     [icon setSize:CGSizeMake(20, 20)];
     return icon;
 }
-
 
 
 @end
