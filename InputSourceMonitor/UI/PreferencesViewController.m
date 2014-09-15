@@ -30,7 +30,9 @@
         [self.appsPopupButton populate];
         
         [self.inputSourcePopupButton populate];
-        [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]];
+        [self.defaultInputSourcePopupButton
+           populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]
+                withInstalledSources:self.inputSourcePopupButton.installedSources];
     }
 
     [self.preferencesTableView reloadData];
@@ -72,6 +74,13 @@
     if (wasDeleted) {
         [self.preferencesTableView removeRowsAtIndexes:[self.preferencesTableView selectedRowIndexes] withAnimation:NSTableViewAnimationSlideUp];
     }
+}
+
+- (IBAction)updateView:(id)sender {
+    apps = nil;
+    [self.inputSourcePopupButton removeAllItems];
+    [self.defaultInputSourcePopupButton removeAllItems];
+    [self appear];
 }
 
 -(void)keyDown:(NSEvent *)theEvent {

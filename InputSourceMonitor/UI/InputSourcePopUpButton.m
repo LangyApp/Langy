@@ -8,21 +8,16 @@
 
 #import "InputSourcePopUpButton.h"
 
-@interface InputSourcePopUpButton() {
-    InputSource *inputSource;
-}
-@end
-
 @implementation InputSourcePopUpButton
 
-- (void)populateAndSelectByLayout:(NSString *)inputSourceId {
+- (void)populateAndSelectByLayout:(NSString *)inputSourceId withInstalledSources:(NSArray *)installedSources {
+    self.installedSources = installedSources;
     [self populate];
     [self selectByLayout:inputSourceId];
 }
 
 - (void)populate {
-    inputSource = [[InputSource alloc] initWithInstalledSources];
-    NSArray *installedSources = [inputSource installed];
+    NSArray *installedSources = [self getInstalledSources];
     
     for (int i = 0; i < [installedSources count]; i++) {
         NSDictionary *source = installedSources[i];
@@ -33,6 +28,10 @@
     }
     
     [self selectItemAtIndex:0];
+}
+
+- (NSArray *)getInstalledSources {
+    return self.installedSources ? self.installedSources : [[[InputSource alloc] initWithInstalledSources] installed];
 }
 
 - (void)selectByLayout:(NSString *)inputSourceId {

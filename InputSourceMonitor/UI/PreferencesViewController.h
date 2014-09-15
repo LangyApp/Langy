@@ -33,5 +33,6 @@
 
 - (IBAction)addPreference:(id)sender;
 - (IBAction)removePreference:(id)sender;
+- (IBAction)updateView:(id)sender;
 
 @end

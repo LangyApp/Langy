@@ -12,7 +12,9 @@
 
 @interface InputSourcePopUpButton : NSPopUpButton
 
-- (void)populateAndSelectByLayout:(NSString *)inputSourceId;
+@property (strong, nonatomic) NSArray *installedSources;
+
+- (void)populateAndSelectByLayout:(NSString *)inputSourceId withInstalledSources:(NSArray *)installedSources;
 
 - (void)populate;
 

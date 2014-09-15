@@ -216,6 +216,17 @@
                             <action selector="defatultInputSourceSelected:" target="hjv-Ah-688" id="rpv-zW-YPR"/>
                         </connections>
                     </popUpButton>
+                    <button id="soX-SL-Zcf">
+                        <rect key="frame" x="20" y="20" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="update-50" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="w0g-0u-LH5">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="LucidaGrande-Bold"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="updateView:" target="hjv-Ah-688" id="qlU-cS-VTC"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
         </window>
@@ -253,5 +264,6 @@
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="update-50" width="50" height="50"/>
     </resources>
 </document>
