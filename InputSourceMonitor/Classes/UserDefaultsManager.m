@@ -8,17 +8,24 @@
 
 #import "UserDefaultsManager.h"
 
+#define kApps @"_InputSourceMonitor_apps"
 #define kDefaultLayout @"_InputSourceMonitor_defaultLayout"
 #define kisOn @"_InputSourceMonitor_isOn"
 
 @implementation UserDefaultsManager
 
+NSMutableDictionary *apps;
+
 + (void)registerDefaults {
     NSDictionary *currentInputSource = [InputSource current];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ kDefaultLayout: @{@"layout": currentInputSource[@"layout"]} }];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{
+                                                                  kDefaultLayout: @{@"layout": currentInputSource[@"layout"]},
+                                                                  kApps: @{}
+                                                              }];
     [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:kisOn];
+    
+    apps = [[NSMutableDictionary alloc] initWithDictionary:[self _stored_apps]];
 }
-
 
 + (void)setDefaultLayout:(NSString *)value {
     [[NSUserDefaults standardUserDefaults] setObject:@{@"layout": value} forKey:kDefaultLayout];
@@ -28,12 +35,8 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:kDefaultLayout][@"layout"];
 }
 
-
 + (NSArray *)allValues {
-    NSDictionary *currentDefaults = [[NSUserDefaults standardUserDefaults] persistentDomainForName:(NSString *)[[NSBundle mainBundle] bundleIdentifier]];
-    NSMutableDictionary *appsToReturn = [[NSMutableDictionary alloc] initWithDictionary:currentDefaults];
-    [appsToReturn removeObjectsForKeys:@[kDefaultLayout, kisOn, @"NSNavLastRootDirectory"]];
-    return [appsToReturn allValues];
+    return [apps allValues];
 }
 
 
@@ -48,21 +51,36 @@
 
 
 + (void)setObject:(id)object forKey:(NSString *)key {
-    [[NSUserDefaults standardUserDefaults] setObject:object forKey:key];
+    [apps setObject:object forKey:key];
+    [self _set_stored_apps];
 }
 
 + (NSDictionary *)objectForKey:(NSString *)key {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:[self exists:key] ? key : kDefaultLayout];
+    if([self exists:key]) {
+        return [apps objectForKey:key];
+    } else {
+        return [[NSUserDefaults standardUserDefaults] objectForKey: kDefaultLayout];
+    }
 }
 
 + (void)removeObjectForKey:(NSString *)key {
     if ([self exists:key]) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+        [apps removeObjectForKey:key];
+        [self _set_stored_apps];
     }
 }
 
 + (BOOL)exists:(NSString *)key {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:key] != nil;
+    return [apps objectForKey:key] != nil;
+}
+
+
++ (NSDictionary *) _stored_apps {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kApps];
+}
+
++ (void) _set_stored_apps {
+    [[NSUserDefaults standardUserDefaults] setObject:apps forKey:kApps];
 }
 
 @end
