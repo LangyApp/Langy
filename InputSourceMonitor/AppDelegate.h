@@ -10,6 +10,7 @@
 #import "ApplicationObserver.h"
 #import "UserDefaultsManager.h"
 #import "PreferencesViewController.h"
+#import "AboutWindowController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 

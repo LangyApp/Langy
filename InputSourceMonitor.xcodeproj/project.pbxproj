@@ -10,6 +10,8 @@
 		D5D18BBD497F41C0990B917A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4939B4A1AF4330A21E4EB2 /* libPods.a */; };
 		EE16A304199340780056FC60 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE16A303199340780056FC60 /* Carbon.framework */; };
 		EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3745C31997FA8600485137 /* UserDefaultsManager.m */; };
+		EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85868A19DB9C8400F9B375 /* AboutWindowController.m */; };
+		EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */; };
 		EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */; };
 		EEA4F49F19927BD500A4DF95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F49E19927BD500A4DF95 /* Cocoa.framework */; };
 		EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */; };
@@ -51,6 +53,9 @@
 		EE16A303199340780056FC60 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		EE3745C21997FA8600485137 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		EE3745C31997FA8600485137 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		EE85868919DB9C8400F9B375 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
+		EE85868A19DB9C8400F9B375 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
+		EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindowController.xib; sourceTree = "<group>"; };
 		EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceMenuItem.h; sourceTree = "<group>"; };
 		EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceMenuItem.m; sourceTree = "<group>"; };
 		EEA4F49B19927BD500A4DF95 /* InputSourceMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputSourceMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +224,9 @@
 				EEAEA19A19A26BC000CCA51E /* InputSourcePopUpButton.m */,
 				EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */,
 				EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */,
+				EE85868919DB9C8400F9B375 /* AboutWindowController.h */,
+				EE85868A19DB9C8400F9B375 /* AboutWindowController.m */,
+				EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 			files = (
 				EEE245A2199727B500283BF7 /* iconx25.png in Resources */,
 				EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */,
+				EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */,
 				EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */,
 				EECA77F119C6A6E300505288 /* update-50.png in Resources */,
 				EEA4F4AF19927BD500A4DF95 /* Credits.rtf in Resources */,
@@ -385,6 +394,7 @@
 				EEA92E20199FBB7B00A5A22B /* AppMenuItem.m in Sources */,
 				EEAC9CF419AD65C900FAEE39 /* StoredApps.m in Sources */,
 				EEA92E1D199FACBE00A5A22B /* PreferencesViewController.m in Sources */,
+				EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */,
 				EEA4F4AB19927BD500A4DF95 /* main.m in Sources */,
 				EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */,
 			);

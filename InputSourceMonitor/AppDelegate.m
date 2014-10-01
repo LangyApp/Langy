@@ -11,6 +11,7 @@
 @interface AppDelegate() {
     ApplicationObserver *appObserver;
     NSStatusItem *statusItem;
+    AboutWindowController *aboutWindowController;
 }
 
 @end
@@ -52,6 +53,14 @@
     [self.preferencesViewController appear];
     [NSApp activateIgnoringOtherApps:YES];
     [self.window makeKeyAndOrderFront:nil];
+}
+
+- (IBAction)showAbout:(id)sender {
+    if (!aboutWindowController) {
+        aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindowController"];
+    }
+    [aboutWindowController showWindow:self];
+    [NSApp activateIgnoringOtherApps:YES];
 }
 
 - (IBAction)quit:(id)sender {
