@@ -31,7 +31,7 @@
 }
 
 - (NSArray *)getInstalledSources {
-    return self.installedSources ? self.installedSources : [[[InputSource alloc] initWithInstalledSources] installed];
+    return self.installedSources ? self.installedSources : [[InputSource alloc] installed];
 }
 
 - (void)selectByLayout:(NSString *)inputSourceId {

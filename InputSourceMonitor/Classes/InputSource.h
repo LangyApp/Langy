@@ -13,8 +13,6 @@
 
 + (NSDictionary *)current;
 
-- (id)initWithInstalledSources;
-
 - (NSArray *)installed;
 
 - (NSString *)localizedName:(NSString *)key;

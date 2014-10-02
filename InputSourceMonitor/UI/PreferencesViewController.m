@@ -30,9 +30,8 @@
         [self.appsPopupButton populate];
         
         [self.inputSourcePopupButton populate];
-        [self.defaultInputSourcePopupButton
-           populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]
-                withInstalledSources:self.inputSourcePopupButton.installedSources];
+        [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]
+                                                 withInstalledSources:self.inputSourcePopupButton.installedSources];
     }
 
     [self.preferencesTableView reloadData];
@@ -122,7 +121,7 @@
         NSString *localizedName = [inputSource addStatusTo:[inputSource localizedName:app[@"layout"]] fromKey:app[@"layout"]];
         cell = [tableView makeViewWithIdentifier:@"InputSourceCell" owner:self];
         [cell.textField setStringValue:localizedName];
-        [cell.imageView setImage:[inputSource icon:app[@"layout"]]];
+//        [cell.imageView setImage:[inputSource icon:app[@"layout"]]];
     }
     
     return cell;

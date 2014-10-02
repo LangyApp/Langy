@@ -17,7 +17,7 @@
         self.layout = inputSourceData[@"layout"];
         
         [self updateStatus];
-        [self setImage:inputSourceData[@"icon"]];
+//        [self setImage:inputSourceData[@"icon"]];
     }
     return self;
 }

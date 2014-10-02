@@ -8,36 +8,21 @@
 
 #import "InputSource.h"
 
-@interface InputSource() {
-    NSArray *installedInputSources;
-}
-
-@end
-
 @implementation InputSource
 
 + (NSDictionary *)current{
     TISInputSourceRef source = TISCopyCurrentKeyboardInputSource();
-    return [[[InputSource alloc] init] _build:source];
-}
-
-- (id)initWithInstalledSources {
-    self = [super init];
-    if (self) {
-        [self fillInstalledSources];
-    }
-    return self;
-}
-
-- (void)fillInstalledSources {
-    NSString *object = (NSString *)kTISTypeKeyboardLayout;
-    NSString *key = (NSString *)kTISPropertyInputSourceType;
-    NSDictionary *installed = [NSDictionary dictionaryWithObject:object forKey:key];
-    
-    installedInputSources = (__bridge NSArray *)TISCreateInputSourceList((__bridge CFDictionaryRef)installed, false);
+    NSDictionary *build = [[[InputSource alloc] init] _build:source];
+    CFRelease(source);
+    return build;
 }
 
 - (NSArray *)installed {
+    NSDictionary *installed = [NSDictionary dictionaryWithObject:(NSString *)kTISTypeKeyboardLayout
+                                                          forKey:(NSString *)kTISPropertyInputSourceType];
+    
+    NSArray *installedInputSources = CFBridgingRelease(TISCreateInputSourceList((__bridge CFDictionaryRef)installed, false));
+    
     NSMutableArray *sources = [[NSMutableArray alloc] initWithCapacity:[installedInputSources count]];
     for (int i = 0; i < [installedInputSources count]; i++) {
         TISInputSourceRef source = (__bridge TISInputSourceRef)installedInputSources[i];
@@ -88,7 +73,7 @@
     if (!key) {
         return @[];
     }
-
+    
     CFDictionaryRef inputSourceAuxDict = (__bridge CFDictionaryRef)@{ (__bridge NSString*)kTISPropertyInputSourceID: key };
     CFArrayRef inputSourceList = TISCreateInputSourceList(inputSourceAuxDict, keysFlag);
     
@@ -100,18 +85,17 @@
 }
 
 - (NSDictionary *)_build:(TISInputSourceRef)source {
-    NSDictionary *build = @{
+    return @{
              @"name": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyLocalizedName),
-             @"layout": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyInputSourceID),
-             @"icon": [self _getImageForIcon:TISGetInputSourceProperty(source, kTISPropertyIconRef)]
+             @"layout": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyInputSourceID)
+             //             @"icon": [self _getImageForIcon:TISGetInputSourceProperty(source, kTISPropertyIconRef)]
              };
-    CFRelease(source);
-    return build;
 }
 
-- (NSImage *)_getImageForIcon:(IconRef)icon {
-    NSImage *image = [[NSImage alloc] initWithIconRef:icon];
-    ReleaseIconRef(icon);
+- (NSImage *)_getImageForIcon:(IconRef)iconRef {
+    NSImage *image = [[NSImage alloc] initWithIconRef:iconRef];
+    [image setSize:CGSizeMake(20, 20)];
+    ReleaseIconRef(iconRef);
     return image;
 }
 
