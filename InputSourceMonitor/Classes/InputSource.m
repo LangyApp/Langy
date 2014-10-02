@@ -100,26 +100,19 @@
 }
 
 - (NSDictionary *)_build:(TISInputSourceRef)source {
-    return @{
+    NSDictionary *build = @{
              @"name": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyLocalizedName),
              @"layout": (__bridge NSString*)TISGetInputSourceProperty(source, kTISPropertyInputSourceID),
              @"icon": [self _getImageForIcon:TISGetInputSourceProperty(source, kTISPropertyIconRef)]
              };
+    CFRelease(source);
+    return build;
 }
 
-- (NSImage *)_getImageForIcon:(IconRef)iconRef {
-    CGRect rect = CGRectMake(0, 0, 20, 20);
-    NSImage* image = [[NSImage alloc] initWithSize:rect.size];
-    [image lockFocus];
-    PlotIconRefInContext((CGContextRef)[[NSGraphicsContext currentContext] graphicsPort],
-                         &rect,
-                         kAlignNone,
-                         kTransformNone,
-                         NULL,
-                         kPlotIconRefNormalFlags,
-                         iconRef);
-    [image unlockFocus];
-	return image;
+- (NSImage *)_getImageForIcon:(IconRef)icon {
+    NSImage *image = [[NSImage alloc] initWithIconRef:icon];
+    ReleaseIconRef(icon);
+    return image;
 }
 
 @end
