@@ -34,6 +34,9 @@
 		EEAF4F2519952A450009C061 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAF4F2419952A450009C061 /* ScriptingBridge.framework */; };
 		EEAF4F28199587DC0009C061 /* ApplicationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F27199587DC0009C061 /* ApplicationObserver.m */; };
 		EECA77F119C6A6E300505288 /* update-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EECA77F019C6A6E300505288 /* update-50.png */; };
+		EEDBAD3C19DE26CB00FBAED1 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */; };
+		EEDBAD3E19DE270800FBAED1 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EEDBAD4019DE2A0F00FBAED1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */; };
 		EEE245A2199727B500283BF7 /* iconx25.png in Resources */ = {isa = PBXBuildFile; fileRef = EEE245A1199727B500283BF7 /* iconx25.png */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,19 @@
 			remoteInfo = InputSourceChecker;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EEDBAD3D19DE26F100FBAED1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EEDBAD3E19DE270800FBAED1 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2B4939B4A1AF4330A21E4EB2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +111,8 @@
 		EEAF4F26199587DC0009C061 /* ApplicationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationObserver.h; sourceTree = "<group>"; };
 		EEAF4F27199587DC0009C061 /* ApplicationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationObserver.m; sourceTree = "<group>"; };
 		EECA77F019C6A6E300505288 /* update-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "update-50.png"; path = "Assets/update-50.png"; sourceTree = "<group>"; };
+		EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Pods/Sparkle/Sparkle.framework; sourceTree = "<group>"; };
+		EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Certs/dsa_pub.pem; sourceTree = "<group>"; };
 		EEE245A1199727B500283BF7 /* iconx25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconx25.png; path = Assets/iconx25.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +123,7 @@
 			files = (
 				EEAF4F2519952A450009C061 /* ScriptingBridge.framework in Frameworks */,
 				EE16A304199340780056FC60 /* Carbon.framework in Frameworks */,
+				EEDBAD3C19DE26CB00FBAED1 /* Sparkle.framework in Frameworks */,
 				EEA4F49F19927BD500A4DF95 /* Cocoa.framework in Frameworks */,
 				D5D18BBD497F41C0990B917A /* libPods.a in Frameworks */,
 			);
@@ -145,6 +164,7 @@
 		EEA4F49D19927BD500A4DF95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */,
 				EEAF4F2419952A450009C061 /* ScriptingBridge.framework */,
 				EE16A303199340780056FC60 /* Carbon.framework */,
 				EEA4F49E19927BD500A4DF95 /* Cocoa.framework */,
@@ -182,6 +202,7 @@
 		EEA4F4A519927BD500A4DF95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */,
 				EECA77F019C6A6E300505288 /* update-50.png */,
 				EEE245A1199727B500283BF7 /* iconx25.png */,
 				EEA4F4A619927BD500A4DF95 /* InputSourceMonitor-Info.plist */,
@@ -260,6 +281,7 @@
 				EEA4F49819927BD500A4DF95 /* Frameworks */,
 				EEA4F49919927BD500A4DF95 /* Resources */,
 				F70CBC7BBA624C04AD8080F6 /* Copy Pods Resources */,
+				EEDBAD3D19DE26F100FBAED1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -327,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEE245A2199727B500283BF7 /* iconx25.png in Resources */,
+				EEDBAD4019DE2A0F00FBAED1 /* dsa_pub.pem in Resources */,
 				EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */,
 				EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */,
 				EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */,
@@ -530,6 +553,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Sparkle",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InputSourceMonitor/InputSourceMonitor-Prefix.pch";
 				INFOPLIST_FILE = "InputSourceMonitor/InputSourceMonitor-Info.plist";
@@ -544,6 +571,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Sparkle",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InputSourceMonitor/InputSourceMonitor-Prefix.pch";
 				INFOPLIST_FILE = "InputSourceMonitor/InputSourceMonitor-Info.plist";

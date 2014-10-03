@@ -32,6 +32,8 @@
 	<string>Copyright © 2014 Nicolas Santangelo. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>
