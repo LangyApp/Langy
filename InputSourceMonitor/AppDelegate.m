@@ -40,7 +40,7 @@
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:self.menu];
     [statusItem setHighlightMode:YES];
-    [statusItem setImage:[NSImage imageNamed:@"iconx25"]];
+    [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
 }
 
 - (IBAction)toggleUse:(id)sender {
