@@ -20,7 +20,7 @@
     if (!inputSource) {
         inputSource = [[InputSource alloc] init];
     }
-    [self.preferencesTableView.window setNextResponder:self];
+//    [self.preferencesTableView.window setNextResponder:self];
 }
 
 - (void)appear {
