@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D5D18BBD497F41C0990B917A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4939B4A1AF4330A21E4EB2 /* libPods.a */; };
 		EE16A304199340780056FC60 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE16A303199340780056FC60 /* Carbon.framework */; };
+		EE229A191A01D5FD0056BB60 /* MenuBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EE229A171A01D5FD0056BB60 /* MenuBarIcon.png */; };
+		EE229A1A1A01D5FD0056BB60 /* MenuBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */; };
+		EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE229A1B1A01D9790056BB60 /* AppIcon.icns */; };
 		EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3745C31997FA8600485137 /* UserDefaultsManager.m */; };
 		EE74E77C19E0419400E16C82 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE74E77B19E0419400E16C82 /* LaunchAtLoginController.m */; };
 		EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85868A19DB9C8400F9B375 /* AboutWindowController.m */; };
@@ -38,7 +41,6 @@
 		EEDBAD3C19DE26CB00FBAED1 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */; };
 		EEDBAD3E19DE270800FBAED1 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EEDBAD4019DE2A0F00FBAED1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */; };
-		EEE245A2199727B500283BF7 /* iconx25.png in Resources */ = {isa = PBXBuildFile; fileRef = EEE245A1199727B500283BF7 /* iconx25.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		2B4939B4A1AF4330A21E4EB2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D3FA00A1D746D7BBCB7A0F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		EE16A303199340780056FC60 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		EE229A171A01D5FD0056BB60 /* MenuBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MenuBarIcon.png; path = Assets/MenuBarIcon.png; sourceTree = "<group>"; };
+		EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MenuBarIcon@2x.png"; path = "Assets/MenuBarIcon@2x.png"; sourceTree = "<group>"; };
+		EE229A1B1A01D9790056BB60 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AppIcon.icns; path = Assets/AppIcon.icns; sourceTree = "<group>"; };
 		EE3745C21997FA8600485137 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		EE3745C31997FA8600485137 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
 		EE74E77A19E0419400E16C82 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
@@ -116,7 +121,6 @@
 		EECA77F019C6A6E300505288 /* update-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "update-50.png"; path = "Assets/update-50.png"; sourceTree = "<group>"; };
 		EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Pods/Sparkle/Sparkle.framework; sourceTree = "<group>"; };
 		EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Certs/dsa_pub.pem; sourceTree = "<group>"; };
-		EEE245A1199727B500283BF7 /* iconx25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconx25.png; path = Assets/iconx25.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,9 +219,11 @@
 		EEA4F4A519927BD500A4DF95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE229A1B1A01D9790056BB60 /* AppIcon.icns */,
+				EE229A171A01D5FD0056BB60 /* MenuBarIcon.png */,
+				EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */,
 				EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */,
 				EECA77F019C6A6E300505288 /* update-50.png */,
-				EEE245A1199727B500283BF7 /* iconx25.png */,
 				EEA4F4A619927BD500A4DF95 /* InputSourceMonitor-Info.plist */,
 				EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */,
 				EEA4F4AA19927BD500A4DF95 /* main.m */,
@@ -361,12 +367,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEE245A2199727B500283BF7 /* iconx25.png in Resources */,
+				EE229A1A1A01D5FD0056BB60 /* MenuBarIcon@2x.png in Resources */,
 				EEDBAD4019DE2A0F00FBAED1 /* dsa_pub.pem in Resources */,
 				EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */,
 				EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */,
 				EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */,
+				EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */,
 				EECA77F119C6A6E300505288 /* update-50.png in Resources */,
+				EE229A191A01D5FD0056BB60 /* MenuBarIcon.png in Resources */,
 				EEA4F4AF19927BD500A4DF95 /* Credits.rtf in Resources */,
 				EEA4F4B519927BD500A4DF95 /* MainMenu.xib in Resources */,
 			);
