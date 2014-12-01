@@ -29,7 +29,7 @@
         
         [self.appsPopupButton populate];
         
-        [self.inputSourcePopupButton populate];
+        [self.inputSourcePopupButton populateWithRememberLast];
         [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]
                                                  withInstalledSources:self.inputSourcePopupButton.installedSources];
     }

@@ -10,6 +10,16 @@
 
 @implementation InputSourceMenuItem
 
+- (id)initWithName:(NSString *)name andLayout:(NSString *)layout {
+    self = [super init];
+    if (self) {
+        self.name = name;
+        self.layout = layout;
+        [self setTitle:name];
+    }
+    return self;
+}
+
 - (id)initWithInputSource:(NSDictionary *)inputSourceData {
     self = [super init];
     if (self) {

@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *layout;
 
+- (id)initWithName:(NSString *)name andLayout:(NSString *)layout;
 - (id)initWithInputSource:(NSDictionary *)inputSource;
 
 - (void)updateStatus;

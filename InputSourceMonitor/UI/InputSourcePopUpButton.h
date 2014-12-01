@@ -16,6 +16,8 @@
 
 - (void)populateAndSelectByLayout:(NSString *)inputSourceId withInstalledSources:(NSArray *)installedSources;
 
+- (void)populateWithRememberLast;
+
 - (void)populate;
 
 - (NSString *)selectedLayout;

@@ -16,6 +16,11 @@
     [self selectByLayout:inputSourceId];
 }
 
+- (void)populateWithRememberLast {
+    [self populate];
+    [self addRememberLastItem];
+}
+
 - (void)populate {
     NSArray *installedSources = [self getInstalledSources];
     
@@ -56,6 +61,12 @@
 - (NSString *)selectedLayout {
     InputSourceMenuItem *menuItem = (InputSourceMenuItem *)[self selectedItem];
     return menuItem ? menuItem.layout : @"";
+}
+
+
+- (void)addRememberLastItem {
+    InputSourceMenuItem *menuItem = [[InputSourceMenuItem alloc] initWithName:@"Remember last used" andLayout:@"remember_last"];
+    [[self menu] addItem:menuItem];
 }
 
 @end
