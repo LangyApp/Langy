@@ -65,7 +65,7 @@
 
 
 - (void)addRememberLastItem {
-    InputSourceMenuItem *menuItem = [[InputSourceMenuItem alloc] initWithName:@"Remember last used" andLayout:@"remember_last"];
+    InputSourceMenuItem *menuItem = [[InputSourceMenuItem alloc] initWithName:[RememberLast name] andLayout:[RememberLast layout]];
     [[self menu] addItem:menuItem];
 }
 

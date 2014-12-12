@@ -17,6 +17,8 @@
 
 #import "StoredApps.h"
 
+#import "RememberLast.h"
+
 @interface PreferencesViewController : NSViewController<NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet AppsPopUpButton *appsPopupButton;

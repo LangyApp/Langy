@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "InputSource.h"
 #import "InputSourceMenuItem.h"
+#import "RememberLast.h"
 
 @interface InputSourcePopUpButton : NSPopUpButton
 

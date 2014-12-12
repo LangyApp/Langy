@@ -13,6 +13,7 @@
 		EE229A1A1A01D5FD0056BB60 /* MenuBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */; };
 		EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE229A1B1A01D9790056BB60 /* AppIcon.icns */; };
 		EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3745C31997FA8600485137 /* UserDefaultsManager.m */; };
+		EE68C7321A3AACF7005378B4 /* RememberLast.m in Sources */ = {isa = PBXBuildFile; fileRef = EE68C7311A3AACF7005378B4 /* RememberLast.m */; };
 		EE74E77C19E0419400E16C82 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE74E77B19E0419400E16C82 /* LaunchAtLoginController.m */; };
 		EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85868A19DB9C8400F9B375 /* AboutWindowController.m */; };
 		EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */; };
@@ -75,6 +76,8 @@
 		EE229A1B1A01D9790056BB60 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AppIcon.icns; path = Assets/AppIcon.icns; sourceTree = "<group>"; };
 		EE3745C21997FA8600485137 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		EE3745C31997FA8600485137 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		EE68C7301A3AACF7005378B4 /* RememberLast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberLast.h; sourceTree = "<group>"; };
+		EE68C7311A3AACF7005378B4 /* RememberLast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberLast.m; sourceTree = "<group>"; };
 		EE74E77A19E0419400E16C82 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
 		EE74E77B19E0419400E16C82 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		EE85868919DB9C8400F9B375 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
@@ -284,6 +287,8 @@
 				EEA92E12199FA65800A5A22B /* AppFinder.m */,
 				EEAC9CF219AD65C900FAEE39 /* StoredApps.h */,
 				EEAC9CF319AD65C900FAEE39 /* StoredApps.m */,
+				EE68C7301A3AACF7005378B4 /* RememberLast.h */,
+				EE68C7311A3AACF7005378B4 /* RememberLast.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 			files = (
 				EEAF4F28199587DC0009C061 /* ApplicationObserver.m in Sources */,
 				EEAF4F2319951FB90009C061 /* InputSource.m in Sources */,
+				EE68C7321A3AACF7005378B4 /* RememberLast.m in Sources */,
 				EEA92E23199FC69500A5A22B /* AppsPopUpButton.m in Sources */,
 				EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */,
 				EEA4F4B219927BD500A4DF95 /* AppDelegate.m in Sources */,
