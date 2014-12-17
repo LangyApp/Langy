@@ -85,23 +85,23 @@
 		EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindowController.xib; sourceTree = "<group>"; };
 		EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceMenuItem.h; sourceTree = "<group>"; };
 		EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceMenuItem.m; sourceTree = "<group>"; };
-		EEA4F49B19927BD500A4DF95 /* InputSourceMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputSourceMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEA4F49B19927BD500A4DF95 /* Langy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Langy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA4F49E19927BD500A4DF95 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EEA4F4A119927BD500A4DF95 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		EEA4F4A219927BD500A4DF95 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EEA4F4A319927BD500A4DF95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		EEA4F4A619927BD500A4DF95 /* InputSourceMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InputSourceMonitor-Info.plist"; sourceTree = "<group>"; };
+		EEA4F4A619927BD500A4DF95 /* Langy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Langy-Info.plist"; sourceTree = "<group>"; };
 		EEA4F4A819927BD500A4DF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EEA4F4AA19927BD500A4DF95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EEA4F4AC19927BD500A4DF95 /* InputSourceMonitor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InputSourceMonitor-Prefix.pch"; sourceTree = "<group>"; };
+		EEA4F4AC19927BD500A4DF95 /* Langy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Langy-Prefix.pch"; sourceTree = "<group>"; };
 		EEA4F4AE19927BD500A4DF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		EEA4F4B019927BD500A4DF95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EEA4F4B119927BD500A4DF95 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EEA4F4B419927BD500A4DF95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		EEA4F4B619927BD500A4DF95 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EEA4F4BC19927BD500A4DF95 /* InputSourceMonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputSourceMonitorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEA4F4BC19927BD500A4DF95 /* LangyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LangyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA4F4BD19927BD500A4DF95 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		EEA4F4C419927BD500A4DF95 /* InputSourceMonitorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InputSourceMonitorTests-Info.plist"; sourceTree = "<group>"; };
+		EEA4F4C419927BD500A4DF95 /* LangyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LangyTests-Info.plist"; sourceTree = "<group>"; };
 		EEA4F4C619927BD500A4DF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EEA4F4C819927BD500A4DF95 /* InputSourceMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputSourceMonitorTests.m; sourceTree = "<group>"; };
 		EEA92E11199FA65800A5A22B /* AppFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFinder.h; sourceTree = "<group>"; };
@@ -174,8 +174,8 @@
 		EEA4F49C19927BD500A4DF95 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EEA4F49B19927BD500A4DF95 /* InputSourceMonitor.app */,
-				EEA4F4BC19927BD500A4DF95 /* InputSourceMonitorTests.xctest */,
+				EEA4F49B19927BD500A4DF95 /* Langy.app */,
+				EEA4F4BC19927BD500A4DF95 /* LangyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,10 +227,10 @@
 				EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */,
 				EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */,
 				EECA77F019C6A6E300505288 /* update-50.png */,
-				EEA4F4A619927BD500A4DF95 /* InputSourceMonitor-Info.plist */,
+				EEA4F4A619927BD500A4DF95 /* Langy-Info.plist */,
 				EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */,
 				EEA4F4AA19927BD500A4DF95 /* main.m */,
-				EEA4F4AC19927BD500A4DF95 /* InputSourceMonitor-Prefix.pch */,
+				EEA4F4AC19927BD500A4DF95 /* Langy-Prefix.pch */,
 				EEA4F4AD19927BD500A4DF95 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -248,7 +248,7 @@
 		EEA4F4C319927BD500A4DF95 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EEA4F4C419927BD500A4DF95 /* InputSourceMonitorTests-Info.plist */,
+				EEA4F4C419927BD500A4DF95 /* LangyTests-Info.plist */,
 				EEA4F4C519927BD500A4DF95 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -296,9 +296,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EEA4F49A19927BD500A4DF95 /* InputSourceMonitor */ = {
+		EEA4F49A19927BD500A4DF95 /* Langy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEA4F4CC19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "InputSourceMonitor" */;
+			buildConfigurationList = EEA4F4CC19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "Langy" */;
 			buildPhases = (
 				0E782071DDB148AB88758A71 /* Check Pods Manifest.lock */,
 				EEA4F49719927BD500A4DF95 /* Sources */,
@@ -311,14 +311,14 @@
 			);
 			dependencies = (
 			);
-			name = InputSourceMonitor;
+			name = Langy;
 			productName = InputSourceChecker;
-			productReference = EEA4F49B19927BD500A4DF95 /* InputSourceMonitor.app */;
+			productReference = EEA4F49B19927BD500A4DF95 /* Langy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EEA4F4BB19927BD500A4DF95 /* InputSourceMonitorTests */ = {
+		EEA4F4BB19927BD500A4DF95 /* LangyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEA4F4CF19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "InputSourceMonitorTests" */;
+			buildConfigurationList = EEA4F4CF19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "LangyTests" */;
 			buildPhases = (
 				EEA4F4B819927BD500A4DF95 /* Sources */,
 				EEA4F4B919927BD500A4DF95 /* Frameworks */,
@@ -329,9 +329,9 @@
 			dependencies = (
 				EEA4F4C119927BD500A4DF95 /* PBXTargetDependency */,
 			);
-			name = InputSourceMonitorTests;
+			name = LangyTests;
 			productName = InputSourceCheckerTests;
-			productReference = EEA4F4BC19927BD500A4DF95 /* InputSourceMonitorTests.xctest */;
+			productReference = EEA4F4BC19927BD500A4DF95 /* LangyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -348,7 +348,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EEA4F49619927BD500A4DF95 /* Build configuration list for PBXProject "InputSourceMonitor" */;
+			buildConfigurationList = EEA4F49619927BD500A4DF95 /* Build configuration list for PBXProject "Langy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -361,8 +361,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EEA4F49A19927BD500A4DF95 /* InputSourceMonitor */,
-				EEA4F4BB19927BD500A4DF95 /* InputSourceMonitorTests */,
+				EEA4F49A19927BD500A4DF95 /* Langy */,
+				EEA4F4BB19927BD500A4DF95 /* LangyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -464,7 +464,7 @@
 /* Begin PBXTargetDependency section */
 		EEA4F4C119927BD500A4DF95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EEA4F49A19927BD500A4DF95 /* InputSourceMonitor */;
+			target = EEA4F49A19927BD500A4DF95 /* Langy */;
 			targetProxy = EEA4F4C019927BD500A4DF95 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -586,10 +586,10 @@
 					"$(PROJECT_DIR)/Pods/Sparkle",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InputSourceMonitor/InputSourceMonitor-Prefix.pch";
-				INFOPLIST_FILE = "InputSourceMonitor/InputSourceMonitor-Info.plist";
+				GCC_PREFIX_HEADER = "InputSourceMonitor/Langy-Prefix.pch";
+				INFOPLIST_FILE = "InputSourceMonitor/Langy-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Langy;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -606,10 +606,10 @@
 					"$(PROJECT_DIR)/Pods/Sparkle",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InputSourceMonitor/InputSourceMonitor-Prefix.pch";
-				INFOPLIST_FILE = "InputSourceMonitor/InputSourceMonitor-Info.plist";
+				GCC_PREFIX_HEADER = "InputSourceMonitor/Langy-Prefix.pch";
+				INFOPLIST_FILE = "InputSourceMonitor/Langy-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Langy;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -630,8 +630,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "InputSourceMonitorTests/InputSourceMonitorTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "InputSourceMonitorTests/LangyTests-Info.plist";
+				PRODUCT_NAME = LangyTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -648,8 +648,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InputSourceMonitor/InputSourceMonitor-Prefix.pch";
-				INFOPLIST_FILE = "InputSourceMonitorTests/InputSourceMonitorTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "InputSourceMonitorTests/LangyTests-Info.plist";
+				PRODUCT_NAME = LangyTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -658,7 +658,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EEA4F49619927BD500A4DF95 /* Build configuration list for PBXProject "InputSourceMonitor" */ = {
+		EEA4F49619927BD500A4DF95 /* Build configuration list for PBXProject "Langy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEA4F4CA19927BD500A4DF95 /* Debug */,
@@ -667,7 +667,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EEA4F4CC19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "InputSourceMonitor" */ = {
+		EEA4F4CC19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "Langy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEA4F4CD19927BD500A4DF95 /* Debug */,
@@ -676,7 +676,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EEA4F4CF19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "InputSourceMonitorTests" */ = {
+		EEA4F4CF19927BD500A4DF95 /* Build configuration list for PBXNativeTarget "LangyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEA4F4D019927BD500A4DF95 /* Debug */,
