@@ -50,6 +50,18 @@ NSMutableDictionary *apps;
 }
 
 
++ (void)updateLastUsedLayout:(NSString *)appName {
+    NSDictionary *app = [self objectForKey:appName];
+    if([RememberLast isEnabledOn:app]) {
+        NSDictionary *currentInputSource = [InputSource current];
+        NSMutableDictionary *newApp = [[NSMutableDictionary alloc] initWithDictionary:app];
+        [newApp setValue:currentInputSource[@"layout"] forKey:@"last_layout"];
+        [self setObject:newApp forKey:appName];
+    }
+    
+}
+
+
 + (void)setObject:(id)object forKey:(NSString *)key {
     [apps setObject:object forKey:key];
     [self _set_stored_apps];

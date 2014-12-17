@@ -10,7 +10,7 @@
 
 @implementation InputSource
 
-+ (NSDictionary *)current{
++ (NSDictionary *)current {
     TISInputSourceRef source = TISCopyCurrentKeyboardInputSource();
     NSDictionary *build = [[[InputSource alloc] init] _build:source];
     CFRelease(source);

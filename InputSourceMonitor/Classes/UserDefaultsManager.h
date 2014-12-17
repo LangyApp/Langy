@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "AppFinder.h"
+
 #import "InputSource.h"
+
+#import "RememberLast.h"
 
 @interface UserDefaultsManager : NSObject
 
@@ -22,6 +25,7 @@
 + (void)toggleIsOn;
 + (BOOL)isOn;
 
++ (void)updateLastUsedLayout:(NSString *)appName;
 
 + (void)setObject:(id)object forKey:(NSString *)key;
 + (NSDictionary *)objectForKey:(NSString *)key;

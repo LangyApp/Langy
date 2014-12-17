@@ -12,6 +12,7 @@
     NSMutableDictionary     *_observers;
     NSWorkspace             *workspace;
     InputSource             *inputSource;
+    NSString                *_currentAppName;
     pid_t                    _currentPid;
 }
 
@@ -72,19 +73,29 @@
     pid_t switchedPid = (pid_t)[[applicationInfo valueForKey:@"NSApplicationProcessIdentifier"] integerValue];
 
     if([self applicationChanged:switchedPid]) {
+        NSString *applicationName = [applicationInfo objectForKey:@"NSApplicationName"];
+        
         if ([UserDefaultsManager isOn]) {
-            NSString *applicationName = [applicationInfo objectForKey:@"NSApplicationName"];
             NSDictionary *app = [UserDefaultsManager objectForKey:applicationName];
+            OSStatus status;
             
-            OSStatus status = [inputSource set:app[@"layout"]];
+            [UserDefaultsManager updateLastUsedLayout:_currentAppName];
+            
+            if([RememberLast isEnabledOn:app]) {
+                status = [inputSource set:app[@"last_layout"]];
+            } else {
+                status = [inputSource set:app[@"layout"]];
+            }
             
             if (status != noErr) {
                 NSLog(@"Error changing the input source for %@", applicationName);
             }
+            
         }
-        
-        /* Store this application's process id so we can compare it with the process id of the next frontmost application */
+        /* Store this application's process id so we can compare it with the process id of the next frontmost application */ 
         _currentPid = switchedPid;
+        
+        _currentAppName = applicationName;
     }
 }
 
