@@ -1,6 +1,6 @@
 //
 //  StoredApps.m
-//  InputSourceMonitor
+//  Langy
 //
 //  Created by Nicolas Santangelo on 8/26/14.
 //  Copyright (c) 2014 Nicolas Santangelo. All rights reserved.

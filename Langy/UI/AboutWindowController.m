@@ -1,6 +1,6 @@
 //
 //  AboutWindowController.m
-//  InputSourceMonitor
+//  Langy
 //
 //  Created by Nicolas Santangelo on 9/30/14.
 //  Copyright (c) 2014 Nicolas Santangelo. All rights reserved.
