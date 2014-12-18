@@ -44,8 +44,13 @@
 }
 
 - (IBAction)toggleUse:(id)sender {
-    NSString *buttonTitle = [NSString stringWithFormat:@"Turn %@", ([UserDefaultsManager isOn] ? @"On" : @"Off")];
-    [self.toggleUseButton setTitle:buttonTitle];
+    if ([UserDefaultsManager isOn]) {
+        [self.toggleUseButton setTitle:@"Turn On"];
+        [statusItem setImage:[NSImage imageNamed:@"MenuBarIconDisabled"]];
+    } else {
+        [self.toggleUseButton setTitle:@"Turn Off"];
+        [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
+    }
     [UserDefaultsManager toggleIsOn];
 }
 
