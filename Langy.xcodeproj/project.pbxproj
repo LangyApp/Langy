@@ -28,7 +28,7 @@
 		EEA4F4BE19927BD500A4DF95 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F4BD19927BD500A4DF95 /* XCTest.framework */; };
 		EEA4F4BF19927BD500A4DF95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F49E19927BD500A4DF95 /* Cocoa.framework */; };
 		EEA4F4C719927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4C519927BD500A4DF95 /* InfoPlist.strings */; };
-		EEA4F4C919927BD500A4DF95 /* InputSourceMonitorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA4F4C819927BD500A4DF95 /* InputSourceMonitorTests.m */; };
+		EEA4F4C919927BD500A4DF95 /* LangyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA4F4C819927BD500A4DF95 /* LangyTests.m */; };
 		EEA92E13199FA65800A5A22B /* AppFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E12199FA65800A5A22B /* AppFinder.m */; };
 		EEA92E1D199FACBE00A5A22B /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E1C199FACBE00A5A22B /* PreferencesViewController.m */; };
 		EEA92E20199FBB7B00A5A22B /* AppMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E1F199FBB7B00A5A22B /* AppMenuItem.m */; };
@@ -103,7 +103,7 @@
 		EEA4F4BD19927BD500A4DF95 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EEA4F4C419927BD500A4DF95 /* LangyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LangyTests-Info.plist"; sourceTree = "<group>"; };
 		EEA4F4C619927BD500A4DF95 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EEA4F4C819927BD500A4DF95 /* InputSourceMonitorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputSourceMonitorTests.m; sourceTree = "<group>"; };
+		EEA4F4C819927BD500A4DF95 /* LangyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LangyTests.m; sourceTree = "<group>"; };
 		EEA92E11199FA65800A5A22B /* AppFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFinder.h; sourceTree = "<group>"; };
 		EEA92E12199FA65800A5A22B /* AppFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppFinder.m; sourceTree = "<group>"; };
 		EEA92E1B199FACBE00A5A22B /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 		EEA4F49219927BD500A4DF95 = {
 			isa = PBXGroup;
 			children = (
-				EEA4F4A419927BD500A4DF95 /* InputSourceMonitor */,
-				EEA4F4C219927BD500A4DF95 /* InputSourceMonitorTests */,
+				EEA4F4A419927BD500A4DF95 /* Langy */,
+				EEA4F4C219927BD500A4DF95 /* LangyTests */,
 				EEA4F49D19927BD500A4DF95 /* Frameworks */,
 				EEA4F49C19927BD500A4DF95 /* Products */,
 				A3D3FA00A1D746D7BBCB7A0F /* Pods.xcconfig */,
@@ -204,7 +204,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		EEA4F4A419927BD500A4DF95 /* InputSourceMonitor */ = {
+		EEA4F4A419927BD500A4DF95 /* Langy */ = {
 			isa = PBXGroup;
 			children = (
 				EE74E77919E0419400E16C82 /* Lib */,
@@ -216,7 +216,7 @@
 				EEA4F4B619927BD500A4DF95 /* Images.xcassets */,
 				EEA4F4A519927BD500A4DF95 /* Supporting Files */,
 			);
-			path = InputSourceMonitor;
+			path = Langy;
 			sourceTree = "<group>";
 		};
 		EEA4F4A519927BD500A4DF95 /* Supporting Files */ = {
@@ -236,13 +236,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EEA4F4C219927BD500A4DF95 /* InputSourceMonitorTests */ = {
+		EEA4F4C219927BD500A4DF95 /* LangyTests */ = {
 			isa = PBXGroup;
 			children = (
-				EEA4F4C819927BD500A4DF95 /* InputSourceMonitorTests.m */,
+				EEA4F4C819927BD500A4DF95 /* LangyTests.m */,
 				EEA4F4C319927BD500A4DF95 /* Supporting Files */,
 			);
-			path = InputSourceMonitorTests;
+			path = LangyTests;
 			sourceTree = "<group>";
 		};
 		EEA4F4C319927BD500A4DF95 /* Supporting Files */ = {
@@ -455,7 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEA4F4C919927BD500A4DF95 /* InputSourceMonitorTests.m in Sources */,
+				EEA4F4C919927BD500A4DF95 /* LangyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,8 +586,8 @@
 					"$(PROJECT_DIR)/Pods/Sparkle",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InputSourceMonitor/Langy-Prefix.pch";
-				INFOPLIST_FILE = "InputSourceMonitor/Langy-Info.plist";
+				GCC_PREFIX_HEADER = "Langy/Langy-Prefix.pch";
+				INFOPLIST_FILE = "Langy/Langy-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = Langy;
 				SDKROOT = macosx;
@@ -606,8 +606,8 @@
 					"$(PROJECT_DIR)/Pods/Sparkle",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InputSourceMonitor/Langy-Prefix.pch";
-				INFOPLIST_FILE = "InputSourceMonitor/Langy-Info.plist";
+				GCC_PREFIX_HEADER = "Langy/Langy-Prefix.pch";
+				INFOPLIST_FILE = "Langy/Langy-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = Langy;
 				SDKROOT = macosx;
