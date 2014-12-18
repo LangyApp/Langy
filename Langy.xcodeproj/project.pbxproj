@@ -618,7 +618,7 @@
 		EEA4F4D019927BD500A4DF95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InputSourceMonitor.app/Contents/MacOS/InputSourceMonitor";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Langy.app/Contents/MacOS/Langy";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -640,7 +640,7 @@
 		EEA4F4D119927BD500A4DF95 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InputSourceMonitor.app/Contents/MacOS/InputSourceMonitor";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Langy.app/Contents/MacOS/Langy";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
