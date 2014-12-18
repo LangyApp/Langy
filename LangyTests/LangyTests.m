@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface InputSourceMonitorTests : XCTestCase
+@interface LangyTests : XCTestCase
 
 @end
 
-@implementation InputSourceMonitorTests
+@implementation LangyTests
 
 - (void)setUp
 {

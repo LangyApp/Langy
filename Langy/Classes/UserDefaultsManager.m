@@ -8,9 +8,9 @@
 
 #import "UserDefaultsManager.h"
 
-#define kApps @"_InputSourceMonitor_apps"
-#define kDefaultLayout @"_InputSourceMonitor_defaultLayout"
-#define kisOn @"_InputSourceMonitor_isOn"
+#define kApps @"_Langy_apps"
+#define kDefaultLayout @"_Langy_defaultLayout"
+#define kisOn @"_Langy_isOn"
 
 @implementation UserDefaultsManager
 
