@@ -73,7 +73,8 @@
     pid_t switchedPid = (pid_t)[[applicationInfo valueForKey:@"NSApplicationProcessIdentifier"] integerValue];
 
     if([self applicationChanged:switchedPid]) {
-        NSString *applicationName = [applicationInfo objectForKey:@"NSApplicationName"];
+        NSString *applicationPath = [applicationInfo objectForKey:@"NSApplicationPath"];
+        NSString *applicationName = [[applicationPath lastPathComponent] stringByDeletingPathExtension];
         
         if ([UserDefaultsManager isOn]) {
             NSDictionary *app = [UserDefaultsManager objectForKey:applicationName];
