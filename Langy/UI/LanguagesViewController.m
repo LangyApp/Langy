@@ -1,26 +1,27 @@
 //
-//  PreferencesViewController.m
+//  LanguagesViewController.m
 //  Langy
 //
-//  Created by Nicolas Santangelo on 8/16/14.
+//  Created by Nicolas Santangelo on 12/25/14.
 //  Copyright (c) 2014 Nicolas Santangelo. All rights reserved.
 //
 
-#import "PreferencesViewController.h"
+#import "LanguagesViewController.h"
 
-@interface PreferencesViewController() {
+@interface LanguagesViewController() {
     StoredApps *apps;
     InputSource *inputSource;
 }
 @end
 
-@implementation PreferencesViewController
+@implementation LanguagesViewController
 
-- (void)awakeFromNib {
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
     if (!inputSource) {
         inputSource = [[InputSource alloc] init];
     }
-//    [self.preferencesTableView.window setNextResponder:self];
 }
 
 - (void)appear {
@@ -33,7 +34,7 @@
         [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]
                                                  withInstalledSources:self.inputSourcePopupButton.installedSources];
     }
-
+    
     [self.preferencesTableView reloadData];
 }
 
@@ -60,7 +61,7 @@
     }
     
     NSUInteger newIndex = [apps addApp:app withLayout:[self.inputSourcePopupButton selectedLayout]];
-
+    
     [self.preferencesTableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:newIndex] withAnimation:NSTableViewAnimationSlideDown];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -126,7 +127,7 @@
         }
         cell = [tableView makeViewWithIdentifier:@"InputSourceCell" owner:self];
         [cell.textField setStringValue:localizedName];
-//        [cell.imageView setImage:[inputSource icon:app[@"layout"]]];
+        //        [cell.imageView setImage:[inputSource icon:app[@"layout"]]];
     }
     
     return cell;

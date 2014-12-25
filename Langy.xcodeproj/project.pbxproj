@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D5D18BBD497F41C0990B917A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4939B4A1AF4330A21E4EB2 /* libPods.a */; };
+		EE011D691A4C804400CE4DE7 /* LanguagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE011D671A4C804400CE4DE7 /* LanguagesViewController.m */; };
+		EE011D6A1A4C804400CE4DE7 /* LanguagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE011D681A4C804400CE4DE7 /* LanguagesViewController.xib */; };
+		EE011D6E1A4C936B00CE4DE7 /* AdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE011D6C1A4C936B00CE4DE7 /* AdvancedViewController.m */; };
+		EE011D6F1A4C936B00CE4DE7 /* AdvancedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE011D6D1A4C936B00CE4DE7 /* AdvancedViewController.xib */; };
 		EE1476251A43927500B64B16 /* MenuBarIconDisabled.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1476231A43927500B64B16 /* MenuBarIconDisabled.png */; };
 		EE1476261A43927500B64B16 /* MenuBarIconDisabled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1476241A43927500B64B16 /* MenuBarIconDisabled@2x.png */; };
 		EE16A304199340780056FC60 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE16A303199340780056FC60 /* Carbon.framework */; };
@@ -32,7 +36,6 @@
 		EEA4F4C719927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4C519927BD500A4DF95 /* InfoPlist.strings */; };
 		EEA4F4C919927BD500A4DF95 /* LangyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA4F4C819927BD500A4DF95 /* LangyTests.m */; };
 		EEA92E13199FA65800A5A22B /* AppFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E12199FA65800A5A22B /* AppFinder.m */; };
-		EEA92E1D199FACBE00A5A22B /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E1C199FACBE00A5A22B /* PreferencesViewController.m */; };
 		EEA92E20199FBB7B00A5A22B /* AppMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E1F199FBB7B00A5A22B /* AppMenuItem.m */; };
 		EEA92E23199FC69500A5A22B /* AppsPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA92E22199FC69500A5A22B /* AppsPopUpButton.m */; };
 		EEAC9CF419AD65C900FAEE39 /* StoredApps.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAC9CF319AD65C900FAEE39 /* StoredApps.m */; };
@@ -72,6 +75,12 @@
 /* Begin PBXFileReference section */
 		2B4939B4A1AF4330A21E4EB2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D3FA00A1D746D7BBCB7A0F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		EE011D661A4C804400CE4DE7 /* LanguagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguagesViewController.h; sourceTree = "<group>"; };
+		EE011D671A4C804400CE4DE7 /* LanguagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagesViewController.m; sourceTree = "<group>"; };
+		EE011D681A4C804400CE4DE7 /* LanguagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanguagesViewController.xib; sourceTree = "<group>"; };
+		EE011D6B1A4C936B00CE4DE7 /* AdvancedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedViewController.h; sourceTree = "<group>"; };
+		EE011D6C1A4C936B00CE4DE7 /* AdvancedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedViewController.m; sourceTree = "<group>"; };
+		EE011D6D1A4C936B00CE4DE7 /* AdvancedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvancedViewController.xib; sourceTree = "<group>"; };
 		EE1476231A43927500B64B16 /* MenuBarIconDisabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MenuBarIconDisabled.png; path = Assets/MenuBarIconDisabled.png; sourceTree = "<group>"; };
 		EE1476241A43927500B64B16 /* MenuBarIconDisabled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MenuBarIconDisabled@2x.png"; path = "Assets/MenuBarIconDisabled@2x.png"; sourceTree = "<group>"; };
 		EE16A303199340780056FC60 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
@@ -110,8 +119,6 @@
 		EEA4F4C819927BD500A4DF95 /* LangyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LangyTests.m; sourceTree = "<group>"; };
 		EEA92E11199FA65800A5A22B /* AppFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppFinder.h; sourceTree = "<group>"; };
 		EEA92E12199FA65800A5A22B /* AppFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppFinder.m; sourceTree = "<group>"; };
-		EEA92E1B199FACBE00A5A22B /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
-		EEA92E1C199FACBE00A5A22B /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
 		EEA92E1E199FBB7B00A5A22B /* AppMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMenuItem.h; sourceTree = "<group>"; };
 		EEA92E1F199FBB7B00A5A22B /* AppMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppMenuItem.m; sourceTree = "<group>"; };
 		EEA92E21199FC69500A5A22B /* AppsPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsPopUpButton.h; sourceTree = "<group>"; };
@@ -263,8 +270,6 @@
 		EEA92E1A199FACBE00A5A22B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				EEA92E1B199FACBE00A5A22B /* PreferencesViewController.h */,
-				EEA92E1C199FACBE00A5A22B /* PreferencesViewController.m */,
 				EEA92E1E199FBB7B00A5A22B /* AppMenuItem.h */,
 				EEA92E1F199FBB7B00A5A22B /* AppMenuItem.m */,
 				EEA92E21199FC69500A5A22B /* AppsPopUpButton.h */,
@@ -276,6 +281,12 @@
 				EE85868919DB9C8400F9B375 /* AboutWindowController.h */,
 				EE85868A19DB9C8400F9B375 /* AboutWindowController.m */,
 				EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */,
+				EE011D661A4C804400CE4DE7 /* LanguagesViewController.h */,
+				EE011D671A4C804400CE4DE7 /* LanguagesViewController.m */,
+				EE011D681A4C804400CE4DE7 /* LanguagesViewController.xib */,
+				EE011D6B1A4C936B00CE4DE7 /* AdvancedViewController.h */,
+				EE011D6C1A4C936B00CE4DE7 /* AdvancedViewController.m */,
+				EE011D6D1A4C936B00CE4DE7 /* AdvancedViewController.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -386,7 +397,9 @@
 				EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */,
 				EECA77F119C6A6E300505288 /* update-50.png in Resources */,
 				EE1476251A43927500B64B16 /* MenuBarIconDisabled.png in Resources */,
+				EE011D6A1A4C804400CE4DE7 /* LanguagesViewController.xib in Resources */,
 				EE229A191A01D5FD0056BB60 /* MenuBarIcon.png in Resources */,
+				EE011D6F1A4C936B00CE4DE7 /* AdvancedViewController.xib in Resources */,
 				EEA4F4AF19927BD500A4DF95 /* Credits.rtf in Resources */,
 				EE1476261A43927500B64B16 /* MenuBarIconDisabled@2x.png in Resources */,
 				EEA4F4B519927BD500A4DF95 /* MainMenu.xib in Resources */,
@@ -449,10 +462,11 @@
 				EEA4F4B219927BD500A4DF95 /* AppDelegate.m in Sources */,
 				EE74E77C19E0419400E16C82 /* LaunchAtLoginController.m in Sources */,
 				EEA92E13199FA65800A5A22B /* AppFinder.m in Sources */,
+				EE011D6E1A4C936B00CE4DE7 /* AdvancedViewController.m in Sources */,
 				EEAEA19B19A26BC000CCA51E /* InputSourcePopUpButton.m in Sources */,
 				EEA92E20199FBB7B00A5A22B /* AppMenuItem.m in Sources */,
+				EE011D691A4C804400CE4DE7 /* LanguagesViewController.m in Sources */,
 				EEAC9CF419AD65C900FAEE39 /* StoredApps.m in Sources */,
-				EEA92E1D199FACBE00A5A22B /* PreferencesViewController.m in Sources */,
 				EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */,
 				EEA4F4AB19927BD500A4DF95 /* main.m in Sources */,
 				EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */,

@@ -1,8 +1,8 @@
 //
-//  PreferencesViewController.h
+//  LanguagesViewController.h
 //  Langy
 //
-//  Created by Nicolas Santangelo on 8/16/14.
+//  Created by Nicolas Santangelo on 12/25/14.
 //  Copyright (c) 2014 Nicolas Santangelo. All rights reserved.
 //
 
@@ -19,7 +19,7 @@
 
 #import "RememberLast.h"
 
-@interface PreferencesViewController : NSViewController<NSTableViewDataSource, NSTableViewDelegate>
+@interface LanguagesViewController  : NSViewController<NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet AppsPopUpButton *appsPopupButton;
 

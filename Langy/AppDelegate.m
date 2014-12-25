@@ -12,10 +12,12 @@
 
 
 @interface AppDelegate() {
-    ApplicationObserver *appObserver;
-    NSStatusItem *statusItem;
-    AboutWindowController *aboutWindowController;
-    NSInteger currentTag;
+    ApplicationObserver     *appObserver;
+    NSStatusItem            *statusItem;
+    AboutWindowController   *aboutWindowController;
+    LanguagesViewController *languagesViewController;
+    AdvancedViewController  *advancedViewController;
+    NSInteger                currentTag;
 }
 
 @end
@@ -25,7 +27,12 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     if([self isAccesibilityEnabled]) {
         [UserDefaultsManager registerDefaults];
+        
         appObserver = [ApplicationObserver start];
+        
+        languagesViewController = [[LanguagesViewController alloc] init];
+        advancedViewController  = [[AdvancedViewController alloc] init];
+        
         [self startStatusBar];
         [self startToolbar];
     } else {
@@ -60,7 +67,7 @@
 }
 
 - (IBAction)showPreferences:(id)sender {
-    [self.preferencesViewController appear];
+    [languagesViewController appear];
     [NSApp activateIgnoringOtherApps:YES];
     [self.window makeKeyAndOrderFront:nil];
 }
@@ -91,9 +98,9 @@
 
 - (NSView *)viewByTag:(NSInteger)tag {
     if (tag == 0) {
-        return self.languagesView;
+        return [languagesViewController view];
     } else {
-        return self.generalView;
+        return [advancedViewController view];
     }
 }
 
