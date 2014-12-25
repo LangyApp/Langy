@@ -12,7 +12,11 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="RKY-pw-XLp" customClass="SUUpdater"/>
+        <customObject id="RKY-pw-XLp" customClass="SUUpdater">
+            <connections>
+                <outlet property="delegate" destination="YmY-Un-Bpb" id="WMC-70-RYl"/>
+            </connections>
+        </customObject>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="customView" destination="uM5-jf-IaF" id="uhj-hP-hJW"/>
@@ -26,13 +30,14 @@
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="CrB-6M-0YO" customClass="LaunchAtLoginController"/>
         <window title="Langy" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="466" height="347"/>
+            <rect key="contentRect" x="335" y="390" width="466" height="362"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="466" height="347"/>
+                <rect key="frame" x="0.0" y="-1" width="466" height="362"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
             <toolbar key="toolbar" implicitIdentifier="CE4717CD-FBB7-49F5-A5A9-24A0564DC950" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="small" id="d0D-Y8-Tbw">
@@ -62,6 +67,7 @@
                     <outlet property="delegate" destination="hjv-Ah-688" id="cd0-vS-6rR"/>
                 </connections>
             </toolbar>
+            <point key="canvasLocation" x="433" y="263"/>
         </window>
         <menu id="4r5-Nh-soy">
             <items>
@@ -101,7 +107,7 @@
             </connections>
         </viewController>
         <customView id="uM5-jf-IaF">
-            <rect key="frame" x="0.0" y="0.0" width="466" height="359"/>
+            <rect key="frame" x="0.0" y="-5" width="466" height="383"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="epH-zU-nFf">
@@ -295,14 +301,14 @@
                     </connections>
                 </popUpButton>
             </subviews>
-            <point key="canvasLocation" x="563" y="684.5"/>
+            <point key="canvasLocation" x="433" y="709.5"/>
         </customView>
         <customView id="yN9-Vw-36P">
-            <rect key="frame" x="0.0" y="1" width="466" height="308"/>
+            <rect key="frame" x="0.0" y="-1" width="466" height="383"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="EDy-ur-iQp">
-                    <rect key="frame" x="18" y="250" width="82" height="17"/>
+                    <rect key="frame" x="18" y="326" width="82" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preferences" id="n12-WZ-S1m">
                         <font key="font" metaFont="system" size="14"/>
@@ -311,7 +317,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="UXL-8A-0dh">
-                    <rect key="frame" x="18" y="96" width="82" height="18"/>
+                    <rect key="frame" x="18" y="171" width="82" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Updates" id="YVe-sI-LUU">
                         <font key="font" metaFont="system" size="14"/>
@@ -319,25 +325,54 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button id="NBw-4d-jYq">
-                    <rect key="frame" x="30" y="210" width="61" height="18"/>
+                <button id="z1p-rQ-WL9">
+                    <rect key="frame" x="30" y="251" width="119" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="xwz-6v-mQp">
+                    <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="5Ye-ge-sym">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="CrB-6M-0YO" name="value" keyPath="launchAtLogin" id="CrU-nV-EmU"/>
+                    </connections>
                 </button>
-                <button id="pS4-2Y-V9A">
-                    <rect key="frame" x="30" y="61" width="61" height="18"/>
+                <button id="JPN-Ph-fC6">
+                    <rect key="frame" x="30" y="138" width="225" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="unH-TJ-YvC">
+                    <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="zBv-ZG-qoQ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <connections>
+                            <binding destination="sj5-Hy-FGT" name="value" keyPath="values.automaticallyChecksForUpdates" id="icX-Q8-zFu"/>
+                        </connections>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="RKY-pw-XLp" name="value" keyPath="automaticallyChecksForUpdates" id="vdO-3f-b2u"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" id="YmY-Un-Bpb">
+                    <rect key="frame" x="26" y="88" width="145" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Check for updates" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dPi-PK-4U1">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="checkForUpdates:" target="RKY-pw-XLp" id="FhY-jf-dvW"/>
+                    </connections>
+                </button>
+                <button id="wvT-Rv-CAk">
+                    <rect key="frame" x="30" y="292" width="153" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Show status bar icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EJx-a2-iMA">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="563" y="1087"/>
+            <point key="canvasLocation" x="433" y="1158.5"/>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="sj5-Hy-FGT"/>
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
