@@ -20,4 +20,9 @@
 
 @property (unsafe_unretained) IBOutlet PreferencesViewController *preferencesViewController;
 
+@property (weak) IBOutlet NSToolbar *toolbar;
+
+@property (weak) IBOutlet NSView *languagesView;
+@property (weak) IBOutlet NSView *generalView;
+
 @end

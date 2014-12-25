@@ -8,10 +8,14 @@
 
 #import "AppDelegate.h"
 
+#define languagesToolbarItem @"LangyLanguages"
+
+
 @interface AppDelegate() {
     ApplicationObserver *appObserver;
     NSStatusItem *statusItem;
     AboutWindowController *aboutWindowController;
+    NSInteger currentTag;
 }
 
 @end
@@ -23,6 +27,7 @@
         [UserDefaultsManager registerDefaults];
         appObserver = [ApplicationObserver start];
         [self startStatusBar];
+        [self startToolbar];
     } else {
         [NSApp terminate:self];
     }
@@ -70,6 +75,38 @@
 
 - (IBAction)quit:(id)sender {
     [NSApp terminate:self];
+}
+
+// Toolbar
+
+- (void)startToolbar {
+    [self.toolbar setSelectedItemIdentifier:languagesToolbarItem];
+    currentTag = 0;
+    [self setViewByTag:currentTag];
+}
+
+- (IBAction)toolbarAction:(id)sender {
+    [self setViewByTag:[sender tag]];
+}
+
+- (NSView *)viewByTag:(NSInteger)tag {
+    if (tag == 0) {
+        return self.languagesView;
+    } else {
+        return self.generalView;
+    }
+}
+
+- (void)setViewByTag:(NSInteger) tag {
+    NSView *mainView = [[self window] contentView];
+    NSView *view = [self viewByTag:tag];
+    if ([[mainView subviews] count] == 0) {
+        [mainView addSubview:view];
+    } else {
+        NSView *oldView = [self viewByTag:currentTag];
+        [mainView replaceSubview:oldView with:view];
+    }
+    currentTag = tag;
 }
 
 @end
