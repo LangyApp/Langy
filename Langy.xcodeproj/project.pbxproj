@@ -19,6 +19,7 @@
 		EE229A1A1A01D5FD0056BB60 /* MenuBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */; };
 		EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE229A1B1A01D9790056BB60 /* AppIcon.icns */; };
 		EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3745C31997FA8600485137 /* UserDefaultsManager.m */; };
+		EE57E50D1A4E096E003EEC88 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EE57E50C1A4E096E003EEC88 /* MainMenu.m */; };
 		EE68C7321A3AACF7005378B4 /* RememberLast.m in Sources */ = {isa = PBXBuildFile; fileRef = EE68C7311A3AACF7005378B4 /* RememberLast.m */; };
 		EE74E77C19E0419400E16C82 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE74E77B19E0419400E16C82 /* LaunchAtLoginController.m */; };
 		EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85868A19DB9C8400F9B375 /* AboutWindowController.m */; };
@@ -89,6 +90,9 @@
 		EE229A1B1A01D9790056BB60 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AppIcon.icns; path = Assets/AppIcon.icns; sourceTree = "<group>"; };
 		EE3745C21997FA8600485137 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		EE3745C31997FA8600485137 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesPresenter.h; sourceTree = "<group>"; };
+		EE57E50B1A4E096E003EEC88 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
+		EE57E50C1A4E096E003EEC88 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
 		EE68C7301A3AACF7005378B4 /* RememberLast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberLast.h; sourceTree = "<group>"; };
 		EE68C7311A3AACF7005378B4 /* RememberLast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberLast.m; sourceTree = "<group>"; };
 		EE74E77A19E0419400E16C82 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
@@ -162,6 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE3C40481A4DBBF600FF51E3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		EE74E77919E0419400E16C82 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 		EEA4F4A419927BD500A4DF95 /* Langy */ = {
 			isa = PBXGroup;
 			children = (
+				EE3C40481A4DBBF600FF51E3 /* Protocols */,
 				EE74E77919E0419400E16C82 /* Lib */,
 				EEA92E1A199FACBE00A5A22B /* UI */,
 				EEAF4F2019951F480009C061 /* Classes */,
@@ -287,6 +300,8 @@
 				EE011D6B1A4C936B00CE4DE7 /* AdvancedViewController.h */,
 				EE011D6C1A4C936B00CE4DE7 /* AdvancedViewController.m */,
 				EE011D6D1A4C936B00CE4DE7 /* AdvancedViewController.xib */,
+				EE57E50B1A4E096E003EEC88 /* MainMenu.h */,
+				EE57E50C1A4E096E003EEC88 /* MainMenu.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -470,6 +485,7 @@
 				EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */,
 				EEA4F4AB19927BD500A4DF95 /* main.m in Sources */,
 				EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */,
+				EE57E50D1A4E096E003EEC88 /* MainMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

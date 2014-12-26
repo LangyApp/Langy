@@ -7,20 +7,23 @@
 //
 
 #import <Cocoa/Cocoa.h>
+
 #import "ApplicationObserver.h"
 #import "UserDefaultsManager.h"
+
+#import "MainMenu.h"
 #import "LanguagesViewController.h"
 #import "AdvancedViewController.h"
 #import "AboutWindowController.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+#import "PreferencesPresenter.h"
+
+@interface AppDelegate : NSObject <NSApplicationDelegate, PreferencesPresenter>
 
 @property (assign) IBOutlet NSWindow *window;
 
-@property (assign) IBOutlet NSMenu *menu;
-
-@property (weak) IBOutlet NSMenuItem *toggleUseButton;
-
 @property (weak) IBOutlet NSToolbar *toolbar;
+
+@property (weak) IBOutlet MainMenu *menu;
 
 @end

@@ -14,9 +14,11 @@
 @interface AppDelegate() {
     ApplicationObserver     *appObserver;
     NSStatusItem            *statusItem;
+    
     AboutWindowController   *aboutWindowController;
     LanguagesViewController *languagesViewController;
     AdvancedViewController  *advancedViewController;
+    
     NSInteger                currentTag;
 }
 
@@ -33,7 +35,7 @@
         languagesViewController = [[LanguagesViewController alloc] init];
         advancedViewController  = [[AdvancedViewController alloc] init];
         
-        [self startStatusBar];
+        [self showStatusBar];
         [self startToolbar];
     } else {
         [NSApp terminate:self];
@@ -48,40 +50,15 @@
 
 // Status bar
 
-- (void)startStatusBar {
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    [statusItem setMenu:self.menu];
-    [statusItem setHighlightMode:YES];
-    [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
+- (void)showStatusBar {
+    [self.menu addToSystemStatusBar];
+    [self.menu setPreferencesPresenter:self];
 }
 
-- (IBAction)toggleUse:(id)sender {
-    if ([UserDefaultsManager isOn]) {
-        [self.toggleUseButton setTitle:@"Turn On"];
-        [statusItem setImage:[NSImage imageNamed:@"MenuBarIconDisabled"]];
-    } else {
-        [self.toggleUseButton setTitle:@"Turn Off"];
-        [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
-    }
-    [UserDefaultsManager toggleIsOn];
-}
-
-- (IBAction)showPreferences:(id)sender {
+- (void)showPreferences {
     [languagesViewController appear];
     [NSApp activateIgnoringOtherApps:YES];
     [self.window makeKeyAndOrderFront:nil];
-}
-
-- (IBAction)showAbout:(id)sender {
-    if (!aboutWindowController) {
-        aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindowController"];
-    }
-    [aboutWindowController showWindow:self];
-    [NSApp activateIgnoringOtherApps:YES];
-}
-
-- (IBAction)quit:(id)sender {
-    [NSApp terminate:self];
 }
 
 // Toolbar
