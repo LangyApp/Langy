@@ -31,9 +31,9 @@
 }
 
 - (void)startToolbar {
-    [self.toolbar setSelectedItemIdentifier:languagesToolbarItem];
     currentTag = 0;
     [self setViewByTag:currentTag];
+    [self.toolbar setSelectedItemIdentifier:languagesToolbarItem];
     [languagesViewController appear];
 }
 
