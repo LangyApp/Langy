@@ -15,7 +15,6 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="menu" destination="4r5-Nh-soy" id="nva-LR-nuj"/>
-                <outlet property="toolbar" destination="d0D-Y8-Tbw" id="NE7-ys-u2Q"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -36,16 +35,8 @@
                     <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="IY5-pz-mOa"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="m6e-3n-tYr"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ETr-lY-xF0"/>
-                    <toolbarItem implicitItemIdentifier="820C66AB-E6C5-40D9-A3A1-B6498F2FBAEB" explicitItemIdentifier="LangyAdvanced" label="Advanced" paletteLabel="Advanced" tag="1" image="NSActionTemplate" selectable="YES" id="CDw-w8-XXP">
-                        <connections>
-                            <action selector="toolbarAction:" target="Voe-Tx-rLC" id="TW7-VS-Oho"/>
-                        </connections>
-                    </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="8FB3EDA4-6A8A-485D-8365-85E7C078198A" explicitItemIdentifier="LangyLanguages" label="Languages" paletteLabel="Languages" image="NSRefreshFreestandingTemplate" selectable="YES" id="5Dg-w5-Guy">
-                        <connections>
-                            <action selector="toolbarAction:" target="Voe-Tx-rLC" id="fi7-9k-TcG"/>
-                        </connections>
-                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="820C66AB-E6C5-40D9-A3A1-B6498F2FBAEB" explicitItemIdentifier="LangyAdvanced" label="Advanced" paletteLabel="Advanced" tag="1" image="NSActionTemplate" selectable="YES" id="CDw-w8-XXP"/>
+                    <toolbarItem implicitItemIdentifier="8FB3EDA4-6A8A-485D-8365-85E7C078198A" explicitItemIdentifier="LangyLanguages" label="Languages" paletteLabel="Languages" image="NSRefreshFreestandingTemplate" selectable="YES" id="5Dg-w5-Guy"/>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="5Dg-w5-Guy"/>
