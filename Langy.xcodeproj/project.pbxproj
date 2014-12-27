@@ -20,6 +20,8 @@
 		EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE229A1B1A01D9790056BB60 /* AppIcon.icns */; };
 		EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3745C31997FA8600485137 /* UserDefaultsManager.m */; };
 		EE57E50D1A4E096E003EEC88 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EE57E50C1A4E096E003EEC88 /* MainMenu.m */; };
+		EE57E5111A4E0E0E003EEC88 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE57E50F1A4E0E0E003EEC88 /* PreferencesWindowController.m */; };
+		EE57E5121A4E0E0E003EEC88 /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE57E5101A4E0E0E003EEC88 /* PreferencesWindowController.xib */; };
 		EE68C7321A3AACF7005378B4 /* RememberLast.m in Sources */ = {isa = PBXBuildFile; fileRef = EE68C7311A3AACF7005378B4 /* RememberLast.m */; };
 		EE74E77C19E0419400E16C82 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE74E77B19E0419400E16C82 /* LaunchAtLoginController.m */; };
 		EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85868A19DB9C8400F9B375 /* AboutWindowController.m */; };
@@ -93,6 +95,9 @@
 		EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesPresenter.h; sourceTree = "<group>"; };
 		EE57E50B1A4E096E003EEC88 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
 		EE57E50C1A4E096E003EEC88 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
+		EE57E50E1A4E0E0E003EEC88 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
+		EE57E50F1A4E0E0E003EEC88 /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		EE57E5101A4E0E0E003EEC88 /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindowController.xib; sourceTree = "<group>"; };
 		EE68C7301A3AACF7005378B4 /* RememberLast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberLast.h; sourceTree = "<group>"; };
 		EE68C7311A3AACF7005378B4 /* RememberLast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberLast.m; sourceTree = "<group>"; };
 		EE74E77A19E0419400E16C82 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
@@ -302,6 +307,9 @@
 				EE011D6D1A4C936B00CE4DE7 /* AdvancedViewController.xib */,
 				EE57E50B1A4E096E003EEC88 /* MainMenu.h */,
 				EE57E50C1A4E096E003EEC88 /* MainMenu.m */,
+				EE57E50E1A4E0E0E003EEC88 /* PreferencesWindowController.h */,
+				EE57E50F1A4E0E0E003EEC88 /* PreferencesWindowController.m */,
+				EE57E5101A4E0E0E003EEC88 /* PreferencesWindowController.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -407,6 +415,7 @@
 				EE229A1A1A01D5FD0056BB60 /* MenuBarIcon@2x.png in Resources */,
 				EEDBAD4019DE2A0F00FBAED1 /* dsa_pub.pem in Resources */,
 				EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */,
+				EE57E5121A4E0E0E003EEC88 /* PreferencesWindowController.xib in Resources */,
 				EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */,
 				EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */,
 				EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */,
@@ -485,6 +494,7 @@
 				EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */,
 				EEA4F4AB19927BD500A4DF95 /* main.m in Sources */,
 				EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */,
+				EE57E5111A4E0E0E003EEC88 /* PreferencesWindowController.m in Sources */,
 				EE57E50D1A4E096E003EEC88 /* MainMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

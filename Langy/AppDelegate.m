@@ -7,19 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "PreferencesWindowController.h"
 
 #define languagesToolbarItem @"LangyLanguages"
 
 
 @interface AppDelegate() {
-    ApplicationObserver     *appObserver;
-    NSStatusItem            *statusItem;
+    ApplicationObserver *appObserver;
+    NSStatusItem        *statusItem;
     
-    AboutWindowController   *aboutWindowController;
-    LanguagesViewController *languagesViewController;
-    AdvancedViewController  *advancedViewController;
+    PreferencesWindowController *preferencesWindowController;
     
-    NSInteger                currentTag;
+    NSInteger currentTag;
 }
 
 @end
@@ -32,11 +31,7 @@
         
         appObserver = [ApplicationObserver start];
         
-        languagesViewController = [[LanguagesViewController alloc] init];
-        advancedViewController  = [[AdvancedViewController alloc] init];
-        
         [self showStatusBar];
-        [self startToolbar];
     } else {
         [NSApp terminate:self];
     }
@@ -56,41 +51,12 @@
 }
 
 - (void)showPreferences {
-    [languagesViewController appear];
+    if (!preferencesWindowController) {
+        preferencesWindowController = [[PreferencesWindowController alloc] initWithWindowNibName:@"PreferencesWindowController"];
+    }
+    [preferencesWindowController showWindow:self];
     [NSApp activateIgnoringOtherApps:YES];
-    [self.window makeKeyAndOrderFront:nil];
 }
 
-// Toolbar
-
-- (void)startToolbar {
-    [self.toolbar setSelectedItemIdentifier:languagesToolbarItem];
-    currentTag = 0;
-    [self setViewByTag:currentTag];
-}
-
-- (IBAction)toolbarAction:(id)sender {
-    [self setViewByTag:[sender tag]];
-}
-
-- (NSView *)viewByTag:(NSInteger)tag {
-    if (tag == 0) {
-        return [languagesViewController view];
-    } else {
-        return [advancedViewController view];
-    }
-}
-
-- (void)setViewByTag:(NSInteger) tag {
-    NSView *mainView = [[self window] contentView];
-    NSView *view = [self viewByTag:tag];
-    if ([[mainView subviews] count] == 0) {
-        [mainView addSubview:view];
-    } else {
-        NSView *oldView = [self viewByTag:currentTag];
-        [mainView replaceSubview:oldView with:view];
-    }
-    currentTag = tag;
-}
 
 @end

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindowController">
+            <connections>
+                <outlet property="toolbar" destination="3sm-Va-Fla" id="BhU-v9-92y"/>
+                <outlet property="window" destination="86u-Ao-Qam" id="xJz-55-Ckf"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Langy" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="86u-Ao-Qam">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="466" height="362"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" id="MqQ-AQ-GRp">
+                <rect key="frame" x="0.0" y="-1" width="466" height="362"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="CE4717CD-FBB7-49F5-A5A9-24A0564DC950" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="small" id="3sm-Va-Fla">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="C49-6u-rld"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="pZK-Kf-2CJ"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="kuA-up-ABJ"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="e6F-HE-a9W"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Vuo-uS-O1M"/>
+                    <toolbarItem implicitItemIdentifier="820C66AB-E6C5-40D9-A3A1-B6498F2FBAEB" explicitItemIdentifier="LangyAdvanced" label="Advanced" paletteLabel="Advanced" tag="1" image="NSActionTemplate" selectable="YES" id="JLZ-dk-G5w">
+                        <connections>
+                            <action selector="toolbarAction:" target="-2" id="qsW-EM-bfv"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="8FB3EDA4-6A8A-485D-8365-85E7C078198A" explicitItemIdentifier="LangyLanguages" label="Languages" paletteLabel="Languages" image="NSRefreshFreestandingTemplate" selectable="YES" id="1Pq-vu-LcY">
+                        <connections>
+                            <action selector="toolbarAction:" target="-2" id="cpg-za-mnU"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="1Pq-vu-LcY"/>
+                    <toolbarItem reference="Vuo-uS-O1M"/>
+                    <toolbarItem reference="JLZ-dk-G5w"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="524" y="298"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
+    </resources>
+</document>

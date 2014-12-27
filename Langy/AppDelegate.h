@@ -14,15 +14,12 @@
 #import "MainMenu.h"
 #import "LanguagesViewController.h"
 #import "AdvancedViewController.h"
-#import "AboutWindowController.h"
 
 #import "PreferencesPresenter.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, PreferencesPresenter>
 
 @property (assign) IBOutlet NSWindow *window;
-
-@property (weak) IBOutlet NSToolbar *toolbar;
 
 @property (weak) IBOutlet MainMenu *menu;
 
