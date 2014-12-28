@@ -7,8 +7,6 @@
 //
 
 #import "MainMenu.h"
-#import "UserDefaultsManager.h"
-#import "AboutWindowController.h"
 
 @interface MainMenu() {
     NSStatusItem *statusItem;
@@ -25,19 +23,13 @@
     [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
 }
 
-- (void)setPresenter:(NSObject<PreferencesPresenter>*)preferencesPresenter {
-    self.preferencesPresenter = preferencesPresenter;
+- (void)setAppToggler:(AppToggler *)appToggler {
+    _appToggler = appToggler;
+    [self.appToggler setStatusItem:statusItem andMenuItem:self.toggleUseButton];
 }
 
 - (IBAction)toggleUse:(id)sender {
-    if ([UserDefaultsManager isOn]) {
-        [self.toggleUseButton setTitle:@"Turn On"];
-        [statusItem setImage:[NSImage imageNamed:@"MenuBarIconDisabled"]];
-    } else {
-        [self.toggleUseButton setTitle:@"Turn Off"];
-        [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
-    }
-    [UserDefaultsManager toggleIsOn];
+    [self.appToggler toggle];
 }
 
 - (IBAction)showPreferences:(id)sender {

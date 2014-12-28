@@ -7,13 +7,20 @@
 //
 
 #import <Cocoa/Cocoa.h>
+
 #import "PreferencesPresenter.h"
+#import "AppToggler.h"
+
+#import "AboutWindowController.h"
+
 
 @interface MainMenu : NSMenu
 
 @property (weak) IBOutlet NSMenuItem *toggleUseButton;
 
 @property (strong) NSObject<PreferencesPresenter> *preferencesPresenter;
+
+@property (nonatomic, strong) AppToggler *appToggler;
 
 - (void)addToSystemStatusBar;
 
