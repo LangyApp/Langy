@@ -59,11 +59,14 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yL-7N-hdh">
-                    <rect key="frame" x="30" y="277" width="153" height="18"/>
-                    <buttonCell key="cell" type="check" title="Show status bar icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kRG-Jv-Io3">
+                    <rect key="frame" x="30" y="273" width="117" height="18"/>
+                    <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kRG-Jv-Io3">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="FkZ-Rt-C9Z" name="value" keyPath="launchAtLogin" id="X8G-2y-p0X"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="574" y="669.5"/>
