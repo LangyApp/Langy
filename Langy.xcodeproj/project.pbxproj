@@ -26,6 +26,8 @@
 		EE74E77C19E0419400E16C82 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE74E77B19E0419400E16C82 /* LaunchAtLoginController.m */; };
 		EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85868A19DB9C8400F9B375 /* AboutWindowController.m */; };
 		EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */; };
+		EE8B769F1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B769E1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m */; };
+		EE8B76A21A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B76A11A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m */; };
 		EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */; };
 		EEA4F49F19927BD500A4DF95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F49E19927BD500A4DF95 /* Cocoa.framework */; };
 		EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */; };
@@ -105,6 +107,10 @@
 		EE85868919DB9C8400F9B375 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
 		EE85868A19DB9C8400F9B375 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
 		EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindowController.xib; sourceTree = "<group>"; };
+		EE8B769D1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceWithPopUpMenuItem.h; sourceTree = "<group>"; };
+		EE8B769E1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceWithPopUpMenuItem.m; sourceTree = "<group>"; };
+		EE8B76A01A4F87BE00CBFF41 /* InputSourceWithPopUpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceWithPopUpManager.h; sourceTree = "<group>"; };
+		EE8B76A11A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceWithPopUpManager.m; sourceTree = "<group>"; };
 		EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceMenuItem.h; sourceTree = "<group>"; };
 		EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceMenuItem.m; sourceTree = "<group>"; };
 		EEA4F49B19927BD500A4DF95 /* Langy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Langy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,6 +302,8 @@
 				EEAEA19A19A26BC000CCA51E /* InputSourcePopUpButton.m */,
 				EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */,
 				EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */,
+				EE8B769D1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.h */,
+				EE8B769E1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m */,
 				EE85868919DB9C8400F9B375 /* AboutWindowController.h */,
 				EE85868A19DB9C8400F9B375 /* AboutWindowController.m */,
 				EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */,
@@ -329,6 +337,8 @@
 				EEAC9CF319AD65C900FAEE39 /* StoredApps.m */,
 				EE68C7301A3AACF7005378B4 /* RememberLast.h */,
 				EE68C7311A3AACF7005378B4 /* RememberLast.m */,
+				EE8B76A01A4F87BE00CBFF41 /* InputSourceWithPopUpManager.h */,
+				EE8B76A11A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -489,6 +499,8 @@
 				EE011D6E1A4C936B00CE4DE7 /* AdvancedViewController.m in Sources */,
 				EEAEA19B19A26BC000CCA51E /* InputSourcePopUpButton.m in Sources */,
 				EEA92E20199FBB7B00A5A22B /* AppMenuItem.m in Sources */,
+				EE8B769F1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m in Sources */,
+				EE8B76A21A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m in Sources */,
 				EE011D691A4C804400CE4DE7 /* LanguagesViewController.m in Sources */,
 				EEAC9CF419AD65C900FAEE39 /* StoredApps.m in Sources */,
 				EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */,

@@ -35,15 +35,24 @@ typedef NSComparisonResult(^AppComparator)(NSDictionary *firstApp, NSDictionary 
 }
 
 - (NSUInteger)addApp:(NSDictionary *)appWithoutLayout withLayout:(NSString *)layout {
-    NSMutableDictionary *app =  [[NSMutableDictionary alloc] initWithDictionary:appWithoutLayout];
+    NSMutableDictionary *app = [[NSMutableDictionary alloc] initWithDictionary:appWithoutLayout];
     [app setObject:layout forKey:@"layout"];
     
     NSUInteger newIndex = [self calculateNewIndexFor:app];
 
-    [apps insertObject:app atIndex:newIndex];
-    [UserDefaultsManager setObject:app forKey:app[@"name"]];
+    [self insertObject:app atIndex:newIndex];
 
     return newIndex;
+}
+
+- (void)updateApp:(NSString *)appName withLayout:(NSString *)layout {
+    NSUInteger index = [self indexOfByName:appName];
+    NSDictionary *oldApp = [self objectAtIndex:index];
+    NSMutableDictionary *newApp = [[NSMutableDictionary alloc] initWithDictionary:oldApp];
+    
+    [newApp setObject:layout forKey:@"layout"];
+    
+    [self insertObject:newApp atIndex:index];
 }
 
 - (NSUInteger)calculateNewIndexFor:(NSDictionary *)app {
@@ -62,10 +71,19 @@ typedef NSComparisonResult(^AppComparator)(NSDictionary *firstApp, NSDictionary 
     return [apps objectAtIndex:index];
 }
 
+- (NSUInteger)indexOfByName:(NSString *)appName {
+    return [self indexOf:@{ @"name": appName }];
+}
+
 - (NSUInteger)indexOf:(NSDictionary *)searchedApp {
     return [apps indexOfObjectPassingTest:^BOOL(NSDictionary *app, NSUInteger idx, BOOL *stop) {
         return [[app objectForKey:@"name"] isEqual:searchedApp[@"name"]];
     }];
+}
+
+- (void)insertObject:(NSDictionary *)app atIndex:(NSUInteger)index {
+    [apps insertObject:app atIndex:index];
+    [UserDefaultsManager setObject:app forKey:app[@"name"]];
 }
 
 - (BOOL)removeAtIndex:(NSInteger)index {
