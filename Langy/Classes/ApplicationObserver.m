@@ -142,7 +142,7 @@
                 AXUIElementRef element = AXUIElementCreateApplication(pid);
                 
                 if(AXObserverAddNotification(observer, element, kAXApplicationActivatedNotification, (__bridge void *)(self)) != kAXErrorSuccess) {
-                    NSLog(@"Failed to create observer for application");
+//                    NSLog(@"Failed to create observer for application");
                 } else {
                     /* Remember the observer so that we can unregister later */
                     [_observers setObject:(__bridge id)observer forKey:pidNumber];
@@ -152,7 +152,7 @@
                 /* We do not need the element any more */
                 CFRelease(element);
             } else {
-                NSLog(@"Failed to create observer for application");
+//                NSLog(@"Failed to create observer for application");
             }
         } else {
             NSLog(@"Attempted to observe application twice");
