@@ -11,7 +11,6 @@
 @implementation InputSourcePopUpButton
 
 - (void)populateAndSelectByLayout:(NSString *)inputSourceId withInstalledSources:(NSArray *)installedSources {
-    self.installedSources = installedSources;
     [self populate];
     [self selectByLayout:inputSourceId];
 }
@@ -36,7 +35,10 @@
 }
 
 - (NSArray *)getInstalledSources {
-    return self.installedSources ? self.installedSources : [[InputSource alloc] installed];
+    if (self.installedSources == nil) {
+        self.installedSources = [[InputSource alloc] installed];;
+    }
+    return self.installedSources;
 }
 
 - (void)selectByLayout:(NSString *)inputSourceId {
