@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 
-#define languagesToolbarItem @"LangyLanguages"
-
+extern Boolean AXIsProcessTrustedWithOptions(CFDictionaryRef options) __attribute__((weak_import));
+extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
 
 @interface AppDelegate() {
     ApplicationObserver *appObserver;
@@ -17,8 +17,6 @@
     AppToggler *appToggler;
     
     PreferencesWindowController *preferencesWindowController;
-    
-    NSInteger currentTag;
 }
 
 @end
@@ -38,9 +36,17 @@
     }
 }
 
+
 - (BOOL)isAccesibilityEnabled {
-    NSDictionary *options = @{(__bridge id)kAXTrustedCheckOptionPrompt: @YES};
-    return AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
+    if (AXIsProcessTrustedWithOptions != NULL) {
+        NSDictionary* options = @{ (__bridge id) kAXTrustedCheckOptionPrompt : @YES };
+        return AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef) options);
+    } else if (!AXAPIEnabled()) {
+        static NSString* script = @"tell application \"System Preferences\"\nactivate\nset current pane to pane \"com.apple.preference.universalaccess\"\nend tell";
+        [[[NSAppleScript alloc] initWithSource:script] executeAndReturnError:nil];
+        return NO;
+    }
+    return NO;
 }
 
 
