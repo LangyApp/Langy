@@ -62,27 +62,23 @@
 }
 
 - (TISInputSourceRef)fromEnabledKey:(NSString *)key {
-    return [self _get:[self toArray:key includeInstalledKeys:FALSE]];
+    return [self getInputSource:key includeInstalledKeys:FALSE];
 }
 
 - (TISInputSourceRef)fromInstalledKey:(NSString *)key {
-    return [self _get:[self toArray:key includeInstalledKeys:TRUE]];
+    return [self getInputSource:key includeInstalledKeys:TRUE];
 }
 
-- (NSArray *)toArray:(NSString *)key includeInstalledKeys:(BOOL)keysFlag {
-    if (!key) {
-        return @[];
-    }
-    
+- (TISInputSourceRef)getInputSource:(NSString *)key includeInstalledKeys:(BOOL)keysFlag{
+    CFArrayRef sourceList = [self getSourceList:key includeInstalledKeys:keysFlag];
+    return (TISInputSourceRef)CFArrayGetValueAtIndex(sourceList, 0);
+}
+
+- (CFArrayRef)getSourceList:(NSString *)key includeInstalledKeys:(BOOL)keysFlag {
     CFDictionaryRef inputSourceAuxDict = (__bridge CFDictionaryRef)@{ (__bridge NSString*)kTISPropertyInputSourceID: key };
-    CFArrayRef inputSourceList = TISCreateInputSourceList(inputSourceAuxDict, keysFlag);
-    
-    return CFBridgingRelease(inputSourceList);
+    return TISCreateInputSourceList(inputSourceAuxDict, keysFlag);
 }
 
-- (TISInputSourceRef) _get:(NSArray *)keys {
-    return [keys count] > 0 ? (__bridge TISInputSourceRef)keys[0] : nil;
-}
 
 - (NSDictionary *)_build:(TISInputSourceRef)source {
     return @{

@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AdvancedViewController">
             <connections>
+                <outlet property="appStateCheckbox" destination="Qgo-1a-kC5" id="NvE-ob-wWO"/>
                 <outlet property="view" destination="nT3-Ib-RBE" id="ihy-Bz-5Xd"/>
             </connections>
         </customObject>
@@ -59,11 +60,24 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yL-7N-hdh">
-                    <rect key="frame" x="30" y="277" width="153" height="18"/>
-                    <buttonCell key="cell" type="check" title="Show status bar icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kRG-Jv-Io3">
+                    <rect key="frame" x="30" y="273" width="117" height="18"/>
+                    <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kRG-Jv-Io3">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <binding destination="FkZ-Rt-C9Z" name="value" keyPath="launchAtLogin" id="X8G-2y-p0X"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qgo-1a-kC5">
+                    <rect key="frame" x="30" y="232" width="71" height="18"/>
+                    <buttonCell key="cell" type="check" title="Turn Off" bezelStyle="regularSquare" imagePosition="left" inset="2" id="VAV-4N-OhE">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="appStateChanged:" target="-2" id="bha-L1-eKb"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="574" y="669.5"/>

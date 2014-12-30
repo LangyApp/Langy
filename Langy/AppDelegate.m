@@ -7,14 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "PreferencesWindowController.h"
 
 #define languagesToolbarItem @"LangyLanguages"
 
 
 @interface AppDelegate() {
     ApplicationObserver *appObserver;
-    NSStatusItem        *statusItem;
+    
+    AppToggler *appToggler;
     
     PreferencesWindowController *preferencesWindowController;
     
@@ -30,6 +30,7 @@
         [UserDefaultsManager registerDefaults];
         
         appObserver = [ApplicationObserver start];
+        appToggler = [[AppToggler alloc] init];
         
         [self showStatusBar];
     } else {
@@ -48,11 +49,13 @@
 - (void)showStatusBar {
     [self.menu addToSystemStatusBar];
     [self.menu setPreferencesPresenter:self];
+    [self.menu setAppToggler:appToggler];
 }
 
 - (void)showPreferences {
     if (!preferencesWindowController) {
         preferencesWindowController = [[PreferencesWindowController alloc] initWithWindowNibName:@"PreferencesWindowController"];
+        [preferencesWindowController setAppToggler:appToggler];
     }
     [preferencesWindowController showWindow:self];
     [NSApp activateIgnoringOtherApps:YES];

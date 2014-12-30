@@ -8,9 +8,13 @@
 
 #import "LanguagesViewController.h"
 
+#import "InputSourceWithPopUpMenuItem.h"
+#import "InputSourceWithPopUpManager.h"
+
 @interface LanguagesViewController() {
     StoredApps *apps;
     InputSource *inputSource;
+    InputSourceWithPopUpManager *popupManager;
 }
 @end
 
@@ -33,6 +37,8 @@
         [self.inputSourcePopupButton populateWithRememberLast];
         [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]
                                                  withInstalledSources:self.inputSourcePopupButton.installedSources];
+        
+        popupManager = [[InputSourceWithPopUpManager alloc] initWithSources:self.inputSourcePopupButton.installedSources];
     }
     
     [self.preferencesTableView reloadData];
@@ -112,27 +118,23 @@
     NSDictionary *app = [apps objectAtIndex:row];
     NSTableCellView *cell = nil;
     
-    // TODO: Refactor this (CustomCell?)
     if ([identifier isEqualToString:@"AppCell"]) {
         cell = [tableView makeViewWithIdentifier:@"AppCell" owner:self];
         [cell.textField setStringValue:app[@"name"]];
         [cell.imageView setImage:[self _getIcon:app[@"path"]]];
     }
     else if ([identifier isEqualToString:@"InputSourceCell"]) {
-        NSString *localizedName = nil;
-        if ([RememberLast isEnabledOn:app]) {
-            localizedName = [RememberLast name];
-        } else {
-            localizedName = [inputSource addStatusTo:[inputSource localizedName:app[@"layout"]] fromKey:app[@"layout"]];
-        }
         cell = [tableView makeViewWithIdentifier:@"InputSourceCell" owner:self];
-        [cell.textField setStringValue:localizedName];
-        //        [cell.imageView setImage:[inputSource icon:app[@"layout"]]];
+        [popupManager addToMenu:cell.menu withApp:app];
     }
     
     return cell;
 }
 
+- (IBAction)changePreference:(id)sender {
+    InputSourceWithPopUpMenuItem *inputSourcePopup = (InputSourceWithPopUpMenuItem *)[sender selectedItem];
+    [apps updateApp:inputSourcePopup.appName withLayout:inputSourcePopup.layout];
+}
 
 // Helpers
 

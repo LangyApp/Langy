@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+    
+    [self.appToggler setStateCheckbox:self.appStateCheckbox];
+}
+
+- (IBAction)appStateChanged:(id)sender {
+    [self.appToggler toggle];
 }
 
 @end

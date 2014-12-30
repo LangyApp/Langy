@@ -12,8 +12,10 @@
 #import "UserDefaultsManager.h"
 
 #import "MainMenu.h"
+
 #import "LanguagesViewController.h"
 #import "AdvancedViewController.h"
+#import "PreferencesWindowController.h"
 
 #import "PreferencesPresenter.h"
 

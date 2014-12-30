@@ -13,6 +13,8 @@
 
 - (NSUInteger)addApp:(NSDictionary *)appWithoutLayout withLayout:(NSString *)layout;
 
+- (void)updateApp:(NSString *)appName withLayout:(NSString *)layout;
+
 - (NSDictionary *)objectAtIndex:(NSUInteger)index;
 - (NSUInteger)indexOf:(NSDictionary *)app;
 

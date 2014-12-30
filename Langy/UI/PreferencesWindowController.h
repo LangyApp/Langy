@@ -15,4 +15,6 @@
 
 @property (weak) IBOutlet NSToolbar *toolbar;
 
+- (void)setAppToggler:(AppToggler *)appToggler;
+
 @end
