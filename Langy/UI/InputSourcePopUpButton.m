@@ -35,9 +35,7 @@
 }
 
 - (NSArray *)getInstalledSources {
-    if (self.installedSources == nil) {
-        self.installedSources = [[InputSource alloc] installed];;
-    }
+    self.installedSources = [[InputSource alloc] installed];
     return self.installedSources;
 }
 

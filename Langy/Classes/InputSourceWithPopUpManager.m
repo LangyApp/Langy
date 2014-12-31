@@ -35,6 +35,8 @@
 }
 
 - (void)addToMenu:(NSMenu *)menu withApp:(NSDictionary *)app {
+    [menu removeAllItems];
+    
     [menu addItem:[self menuItem:app layoutName:[self getLocalizedNameFor:app]]];
     
     for (int i = 0; i < [installedSources count]; i++) {
