@@ -23,7 +23,4 @@
 
 - (NSString *)addStatusTo:(NSString *)str fromKey:(NSString *)key;
 
-- (TISInputSourceRef)fromEnabledKey:(NSString *)key;
-- (TISInputSourceRef)fromInstalledKey:(NSString *)key;
-
 @end

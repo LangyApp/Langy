@@ -8,6 +8,9 @@
 
 #import "InputSource.h"
 
+#define INSTALLED TRUE
+#define ENABLED FALSE
+
 @implementation InputSource
 
 + (NSDictionary *)current {
@@ -21,62 +24,81 @@
     NSDictionary *installed = [NSDictionary dictionaryWithObject:(NSString *)kTISTypeKeyboardLayout
                                                           forKey:(NSString *)kTISPropertyInputSourceType];
     
-    NSArray *installedInputSources = CFBridgingRelease(TISCreateInputSourceList((__bridge CFDictionaryRef)installed, false));
+    CFArrayRef installedInputSources = TISCreateInputSourceList((__bridge CFDictionaryRef)installed, false);
+    int installedCount = (int)CFArrayGetCount(installedInputSources);
     
-    NSMutableArray *sources = [[NSMutableArray alloc] initWithCapacity:[installedInputSources count]];
-    for (int i = 0; i < [installedInputSources count]; i++) {
-        TISInputSourceRef source = (__bridge TISInputSourceRef)installedInputSources[i];
+    NSMutableArray *sources = [[NSMutableArray alloc] initWithCapacity:installedCount];
+    
+    for (int i = 0; i < installedCount; i++) {
+        TISInputSourceRef source = (TISInputSourceRef)CFArrayGetValueAtIndex(installedInputSources, i);
         [sources addObject:[self _build:source]];
     }
+    CFRelease(installedInputSources);
     return sources;
 }
 
 - (NSString *)localizedName:(NSString *)key {
-    return (__bridge NSString*)[self getProperty:key property:kTISPropertyLocalizedName];
+    return [self getProperty:key property:kTISPropertyLocalizedName];
 }
 
 - (NSImage *)icon:(NSString *)key {
-    return [self _getImageForIcon:[self getProperty:key property:kTISPropertyIconRef]];
+    IconRef iconref = (__bridge IconRef)([self getProperty:key property:kTISPropertyIconRef]);
+    return [self _getImageForIcon:iconref];
 }
 
 - (OSStatus)set:(NSString *)key {
-    TISInputSourceRef source = [self fromEnabledKey:key];
-    return TISSelectInputSource(source);
+    CFArrayRef sourceList = [self getSourcesList:key property:ENABLED];
+    TISInputSourceRef source = [self extractSource:sourceList];
+    
+    OSStatus status = TISSelectInputSource(source);
+    
+    CFRelease(sourceList);
+    
+    return status;
 }
 
 - (BOOL)selected:(NSString *)key {
-    CFBooleanRef selected = [self getProperty:key property:kTISPropertyInputSourceIsSelected];
+    CFBooleanRef selected = (__bridge CFBooleanRef)([self getProperty:key property:kTISPropertyInputSourceIsSelected]);
     if (!selected) {
         return NO;
     }
     return CFBooleanGetValue(selected);
 }
 
-- (void *)getProperty:(NSString *)key property:(CFStringRef)property {
-    TISInputSourceRef source = [self fromInstalledKey:key];
-    return TISGetInputSourceProperty(source, property);
+- (id)getProperty:(NSString *)key property:(const CFStringRef)property {
+    CFArrayRef sourceList = [self getSourcesList:key property:INSTALLED];
+    TISInputSourceRef source = [self extractSource:sourceList];
+    
+    id value = CFBridgingRelease(TISGetInputSourceProperty(source, property));
+    
+    CFRelease(sourceList);
+    
+    return value;
 }
 
 - (NSString *)addStatusTo:(NSString *)str fromKey:(NSString *)key {
-    return [self fromEnabledKey:key] ? str : [NSString stringWithFormat:@"%@ %@", str, @"(disabled)"];
+    CFArrayRef sourceList = [self getSourcesList:key property:ENABLED];
+    TISInputSourceRef source = [self extractSource:sourceList];
+    
+    NSString *result = str;
+    
+    if(source) {
+        CFRelease(sourceList);
+    } else {
+        result = [NSString stringWithFormat:@"%@ %@", str, @"(disabled)"];
+    }
+    
+    return result;
 }
 
-- (TISInputSourceRef)fromEnabledKey:(NSString *)key {
-    return [self getInputSource:key includeInstalledKeys:FALSE];
-}
 
-- (TISInputSourceRef)fromInstalledKey:(NSString *)key {
-    return [self getInputSource:key includeInstalledKeys:TRUE];
-}
-
-- (TISInputSourceRef)getInputSource:(NSString *)key includeInstalledKeys:(BOOL)keysFlag{
-    CFArrayRef sourceList = [self getSourceList:key includeInstalledKeys:keysFlag];
-    return (TISInputSourceRef)CFArrayGetValueAtIndex(sourceList, 0);
-}
-
-- (CFArrayRef)getSourceList:(NSString *)key includeInstalledKeys:(BOOL)keysFlag {
+- (CFArrayRef)getSourcesList:(NSString *)key property:(BOOL)flag {
     CFDictionaryRef inputSourceAuxDict = (__bridge CFDictionaryRef)@{ (__bridge NSString*)kTISPropertyInputSourceID: key };
-    return TISCreateInputSourceList(inputSourceAuxDict, keysFlag);
+    return TISCreateInputSourceList(inputSourceAuxDict, flag);
+}
+
+- (TISInputSourceRef)extractSource:(CFArrayRef)sourceList {
+    return  sourceList ? (TISInputSourceRef)CFArrayGetValueAtIndex(sourceList, 0) : nil;
 }
 
 
