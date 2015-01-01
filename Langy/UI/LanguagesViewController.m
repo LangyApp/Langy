@@ -8,9 +8,6 @@
 
 #import "LanguagesViewController.h"
 
-#import "InputSourceWithPopUpMenuItem.h"
-#import "InputSourceWithPopUpManager.h"
-
 @interface LanguagesViewController() {
     StoredApps *apps;
     InputSource *inputSource;

@@ -12,6 +12,7 @@
 #import "AppFinder.h"
 #import "AppsPopUpButton.h"
 
+#import "InputSourceWithPopUpManager.h"
 #import "InputSourcePopUpButton.h"
 #import "InputSource.h"
 

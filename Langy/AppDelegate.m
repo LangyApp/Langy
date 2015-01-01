@@ -37,6 +37,8 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
 }
 
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 - (BOOL)isAccesibilityEnabled {
     if (AXIsProcessTrustedWithOptions != NULL) {
         NSDictionary* options = @{ (__bridge id) kAXTrustedCheckOptionPrompt : @YES };
@@ -48,6 +50,7 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
     }
     return NO;
 }
+#pragma GCC diagnostic pop
 
 
 // Status bar
