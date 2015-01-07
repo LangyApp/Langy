@@ -37,9 +37,7 @@
 }
 
 - (IBAction)showAbout:(id)sender {
-    if (!aboutWindowController) {
-        aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindowController"];
-    }
+    aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindowController"];
     [aboutWindowController showWindow:self];
     [NSApp activateIgnoringOtherApps:YES];
 }
