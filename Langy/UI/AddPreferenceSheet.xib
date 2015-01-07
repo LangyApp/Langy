@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="LanguagesViewController">
             <connections>
                 <outlet property="addPreferenceSheet" destination="QvC-M9-y7g" id="EQh-R5-u0p"/>
+                <outlet property="sheetAppsPopupButton" destination="0tc-xj-umJ" id="9xC-M2-DKD"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>

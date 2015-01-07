@@ -30,6 +30,7 @@
 @property (weak) IBOutlet NSTableView *preferencesTableView;
 
 @property (assign) IBOutlet NSWindow *addPreferenceSheet;
+@property (weak) IBOutlet AppsPopUpButton *sheetAppsPopupButton;
 
 - (void)appear;
 

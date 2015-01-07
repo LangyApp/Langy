@@ -55,21 +55,25 @@
     }
     
     [NSApp beginSheet: self.addPreferenceSheet
-       modalForWindow:[[self view] window]
+       modalForWindow: [[self view] window]
         modalDelegate: self
        didEndSelector: NULL
           contextInfo: nil];
+    
+    [self.sheetAppsPopupButton populate];
 }
 
 - (IBAction)closeNewAppSelected:(id)sender {
     [NSApp endSheet:self.addPreferenceSheet returnCode:NSCancelButton];
     [self.addPreferenceSheet orderOut:self];
+    [self.sheetAppsPopupButton removeFromSuperview];
     self.addPreferenceSheet = nil;
 }
 
 - (IBAction)acceptNewAppSelected:(id)sender {
     [NSApp endSheet:self.addPreferenceSheet returnCode:NSOKButton];
     [self.addPreferenceSheet orderOut:self];
+    [self.sheetAppsPopupButton removeFromSuperview];
     self.addPreferenceSheet = nil;
 }
 
