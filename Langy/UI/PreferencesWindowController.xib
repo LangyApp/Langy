@@ -16,10 +16,10 @@
         <window title="Langy" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="86u-Ao-Qam">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="466" height="362"/>
+            <rect key="contentRect" x="335" y="390" width="466" height="314"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="MqQ-AQ-GRp">
-                <rect key="frame" x="0.0" y="-1" width="466" height="362"/>
+                <rect key="frame" x="0.0" y="0.0" width="466" height="314"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
             <toolbar key="toolbar" implicitIdentifier="CE4717CD-FBB7-49F5-A5A9-24A0564DC950" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="small" id="3sm-Va-Fla">
@@ -46,7 +46,7 @@
                     <toolbarItem reference="JLZ-dk-G5w"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="524" y="298"/>
+            <point key="canvasLocation" x="524" y="274"/>
         </window>
     </objects>
     <resources>

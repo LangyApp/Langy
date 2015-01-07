@@ -20,11 +20,11 @@
             </connections>
         </customObject>
         <customView id="nT3-Ib-RBE">
-            <rect key="frame" x="0.0" y="0.0" width="466" height="383"/>
+            <rect key="frame" x="0.0" y="0.0" width="466" height="306"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fDZ-nQ-LGX">
-                    <rect key="frame" x="18" y="311" width="82" height="17"/>
+                    <rect key="frame" x="18" y="261" width="82" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preferences" id="L3R-g2-IbQ">
                         <font key="font" metaFont="system" size="14"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -32,7 +32,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJO-V9-r6N">
-                    <rect key="frame" x="18" y="156" width="82" height="18"/>
+                    <rect key="frame" x="18" y="119" width="82" height="18"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Updates" id="eXI-HI-qqO">
                         <font key="font" metaFont="system" size="14"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -40,7 +40,7 @@
                     </textFieldCell>
                 </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="di5-0m-Nca">
-                    <rect key="frame" x="30" y="123" width="225" height="18"/>
+                    <rect key="frame" x="30" y="86" width="225" height="18"/>
                     <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="2Bm-mL-9s2">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -50,7 +50,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHU-fM-oQ4">
-                    <rect key="frame" x="26" y="73" width="145" height="32"/>
+                    <rect key="frame" x="26" y="36" width="145" height="32"/>
                     <buttonCell key="cell" type="push" title="Check for updates" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r2p-6E-QFn">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -60,7 +60,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yL-7N-hdh">
-                    <rect key="frame" x="30" y="273" width="117" height="18"/>
+                    <rect key="frame" x="30" y="223" width="117" height="18"/>
                     <buttonCell key="cell" type="check" title="Launch at login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="kRG-Jv-Io3">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -70,7 +70,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qgo-1a-kC5">
-                    <rect key="frame" x="30" y="232" width="71" height="18"/>
+                    <rect key="frame" x="30" y="182" width="71" height="18"/>
                     <buttonCell key="cell" type="check" title="Turn Off" bezelStyle="regularSquare" imagePosition="left" inset="2" id="VAV-4N-OhE">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>

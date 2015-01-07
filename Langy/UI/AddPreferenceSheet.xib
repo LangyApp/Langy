@@ -29,7 +29,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="acceptNewAppSelected:" target="-2" id="5BT-CY-5oI"/>
+                            <action selector="acceptAddPreferenceSheet:" target="-2" id="gKZ-xl-KrK"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxQ-rc-LGd">
@@ -39,7 +39,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="closeNewAppSelected:" target="-2" id="tSb-7B-gLB"/>
+                            <action selector="closeAddPreferenceSheet:" target="-2" id="YO7-EK-yc1"/>
                         </connections>
                     </button>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0tc-xj-umJ" customClass="AppsPopUpButton">
@@ -49,6 +49,9 @@
                             <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="wtY-ls-X5m"/>
                         </popUpButtonCell>
+                        <connections>
+                            <action selector="appSelected:" target="-2" id="aTA-h6-34V"/>
+                        </connections>
                     </popUpButton>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTD-bj-fsP">
                         <rect key="frame" x="154" y="118" width="142" height="17"/>
