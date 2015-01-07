@@ -19,6 +19,7 @@
 		EE229A1A1A01D5FD0056BB60 /* MenuBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */; };
 		EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE229A1B1A01D9790056BB60 /* AppIcon.icns */; };
 		EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3745C31997FA8600485137 /* UserDefaultsManager.m */; };
+		EE3B717C1A5C90090011B3C4 /* AddPreferenceSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3B717B1A5C90090011B3C4 /* AddPreferenceSheet.xib */; };
 		EE57E50D1A4E096E003EEC88 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EE57E50C1A4E096E003EEC88 /* MainMenu.m */; };
 		EE57E5111A4E0E0E003EEC88 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE57E50F1A4E0E0E003EEC88 /* PreferencesWindowController.m */; };
 		EE57E5121A4E0E0E003EEC88 /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE57E5101A4E0E0E003EEC88 /* PreferencesWindowController.xib */; };
@@ -95,6 +96,7 @@
 		EE229A1B1A01D9790056BB60 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AppIcon.icns; path = Assets/AppIcon.icns; sourceTree = "<group>"; };
 		EE3745C21997FA8600485137 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		EE3745C31997FA8600485137 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		EE3B717B1A5C90090011B3C4 /* AddPreferenceSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPreferenceSheet.xib; sourceTree = "<group>"; };
 		EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesPresenter.h; sourceTree = "<group>"; };
 		EE57E50B1A4E096E003EEC88 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
 		EE57E50C1A4E096E003EEC88 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				EE57E50E1A4E0E0E003EEC88 /* PreferencesWindowController.h */,
 				EE57E50F1A4E0E0E003EEC88 /* PreferencesWindowController.m */,
 				EE57E5101A4E0E0E003EEC88 /* PreferencesWindowController.xib */,
+				EE3B717B1A5C90090011B3C4 /* AddPreferenceSheet.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */,
 				EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */,
 				EECA77F119C6A6E300505288 /* update-50.png in Resources */,
+				EE3B717C1A5C90090011B3C4 /* AddPreferenceSheet.xib in Resources */,
 				EE1476251A43927500B64B16 /* MenuBarIconDisabled.png in Resources */,
 				EE011D6A1A4C804400CE4DE7 /* LanguagesViewController.xib in Resources */,
 				EE229A191A01D5FD0056BB60 /* MenuBarIcon.png in Resources */,

@@ -47,6 +47,32 @@
     [self.appsPopupButton triggerSelection];
 }
 
+- (IBAction)newAppSelected:(id)sender {
+    if (!_addPreferenceSheet) {
+        [[NSBundle mainBundle] loadNibNamed:@"AddPreferenceSheet"
+                                      owner:self
+                            topLevelObjects:nil];
+    }
+    
+    [NSApp beginSheet: self.addPreferenceSheet
+       modalForWindow:[[self view] window]
+        modalDelegate: self
+       didEndSelector: NULL
+          contextInfo: nil];
+}
+
+- (IBAction)closeNewAppSelected:(id)sender {
+    [NSApp endSheet:self.addPreferenceSheet returnCode:NSCancelButton];
+    [self.addPreferenceSheet orderOut:self];
+    self.addPreferenceSheet = nil;
+}
+
+- (IBAction)acceptNewAppSelected:(id)sender {
+    [NSApp endSheet:self.addPreferenceSheet returnCode:NSOKButton];
+    [self.addPreferenceSheet orderOut:self];
+    self.addPreferenceSheet = nil;
+}
+
 - (IBAction)defatultInputSourceSelected:(id)sender {
     [UserDefaultsManager setDefaultLayout:[self.defaultInputSourcePopupButton selectedLayout]];
 }

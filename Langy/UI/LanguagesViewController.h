@@ -29,6 +29,8 @@
 
 @property (weak) IBOutlet NSTableView *preferencesTableView;
 
+@property (assign) IBOutlet NSWindow *addPreferenceSheet;
+
 - (void)appear;
 
 - (IBAction)appSelected:(id)sender;
