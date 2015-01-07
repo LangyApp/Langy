@@ -50,7 +50,6 @@
 		EEAF4F2319951FB90009C061 /* InputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F2219951FB90009C061 /* InputSource.m */; };
 		EEAF4F2519952A450009C061 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAF4F2419952A450009C061 /* ScriptingBridge.framework */; };
 		EEAF4F28199587DC0009C061 /* ApplicationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F27199587DC0009C061 /* ApplicationObserver.m */; };
-		EECA77F119C6A6E300505288 /* update-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EECA77F019C6A6E300505288 /* update-50.png */; };
 		EEDBAD3C19DE26CB00FBAED1 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */; };
 		EEDBAD3E19DE270800FBAED1 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EEDBAD4019DE2A0F00FBAED1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */; };
@@ -152,7 +151,6 @@
 		EEAF4F2419952A450009C061 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		EEAF4F26199587DC0009C061 /* ApplicationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationObserver.h; sourceTree = "<group>"; };
 		EEAF4F27199587DC0009C061 /* ApplicationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationObserver.m; sourceTree = "<group>"; };
-		EECA77F019C6A6E300505288 /* update-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "update-50.png"; path = "Assets/update-50.png"; sourceTree = "<group>"; };
 		EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Pods/Sparkle/Sparkle.framework; sourceTree = "<group>"; };
 		EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Certs/dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,7 +266,6 @@
 				EE229A171A01D5FD0056BB60 /* MenuBarIcon.png */,
 				EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */,
 				EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */,
-				EECA77F019C6A6E300505288 /* update-50.png */,
 				EEA4F4A619927BD500A4DF95 /* Langy-Info.plist */,
 				EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */,
 				EEA4F4AA19927BD500A4DF95 /* main.m */,
@@ -437,7 +434,6 @@
 				EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */,
 				EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */,
 				EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */,
-				EECA77F119C6A6E300505288 /* update-50.png in Resources */,
 				EE3B717C1A5C90090011B3C4 /* AddPreferenceSheet.xib in Resources */,
 				EE1476251A43927500B64B16 /* MenuBarIconDisabled.png in Resources */,
 				EE011D6A1A4C804400CE4DE7 /* LanguagesViewController.xib in Resources */,

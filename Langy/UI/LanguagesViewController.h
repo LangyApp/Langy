@@ -31,10 +31,10 @@
 
 - (void)appear;
 
-- (IBAction)appSelected:(id)sender;
 - (IBAction)defatultInputSourceSelected:(id)sender;
 
+- (IBAction)appSelected:(id)sender;
+
 - (IBAction)removePreference:(id)sender;
-- (IBAction)updateView:(id)sender;
 
 @end

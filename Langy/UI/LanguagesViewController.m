@@ -86,6 +86,8 @@
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [self.preferencesTableView scrollRowToVisible:newIndex];
     }];
+    
+    [self updateView];
     [self releaseSheet];
 }
 
@@ -106,8 +108,9 @@
     }
 }
 
-- (IBAction)updateView:(id)sender {
+- (void)updateView {
     apps = nil;
+    popupManager = nil;
     [self.defaultInputSourcePopupButton removeAllItems];
     [self appear];
 }

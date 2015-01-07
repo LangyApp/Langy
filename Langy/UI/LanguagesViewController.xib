@@ -29,17 +29,6 @@
                         <action selector="removePreference:" target="-2" id="dsA-hB-9RA"/>
                     </connections>
                 </button>
-                <button id="pnO-cT-p88">
-                    <rect key="frame" x="421" y="20" width="25" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="update-50" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="57A-Ym-3UZ">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="systemBold"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="updateView:" target="-2" id="rZS-CX-ipa"/>
-                    </connections>
-                </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="eGj-GS-6Sf">
                     <rect key="frame" x="18" y="267" width="137" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -178,6 +167,5 @@
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="update-50" width="50" height="50"/>
     </resources>
 </document>
