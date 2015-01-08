@@ -17,10 +17,14 @@
 @implementation AppsPopUpButton
 
 - (void)populate {
+    [self populateWithout:@[]];
+}
+
+- (void)populateWithout:(NSArray *)names {
     appFinder = [[AppFinder alloc] init];
     
     [appFinder forEachInstalledApp:^(NSDictionary *app) {
-        if ([self itemWithTitle:app[@"name"]] == nil) {
+        if ([self itemWithTitle:app[@"name"]] == nil && ![names containsObject:app[@"name"]]) {
             [[self menu] addItem:[[AppMenuItem alloc] initWithApp:app]];
         }
     }];

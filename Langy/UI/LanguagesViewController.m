@@ -63,7 +63,7 @@
        didEndSelector: NULL
           contextInfo: nil];
     
-    [self.sheetAppsPopupButton populate];
+    [self.sheetAppsPopupButton populateWithout:[apps names]];
 }
 
 - (IBAction)closeAddPreferenceSheet:(id)sender {
