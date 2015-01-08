@@ -42,14 +42,6 @@
     }
 }
 
-- (NSArray *)getInstalledApps {
-    NSMutableArray *apps = [[NSMutableArray alloc] init];
-    [self forEachInstalledApp:^(NSDictionary *app) {
-        [apps addObject:apps];
-    }];
-    return apps;
-}
-
 - (void)forEachInstalledApp:(void (^)(NSDictionary *app))fn {
     [[self sourcePathContents] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *filename = (NSString *)obj;
