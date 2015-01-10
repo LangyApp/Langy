@@ -24,14 +24,20 @@
 }
 
 - (void)toggle {
-    if ([self uiExists]) {
-        if ([UserDefaultsManager isOn]) {
+    if ([UserDefaultsManager isOn]) {
+        if (self.toggleUseMenuItem && self.statusItem) {
             [self.toggleUseMenuItem setTitle:@"Turn On"];
             [self.statusItem setImage:[NSImage imageNamed:@"MenuBarIconDisabled"]];
+        }
+        if (self.stateCheckbox) {
             [self.stateCheckbox setState:NSOffState];
-        } else {
+        }
+    } else {
+        if (self.toggleUseMenuItem && self.statusItem) {
             [self.toggleUseMenuItem setTitle:@"Turn Off"];
             [self.statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
+        }
+        if (self.stateCheckbox) {
             [self.stateCheckbox setState:NSOnState];
         }
     }

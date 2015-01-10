@@ -22,7 +22,7 @@ NSMutableDictionary *apps;
                                                                   kDefaultLayout: @{@"layout": currentInputSource[@"layout"]},
                                                                   kApps: @{}
                                                               }];
-    [[NSUserDefaults standardUserDefaults] setObject:@1 forKey:kisOn];
+    [[NSUserDefaults standardUserDefaults] setObject:@0 forKey:kisOn];
     
     apps = [[NSMutableDictionary alloc] initWithDictionary:[self _stored_apps]];
 }

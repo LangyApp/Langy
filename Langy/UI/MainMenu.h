@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) AppToggler *appToggler;
 
+- (void)start;
+
 - (void)addToSystemStatusBar;
 
 @end
