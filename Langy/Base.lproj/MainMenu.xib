@@ -74,7 +74,7 @@
                 </menuItem>
             </items>
             <connections>
-                <outlet property="toggleUseButton" destination="IbW-4x-0Kb" id="GgN-4j-B7O"/>
+                <outlet property="toggleUseMenuItem" destination="IbW-4x-0Kb" id="NdH-ev-XA3"/>
             </connections>
             <point key="canvasLocation" x="408" y="624.5"/>
         </menu>

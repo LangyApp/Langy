@@ -21,11 +21,12 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
 @implementation MainMenu
 
 - (void)start {
+    [[ApplicationStateManager sharedManager] addListener:self];
     NSMenuItem *preferenceMenuItem = [self itemWithTag:1];
     
     if([self isAccesibilityEnabled]) {
         [preferenceMenuItem setAction:@selector(showPreferences:)];
-        [self.appToggler toggle];
+        [[ApplicationStateManager sharedManager] change];
     } else {
         [preferenceMenuItem setAction:NULL];
     }
@@ -38,18 +39,13 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
     [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
 }
 
-- (void)setAppToggler:(AppToggler *)appToggler {
-    _appToggler = appToggler;
-    [self.appToggler setStatusItem:statusItem andMenuItem:self.toggleUseButton];
-}
-
 - (IBAction)toggleUse:(id)sender {
     if([self isAccesibilityEnabled]) {
         NSMenuItem *preferenceMenuItem = [self itemWithTag:1];
         if (![preferenceMenuItem action]) {
             [preferenceMenuItem setAction:@selector(showPreferences:)];
         }
-        [self.appToggler toggle];
+        [[ApplicationStateManager sharedManager] change];
     }
 }
 
@@ -67,6 +63,15 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
     [NSApp terminate:self];
 }
 
+- (void)appStateChanged:(BOOL)isOn {
+    if(isOn) {
+        [self.toggleUseMenuItem setTitle:@"Turn On"];
+        [statusItem setImage:[NSImage imageNamed:@"MenuBarIconDisabled"]];
+    } else {
+        [self.toggleUseMenuItem setTitle:@"Turn Off"];
+        [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
+    }
+}
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"

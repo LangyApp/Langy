@@ -76,7 +76,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="appStateChanged:" target="-2" id="bha-L1-eKb"/>
+                        <action selector="changeState:" target="-2" id="qev-oS-sHv"/>
                     </connections>
                 </button>
             </subviews>

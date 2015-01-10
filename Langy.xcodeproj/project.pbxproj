@@ -29,7 +29,7 @@
 		EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */; };
 		EE8B769F1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B769E1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m */; };
 		EE8B76A21A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B76A11A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m */; };
-		EE8B76A51A4FB8B600CBFF41 /* AppToggler.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B76A41A4FB8B600CBFF41 /* AppToggler.m */; };
+		EE8B76A51A4FB8B600CBFF41 /* ApplicationStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B76A41A4FB8B600CBFF41 /* ApplicationStateManager.m */; };
 		EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */; };
 		EEA4F49F19927BD500A4DF95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F49E19927BD500A4DF95 /* Cocoa.framework */; };
 		EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */; };
@@ -95,6 +95,7 @@
 		EE229A1B1A01D9790056BB60 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AppIcon.icns; path = Assets/AppIcon.icns; sourceTree = "<group>"; };
 		EE3745C21997FA8600485137 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		EE3745C31997FA8600485137 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		EE3A233F1A61B525000EF25C /* ApplicationStateManaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationStateManaging.h; sourceTree = "<group>"; };
 		EE3B717B1A5C90090011B3C4 /* AddPreferenceSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPreferenceSheet.xib; sourceTree = "<group>"; };
 		EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesPresenter.h; sourceTree = "<group>"; };
 		EE57E50B1A4E096E003EEC88 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
@@ -113,8 +114,8 @@
 		EE8B769E1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceWithPopUpMenuItem.m; sourceTree = "<group>"; };
 		EE8B76A01A4F87BE00CBFF41 /* InputSourceWithPopUpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceWithPopUpManager.h; sourceTree = "<group>"; };
 		EE8B76A11A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceWithPopUpManager.m; sourceTree = "<group>"; };
-		EE8B76A31A4FB8B600CBFF41 /* AppToggler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppToggler.h; sourceTree = "<group>"; };
-		EE8B76A41A4FB8B600CBFF41 /* AppToggler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppToggler.m; sourceTree = "<group>"; };
+		EE8B76A31A4FB8B600CBFF41 /* ApplicationStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationStateManager.h; sourceTree = "<group>"; };
+		EE8B76A41A4FB8B600CBFF41 /* ApplicationStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationStateManager.m; sourceTree = "<group>"; };
 		EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceMenuItem.h; sourceTree = "<group>"; };
 		EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceMenuItem.m; sourceTree = "<group>"; };
 		EEA4F49B19927BD500A4DF95 /* Langy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Langy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */,
+				EE3A233F1A61B525000EF25C /* ApplicationStateManaging.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -332,8 +334,8 @@
 				EEA92E12199FA65800A5A22B /* AppFinder.m */,
 				EEAF4F26199587DC0009C061 /* ApplicationObserver.h */,
 				EEAF4F27199587DC0009C061 /* ApplicationObserver.m */,
-				EE8B76A31A4FB8B600CBFF41 /* AppToggler.h */,
-				EE8B76A41A4FB8B600CBFF41 /* AppToggler.m */,
+				EE8B76A31A4FB8B600CBFF41 /* ApplicationStateManager.h */,
+				EE8B76A41A4FB8B600CBFF41 /* ApplicationStateManager.m */,
 				EEAF4F2119951FB90009C061 /* InputSource.h */,
 				EEAF4F2219951FB90009C061 /* InputSource.m */,
 				EE8B76A01A4F87BE00CBFF41 /* InputSourceWithPopUpManager.h */,
@@ -511,7 +513,7 @@
 				EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */,
 				EEA4F4AB19927BD500A4DF95 /* main.m in Sources */,
 				EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */,
-				EE8B76A51A4FB8B600CBFF41 /* AppToggler.m in Sources */,
+				EE8B76A51A4FB8B600CBFF41 /* ApplicationStateManager.m in Sources */,
 				EE57E5111A4E0E0E003EEC88 /* PreferencesWindowController.m in Sources */,
 				EE57E50D1A4E096E003EEC88 /* MainMenu.m in Sources */,
 			);

@@ -8,12 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "AppToggler.h"
+#import "ApplicationStateManager.h"
+#import "ApplicationStateManaging.h"
 
-@interface AdvancedViewController : NSViewController
+@interface AdvancedViewController : NSViewController<ApplicationStateManaging>
 
 @property (weak) IBOutlet NSButton *appStateCheckbox;
-
-@property (nonatomic, strong) AppToggler *appToggler;
 
 @end

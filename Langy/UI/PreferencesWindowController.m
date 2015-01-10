@@ -30,10 +30,6 @@
     return self;
 }
 
-- (void)setAppToggler:(AppToggler *)appToggler {
-    [advancedViewController setAppToggler:appToggler];
-}
-
 - (void)startToolbar {
     currentTag = 0;
     [self setViewByTag:currentTag];
