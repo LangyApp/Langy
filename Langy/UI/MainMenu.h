@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "PreferencesPresenter.h"
+#import "PreferencesPresenting.h"
 #import "ApplicationStateManager.h"
 
 #import "ApplicationStateManaging.h"
@@ -20,7 +20,7 @@
 
 @property (weak) IBOutlet NSMenuItem *toggleUseMenuItem;
 
-@property (strong) NSObject<PreferencesPresenter> *preferencesPresenter;
+@property (strong) NSObject<PreferencesPresenting> *preferencesPresenter;
 
 - (void)start;
 

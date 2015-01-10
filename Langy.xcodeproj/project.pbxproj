@@ -97,7 +97,7 @@
 		EE3745C31997FA8600485137 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
 		EE3A233F1A61B525000EF25C /* ApplicationStateManaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationStateManaging.h; sourceTree = "<group>"; };
 		EE3B717B1A5C90090011B3C4 /* AddPreferenceSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPreferenceSheet.xib; sourceTree = "<group>"; };
-		EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesPresenter.h; sourceTree = "<group>"; };
+		EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesPresenting.h; sourceTree = "<group>"; };
 		EE57E50B1A4E096E003EEC88 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
 		EE57E50C1A4E096E003EEC88 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
 		EE57E50E1A4E0E0E003EEC88 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 		EE3C40481A4DBBF600FF51E3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */,
+				EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenting.h */,
 				EE3A233F1A61B525000EF25C /* ApplicationStateManaging.h */,
 			);
 			path = Protocols;
