@@ -29,12 +29,12 @@
                     <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="kuA-up-ABJ"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="e6F-HE-a9W"/>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Vuo-uS-O1M"/>
-                    <toolbarItem implicitItemIdentifier="820C66AB-E6C5-40D9-A3A1-B6498F2FBAEB" explicitItemIdentifier="LangyAdvanced" label="Advanced" paletteLabel="Advanced" tag="1" image="NSActionTemplate" selectable="YES" id="JLZ-dk-G5w">
+                    <toolbarItem implicitItemIdentifier="820C66AB-E6C5-40D9-A3A1-B6498F2FBAEB" explicitItemIdentifier="LangyAdvanced" label="Advanced" paletteLabel="Advanced" tag="1" image="PrefsGeneral" selectable="YES" id="JLZ-dk-G5w">
                         <connections>
                             <action selector="toolbarAction:" target="-2" id="qsW-EM-bfv"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="8FB3EDA4-6A8A-485D-8365-85E7C078198A" explicitItemIdentifier="LangyLanguages" label="Languages" paletteLabel="Languages" image="NSRefreshFreestandingTemplate" selectable="YES" id="1Pq-vu-LcY">
+                    <toolbarItem implicitItemIdentifier="8FB3EDA4-6A8A-485D-8365-85E7C078198A" explicitItemIdentifier="LangyLanguages" label="Languages" paletteLabel="Languages" image="PrefsLanguages" selectable="YES" id="1Pq-vu-LcY">
                         <connections>
                             <action selector="toolbarAction:" target="-2" id="cpg-za-mnU"/>
                         </connections>
@@ -42,15 +42,15 @@
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="1Pq-vu-LcY"/>
-                    <toolbarItem reference="Vuo-uS-O1M"/>
                     <toolbarItem reference="JLZ-dk-G5w"/>
+                    <toolbarItem reference="Vuo-uS-O1M"/>
                 </defaultToolbarItems>
             </toolbar>
             <point key="canvasLocation" x="524" y="298"/>
         </window>
     </objects>
     <resources>
-        <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
+        <image name="PrefsGeneral" width="36" height="36"/>
+        <image name="PrefsLanguages" width="72" height="72"/>
     </resources>
 </document>
