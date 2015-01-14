@@ -29,33 +29,49 @@
     if (!apps) {
         apps = [[StoredApps alloc] init];
         
-        [self.appsPopupButton populate];
+        [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]];
         
-        [self.inputSourcePopupButton populateWithRememberLast];
-        [self.defaultInputSourcePopupButton populateAndSelectByLayout:[UserDefaultsManager getDefaultLayout]
-                                                 withInstalledSources:self.inputSourcePopupButton.installedSources];
-        
-        popupManager = [[InputSourceWithPopUpManager alloc] initWithSources:self.inputSourcePopupButton.installedSources];
+        popupManager = [[InputSourceWithPopUpManager alloc] initWithSources:self.defaultInputSourcePopupButton.installedSources];
     }
     
     [self.preferencesTableView reloadData];
 }
 
-// Apps ComboBox
-
-- (IBAction)appSelected:(id)sender {
-    [self.appsPopupButton triggerSelection];
-}
+// Default input source
 
 - (IBAction)defatultInputSourceSelected:(id)sender {
     [UserDefaultsManager setDefaultLayout:[self.defaultInputSourcePopupButton selectedLayout]];
 }
 
 
-// Add and remove preferences
+// Add preferences
 
-- (IBAction)addPreference:(id)sender {
-    NSDictionary *app = [self.appsPopupButton selectedApp];
+- (IBAction)appSelected:(id)sender {
+    [self.sheetAppsPopupButton triggerSelection];
+}
+
+- (IBAction)showAddPreferenceSheet:(id)sender {
+    if (!_addPreferenceSheet) {
+        [[NSBundle mainBundle] loadNibNamed:@"AddPreferenceSheet"
+                                      owner:self
+                            topLevelObjects:nil];
+    }
+    
+    [NSApp beginSheet: self.addPreferenceSheet
+       modalForWindow: [[self view] window]
+        modalDelegate: self
+       didEndSelector: NULL
+          contextInfo: nil];
+    
+    [self.sheetAppsPopupButton populateWithout:[apps names]];
+}
+
+- (IBAction)closeAddPreferenceSheet:(id)sender {
+    [self releaseSheet];
+}
+
+- (IBAction)acceptAddPreferenceSheet:(id)sender {
+    NSDictionary *app = [self.sheetAppsPopupButton selectedApp];
     NSUInteger oldIndex = [apps indexOf:app];
     
     if (oldIndex != NSNotFound) {
@@ -63,14 +79,27 @@
         [self.preferencesTableView removeRowsAtIndexes:[[NSIndexSet alloc] initWithIndex:oldIndex] withAnimation:NSTableViewAnimationSlideUp];
     }
     
-    NSUInteger newIndex = [apps addApp:app withLayout:[self.inputSourcePopupButton selectedLayout]];
+    NSUInteger newIndex = [apps addApp:app withLayout:[self.defaultInputSourcePopupButton selectedLayout]];
     
     [self.preferencesTableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:newIndex] withAnimation:NSTableViewAnimationSlideDown];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [self.preferencesTableView scrollRowToVisible:newIndex];
     }];
+    
+    [self updateView];
+    [self releaseSheet];
 }
+
+- (void)releaseSheet {
+    [NSApp endSheet:self.addPreferenceSheet];
+    [self.addPreferenceSheet orderOut:self];
+    [self.sheetAppsPopupButton removeFromSuperview];
+    self.addPreferenceSheet = nil;
+}
+
+
+// Remove preferences
 
 - (IBAction)removePreference:(id)sender {
     BOOL wasDeleted = [apps removeAtIndex:[self.preferencesTableView selectedRow]];
@@ -79,9 +108,9 @@
     }
 }
 
-- (IBAction)updateView:(id)sender {
+- (void)updateView {
     apps = nil;
-    [self.inputSourcePopupButton removeAllItems];
+    popupManager = nil;
     [self.defaultInputSourcePopupButton removeAllItems];
     [self appear];
 }

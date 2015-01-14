@@ -22,4 +22,6 @@
 
 - (NSInteger)count;
 
+- (NSArray *)names;
+
 @end

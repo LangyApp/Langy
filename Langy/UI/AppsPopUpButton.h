@@ -13,6 +13,7 @@
 @interface AppsPopUpButton : NSPopUpButton
 
 - (void)populate;
+- (void)populateWithout:(NSArray *)names;
 
 - (void)triggerSelection;
 

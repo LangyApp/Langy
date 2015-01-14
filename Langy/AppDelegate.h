@@ -17,9 +17,9 @@
 #import "AdvancedViewController.h"
 #import "PreferencesWindowController.h"
 
-#import "PreferencesPresenter.h"
+#import "PreferencesPresenting.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, PreferencesPresenter>
+@interface AppDelegate : NSObject <NSApplicationDelegate, PreferencesPresenting>
 
 @property (assign) IBOutlet NSWindow *window;
 

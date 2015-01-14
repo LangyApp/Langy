@@ -15,7 +15,8 @@
 
 + (NSDictionary *)current {
     TISInputSourceRef source = TISCopyCurrentKeyboardInputSource();
-    NSDictionary *build = [[[InputSource alloc] init] _build:source];
+    InputSource *inputSource = [[InputSource alloc] init];
+    NSDictionary *build = [inputSource _build:source];
     CFRelease(source);
     return build;
 }
@@ -47,7 +48,7 @@
 }
 
 - (OSStatus)set:(NSString *)key {
-    CFArrayRef sourceList = [self getSourcesList:key property:ENABLED];
+    CFArrayRef sourceList = [self copySourcesList:key property:ENABLED];
     TISInputSourceRef source = [self extractSource:sourceList];
     
     OSStatus status = TISSelectInputSource(source);
@@ -66,7 +67,7 @@
 }
 
 - (id)getProperty:(NSString *)key property:(const CFStringRef)property {
-    CFArrayRef sourceList = [self getSourcesList:key property:INSTALLED];
+    CFArrayRef sourceList = [self copySourcesList:key property:INSTALLED];
     TISInputSourceRef source = [self extractSource:sourceList];
     
     id value = CFBridgingRelease(TISGetInputSourceProperty(source, property));
@@ -77,7 +78,7 @@
 }
 
 - (NSString *)addStatusTo:(NSString *)str fromKey:(NSString *)key {
-    CFArrayRef sourceList = [self getSourcesList:key property:ENABLED];
+    CFArrayRef sourceList = [self copySourcesList:key property:ENABLED];
     TISInputSourceRef source = [self extractSource:sourceList];
     
     NSString *result = str;
@@ -86,13 +87,14 @@
         CFRelease(sourceList);
     } else {
         result = [NSString stringWithFormat:@"%@ %@", str, @"(disabled)"];
+        CFBridgingRelease(sourceList);
     }
     
     return result;
 }
 
 
-- (CFArrayRef)getSourcesList:(NSString *)key property:(BOOL)flag {
+- (CFArrayRef)copySourcesList:(NSString *)key property:(BOOL)flag {
     CFDictionaryRef inputSourceAuxDict = (__bridge CFDictionaryRef)@{ (__bridge NSString*)kTISPropertyInputSourceID: key };
     return TISCreateInputSourceList(inputSourceAuxDict, flag);
 }

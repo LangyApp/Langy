@@ -1,5 +1,5 @@
 //
-//  PreferencesPresenter.h
+//  PreferencesPresenting.h
 //  Langy
 //
 //  Created by Nicolas Santangelo on 12/26/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PreferencesPresenter <NSObject>
+@protocol PreferencesPresenting <NSObject>
 
 - (void) showPreferences;
 

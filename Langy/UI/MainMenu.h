@@ -8,19 +8,21 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "PreferencesPresenter.h"
-#import "AppToggler.h"
+#import "PreferencesPresenting.h"
+#import "ApplicationStateManager.h"
+
+#import "ApplicationStateManaging.h"
 
 #import "AboutWindowController.h"
 
 
-@interface MainMenu : NSMenu
+@interface MainMenu : NSMenu<ApplicationStateManaging>
 
-@property (weak) IBOutlet NSMenuItem *toggleUseButton;
+@property (weak) IBOutlet NSMenuItem *toggleUseMenuItem;
 
-@property (strong) NSObject<PreferencesPresenter> *preferencesPresenter;
+@property (strong) NSObject<PreferencesPresenting> *preferencesPresenter;
 
-@property (nonatomic, strong) AppToggler *appToggler;
+- (void)start;
 
 - (void)addToSystemStatusBar;
 

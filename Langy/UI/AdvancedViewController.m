@@ -16,12 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.appToggler setStateCheckbox:self.appStateCheckbox];
+    [[ApplicationStateManager sharedManager] addListener:self];
 }
 
-- (IBAction)appStateChanged:(id)sender {
-    [self.appToggler toggle];
+- (IBAction)changeState:(id)sender {
+    [[ApplicationStateManager sharedManager] change];
+}
+
+- (void)appStateChanged:(BOOL)isOn {
+    if (isOn) {
+        [self.appStateCheckbox setState:NSOnState];
+    } else {
+        [self.appStateCheckbox setState:NSOffState];
+    }
 }
 
 @end

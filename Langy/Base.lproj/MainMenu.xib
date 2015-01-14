@@ -48,14 +48,14 @@
         </window>
         <menu id="4r5-Nh-soy" customClass="MainMenu">
             <items>
-                <menuItem title="Turn Off" id="IbW-4x-0Kb">
+                <menuItem title="Turn On" id="IbW-4x-0Kb">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="toggleUse:" target="4r5-Nh-soy" id="QZq-yQ-Ppl"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="2P4-Ay-fuT"/>
-                <menuItem title="Preferences" keyEquivalent="," id="hj3-ra-JtX">
+                <menuItem title="Preferences" tag="1" keyEquivalent="," id="hj3-ra-JtX">
                     <connections>
                         <action selector="showPreferences:" target="4r5-Nh-soy" id="VaK-C1-rTo"/>
                     </connections>
@@ -74,7 +74,7 @@
                 </menuItem>
             </items>
             <connections>
-                <outlet property="toggleUseButton" destination="IbW-4x-0Kb" id="GgN-4j-B7O"/>
+                <outlet property="toggleUseMenuItem" destination="IbW-4x-0Kb" id="NdH-ev-XA3"/>
             </connections>
             <point key="canvasLocation" x="408" y="624.5"/>
         </menu>

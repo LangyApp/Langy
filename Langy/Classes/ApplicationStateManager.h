@@ -1,5 +1,5 @@
 //
-//  AppToggler.h
+//  ApplicationStateManager.h
 //  Langy
 //
 //  Created by Nicolas Santangelo on 12/28/14.
@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AppToggler : NSObject
+#import "UserDefaultsManager.h"
+#import "ApplicationStateManaging.h"
+
+@interface ApplicationStateManager : NSObject
 
 @property (weak) NSMenuItem *toggleUseMenuItem;
 
@@ -16,8 +19,10 @@
 
 @property (nonatomic, weak) NSButton *stateCheckbox;
 
-- (void)setStatusItem:(NSStatusItem *)statusItem andMenuItem:(NSMenuItem *)menuItem;
++ (id)sharedManager;
 
-- (void)toggle;
+- (void)addListener:(NSObject *)listener;
+
+- (void)change;
 
 @end

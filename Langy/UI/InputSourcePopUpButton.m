@@ -10,7 +10,7 @@
 
 @implementation InputSourcePopUpButton
 
-- (void)populateAndSelectByLayout:(NSString *)inputSourceId withInstalledSources:(NSArray *)installedSources {
+- (void)populateAndSelectByLayout:(NSString *)inputSourceId {
     [self populate];
     [self selectByLayout:inputSourceId];
 }

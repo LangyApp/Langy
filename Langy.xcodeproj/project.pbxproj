@@ -21,6 +21,7 @@
 		EE229A1A1A01D5FD0056BB60 /* MenuBarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */; };
 		EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = EE229A1B1A01D9790056BB60 /* AppIcon.icns */; };
 		EE3745C41997FA8600485137 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3745C31997FA8600485137 /* UserDefaultsManager.m */; };
+		EE3B717C1A5C90090011B3C4 /* AddPreferenceSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE3B717B1A5C90090011B3C4 /* AddPreferenceSheet.xib */; };
 		EE57E50D1A4E096E003EEC88 /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EE57E50C1A4E096E003EEC88 /* MainMenu.m */; };
 		EE57E5111A4E0E0E003EEC88 /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE57E50F1A4E0E0E003EEC88 /* PreferencesWindowController.m */; };
 		EE57E5121A4E0E0E003EEC88 /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE57E5101A4E0E0E003EEC88 /* PreferencesWindowController.xib */; };
@@ -30,7 +31,7 @@
 		EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */; };
 		EE8B769F1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B769E1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m */; };
 		EE8B76A21A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B76A11A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m */; };
-		EE8B76A51A4FB8B600CBFF41 /* AppToggler.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B76A41A4FB8B600CBFF41 /* AppToggler.m */; };
+		EE8B76A51A4FB8B600CBFF41 /* ApplicationStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE8B76A41A4FB8B600CBFF41 /* ApplicationStateManager.m */; };
 		EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */; };
 		EEA4F49F19927BD500A4DF95 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEA4F49E19927BD500A4DF95 /* Cocoa.framework */; };
 		EEA4F4A919927BD500A4DF95 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */; };
@@ -51,7 +52,6 @@
 		EEAF4F2319951FB90009C061 /* InputSource.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F2219951FB90009C061 /* InputSource.m */; };
 		EEAF4F2519952A450009C061 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEAF4F2419952A450009C061 /* ScriptingBridge.framework */; };
 		EEAF4F28199587DC0009C061 /* ApplicationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = EEAF4F27199587DC0009C061 /* ApplicationObserver.m */; };
-		EECA77F119C6A6E300505288 /* update-50.png in Resources */ = {isa = PBXBuildFile; fileRef = EECA77F019C6A6E300505288 /* update-50.png */; };
 		EEDBAD3C19DE26CB00FBAED1 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */; };
 		EEDBAD3E19DE270800FBAED1 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EEDBAD4019DE2A0F00FBAED1 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */; };
@@ -100,7 +100,9 @@
 		EE229A1B1A01D9790056BB60 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = AppIcon.icns; path = Assets/AppIcon.icns; sourceTree = "<group>"; };
 		EE3745C21997FA8600485137 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		EE3745C31997FA8600485137 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
-		EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesPresenter.h; sourceTree = "<group>"; };
+		EE3A233F1A61B525000EF25C /* ApplicationStateManaging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationStateManaging.h; sourceTree = "<group>"; };
+		EE3B717B1A5C90090011B3C4 /* AddPreferenceSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPreferenceSheet.xib; sourceTree = "<group>"; };
+		EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesPresenting.h; sourceTree = "<group>"; };
 		EE57E50B1A4E096E003EEC88 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
 		EE57E50C1A4E096E003EEC88 /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenu.m; sourceTree = "<group>"; };
 		EE57E50E1A4E0E0E003EEC88 /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
@@ -117,8 +119,8 @@
 		EE8B769E1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceWithPopUpMenuItem.m; sourceTree = "<group>"; };
 		EE8B76A01A4F87BE00CBFF41 /* InputSourceWithPopUpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceWithPopUpManager.h; sourceTree = "<group>"; };
 		EE8B76A11A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceWithPopUpManager.m; sourceTree = "<group>"; };
-		EE8B76A31A4FB8B600CBFF41 /* AppToggler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppToggler.h; sourceTree = "<group>"; };
-		EE8B76A41A4FB8B600CBFF41 /* AppToggler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppToggler.m; sourceTree = "<group>"; };
+		EE8B76A31A4FB8B600CBFF41 /* ApplicationStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationStateManager.h; sourceTree = "<group>"; };
+		EE8B76A41A4FB8B600CBFF41 /* ApplicationStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationStateManager.m; sourceTree = "<group>"; };
 		EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSourceMenuItem.h; sourceTree = "<group>"; };
 		EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSourceMenuItem.m; sourceTree = "<group>"; };
 		EEA4F49B19927BD500A4DF95 /* Langy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Langy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,7 +157,6 @@
 		EEAF4F2419952A450009C061 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		EEAF4F26199587DC0009C061 /* ApplicationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationObserver.h; sourceTree = "<group>"; };
 		EEAF4F27199587DC0009C061 /* ApplicationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationObserver.m; sourceTree = "<group>"; };
-		EECA77F019C6A6E300505288 /* update-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "update-50.png"; path = "Assets/update-50.png"; sourceTree = "<group>"; };
 		EEDBAD3B19DE26CB00FBAED1 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Pods/Sparkle/Sparkle.framework; sourceTree = "<group>"; };
 		EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Certs/dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,7 +198,8 @@
 		EE3C40481A4DBBF600FF51E3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenter.h */,
+				EE3C40491A4DBD5F00FF51E3 /* PreferencesPresenting.h */,
+				EE3A233F1A61B525000EF25C /* ApplicationStateManaging.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -282,7 +284,6 @@
 				EE229A171A01D5FD0056BB60 /* MenuBarIcon.png */,
 				EE229A181A01D5FD0056BB60 /* MenuBarIcon@2x.png */,
 				EEDBAD3F19DE2A0F00FBAED1 /* dsa_pub.pem */,
-				EECA77F019C6A6E300505288 /* update-50.png */,
 				EEA4F4A619927BD500A4DF95 /* Langy-Info.plist */,
 				EEA4F4A719927BD500A4DF95 /* InfoPlist.strings */,
 				EEA4F4AA19927BD500A4DF95 /* main.m */,
@@ -313,25 +314,26 @@
 		EEA92E1A199FACBE00A5A22B /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EE85868919DB9C8400F9B375 /* AboutWindowController.h */,
+				EE85868A19DB9C8400F9B375 /* AboutWindowController.m */,
+				EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */,
+				EE3B717B1A5C90090011B3C4 /* AddPreferenceSheet.xib */,
+				EE011D6B1A4C936B00CE4DE7 /* AdvancedViewController.h */,
+				EE011D6C1A4C936B00CE4DE7 /* AdvancedViewController.m */,
+				EE011D6D1A4C936B00CE4DE7 /* AdvancedViewController.xib */,
 				EEA92E1E199FBB7B00A5A22B /* AppMenuItem.h */,
 				EEA92E1F199FBB7B00A5A22B /* AppMenuItem.m */,
 				EEA92E21199FC69500A5A22B /* AppsPopUpButton.h */,
 				EEA92E22199FC69500A5A22B /* AppsPopUpButton.m */,
-				EEAEA19919A26BC000CCA51E /* InputSourcePopUpButton.h */,
-				EEAEA19A19A26BC000CCA51E /* InputSourcePopUpButton.m */,
 				EE9EE09619A4599200A94668 /* InputSourceMenuItem.h */,
 				EE9EE09719A4599200A94668 /* InputSourceMenuItem.m */,
+				EEAEA19919A26BC000CCA51E /* InputSourcePopUpButton.h */,
+				EEAEA19A19A26BC000CCA51E /* InputSourcePopUpButton.m */,
 				EE8B769D1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.h */,
 				EE8B769E1A4F832700CBFF41 /* InputSourceWithPopUpMenuItem.m */,
-				EE85868919DB9C8400F9B375 /* AboutWindowController.h */,
-				EE85868A19DB9C8400F9B375 /* AboutWindowController.m */,
-				EE85868B19DB9C8400F9B375 /* AboutWindowController.xib */,
 				EE011D661A4C804400CE4DE7 /* LanguagesViewController.h */,
 				EE011D671A4C804400CE4DE7 /* LanguagesViewController.m */,
 				EE011D681A4C804400CE4DE7 /* LanguagesViewController.xib */,
-				EE011D6B1A4C936B00CE4DE7 /* AdvancedViewController.h */,
-				EE011D6C1A4C936B00CE4DE7 /* AdvancedViewController.m */,
-				EE011D6D1A4C936B00CE4DE7 /* AdvancedViewController.xib */,
 				EE57E50B1A4E096E003EEC88 /* MainMenu.h */,
 				EE57E50C1A4E096E003EEC88 /* MainMenu.m */,
 				EE57E50E1A4E0E0E003EEC88 /* PreferencesWindowController.h */,
@@ -344,22 +346,22 @@
 		EEAF4F2019951F480009C061 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EEAF4F2119951FB90009C061 /* InputSource.h */,
-				EEAF4F2219951FB90009C061 /* InputSource.m */,
-				EEAF4F26199587DC0009C061 /* ApplicationObserver.h */,
-				EEAF4F27199587DC0009C061 /* ApplicationObserver.m */,
-				EE3745C21997FA8600485137 /* UserDefaultsManager.h */,
-				EE3745C31997FA8600485137 /* UserDefaultsManager.m */,
 				EEA92E11199FA65800A5A22B /* AppFinder.h */,
 				EEA92E12199FA65800A5A22B /* AppFinder.m */,
-				EEAC9CF219AD65C900FAEE39 /* StoredApps.h */,
-				EEAC9CF319AD65C900FAEE39 /* StoredApps.m */,
-				EE68C7301A3AACF7005378B4 /* RememberLast.h */,
-				EE68C7311A3AACF7005378B4 /* RememberLast.m */,
+				EEAF4F26199587DC0009C061 /* ApplicationObserver.h */,
+				EEAF4F27199587DC0009C061 /* ApplicationObserver.m */,
+				EE8B76A31A4FB8B600CBFF41 /* ApplicationStateManager.h */,
+				EE8B76A41A4FB8B600CBFF41 /* ApplicationStateManager.m */,
+				EEAF4F2119951FB90009C061 /* InputSource.h */,
+				EEAF4F2219951FB90009C061 /* InputSource.m */,
 				EE8B76A01A4F87BE00CBFF41 /* InputSourceWithPopUpManager.h */,
 				EE8B76A11A4F87BE00CBFF41 /* InputSourceWithPopUpManager.m */,
-				EE8B76A31A4FB8B600CBFF41 /* AppToggler.h */,
-				EE8B76A41A4FB8B600CBFF41 /* AppToggler.m */,
+				EE68C7301A3AACF7005378B4 /* RememberLast.h */,
+				EE68C7311A3AACF7005378B4 /* RememberLast.m */,
+				EEAC9CF219AD65C900FAEE39 /* StoredApps.h */,
+				EEAC9CF319AD65C900FAEE39 /* StoredApps.m */,
+				EE3745C21997FA8600485137 /* UserDefaultsManager.h */,
+				EE3745C31997FA8600485137 /* UserDefaultsManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -452,7 +454,7 @@
 				EE85868D19DB9C8400F9B375 /* AboutWindowController.xib in Resources */,
 				EEA4F4B719927BD500A4DF95 /* Images.xcassets in Resources */,
 				EE229A1C1A01D9790056BB60 /* AppIcon.icns in Resources */,
-				EECA77F119C6A6E300505288 /* update-50.png in Resources */,
+				EE3B717C1A5C90090011B3C4 /* AddPreferenceSheet.xib in Resources */,
 				EE1476251A43927500B64B16 /* MenuBarIconDisabled.png in Resources */,
 				EE011D6A1A4C804400CE4DE7 /* LanguagesViewController.xib in Resources */,
 				EE229A191A01D5FD0056BB60 /* MenuBarIcon.png in Resources */,
@@ -529,7 +531,7 @@
 				EE85868C19DB9C8400F9B375 /* AboutWindowController.m in Sources */,
 				EEA4F4AB19927BD500A4DF95 /* main.m in Sources */,
 				EE9EE09819A4599200A94668 /* InputSourceMenuItem.m in Sources */,
-				EE8B76A51A4FB8B600CBFF41 /* AppToggler.m in Sources */,
+				EE8B76A51A4FB8B600CBFF41 /* ApplicationStateManager.m in Sources */,
 				EE57E5111A4E0E0E003EEC88 /* PreferencesWindowController.m in Sources */,
 				EE57E50D1A4E096E003EEC88 /* MainMenu.m in Sources */,
 			);

@@ -12,8 +12,6 @@
 
 -(id)initWithSourcePath:(NSString *)anotherSourcePath;
 
-- (NSArray *)getInstalledApps;
-
 - (void)forEachInstalledApp:(void (^)(NSDictionary *app))fn;
 
 - (void)openDialog:(void (^)(NSDictionary *app))fn;

@@ -99,4 +99,12 @@ typedef NSComparisonResult(^AppComparator)(NSDictionary *firstApp, NSDictionary 
     return [apps count];
 }
 
+- (NSArray *)names {
+    NSMutableArray *names = [[NSMutableArray alloc] initWithCapacity:[self count]];
+    for (int i = 0; i < [self count]; i++) {
+        [names addObject:[self objectAtIndex:i][@"name"]];
+    }
+    return [names copy];
+}
+
 @end

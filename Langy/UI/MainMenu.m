@@ -7,6 +7,10 @@
 //
 
 #import "MainMenu.h"
+#import "UserDefaultsManager.h"
+
+extern Boolean AXIsProcessTrustedWithOptions(CFDictionaryRef options) __attribute__((weak_import));
+extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
 
 @interface MainMenu() {
     NSStatusItem *statusItem;
@@ -16,6 +20,18 @@
 
 @implementation MainMenu
 
+- (void)start {
+    [[ApplicationStateManager sharedManager] addListener:self];
+    NSMenuItem *preferenceMenuItem = [self itemWithTag:1];
+    
+    if([self isAccesibilityEnabled]) {
+        [preferenceMenuItem setAction:@selector(showPreferences:)];
+        [[ApplicationStateManager sharedManager] change];
+    } else {
+        [preferenceMenuItem setAction:NULL];
+    }
+}
+
 - (void)addToSystemStatusBar {
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:self];
@@ -23,13 +39,14 @@
     [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
 }
 
-- (void)setAppToggler:(AppToggler *)appToggler {
-    _appToggler = appToggler;
-    [self.appToggler setStatusItem:statusItem andMenuItem:self.toggleUseButton];
-}
-
 - (IBAction)toggleUse:(id)sender {
-    [self.appToggler toggle];
+    if([self isAccesibilityEnabled]) {
+        NSMenuItem *preferenceMenuItem = [self itemWithTag:1];
+        if (![preferenceMenuItem action]) {
+            [preferenceMenuItem setAction:@selector(showPreferences:)];
+        }
+        [[ApplicationStateManager sharedManager] change];
+    }
 }
 
 - (IBAction)showPreferences:(id)sender {
@@ -37,9 +54,7 @@
 }
 
 - (IBAction)showAbout:(id)sender {
-    if (!aboutWindowController) {
-        aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindowController"];
-    }
+    aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindowController"];
     [aboutWindowController showWindow:self];
     [NSApp activateIgnoringOtherApps:YES];
 }
@@ -48,5 +63,29 @@
     [NSApp terminate:self];
 }
 
+- (void)appStateChanged:(BOOL)isOn {
+    if(isOn) {
+        [self.toggleUseMenuItem setTitle:@"Turn On"];
+        [statusItem setImage:[NSImage imageNamed:@"MenuBarIconDisabled"]];
+    } else {
+        [self.toggleUseMenuItem setTitle:@"Turn Off"];
+        [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
+    }
+}
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+- (BOOL)isAccesibilityEnabled {
+    if (AXIsProcessTrustedWithOptions != NULL) {
+        NSDictionary* options = @{ (__bridge id) kAXTrustedCheckOptionPrompt : @YES };
+        return AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef) options);
+    } else if (!AXAPIEnabled()) {
+        static NSString* script = @"tell application \"System Preferences\"\nactivate\nset current pane to pane \"com.apple.preference.universalaccess\"\nend tell";
+        [[[NSAppleScript alloc] initWithSource:script] executeAndReturnError:nil];
+        return NO;
+    }
+    return NO;
+}
+#pragma GCC diagnostic pop
 
 @end

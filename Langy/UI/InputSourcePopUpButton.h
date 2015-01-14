@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) NSArray *installedSources;
 
-- (void)populateAndSelectByLayout:(NSString *)inputSourceId withInstalledSources:(NSArray *)installedSources;
+- (void)populateAndSelectByLayout:(NSString *)inputSourceId;
 
 - (void)populateWithRememberLast;
 
