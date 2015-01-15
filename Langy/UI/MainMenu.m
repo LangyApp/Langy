@@ -27,8 +27,10 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
     if([self isAccesibilityEnabled]) {
         [preferenceMenuItem setAction:@selector(showPreferences:)];
         [[ApplicationStateManager sharedManager] change];
+        [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
     } else {
         [preferenceMenuItem setAction:NULL];
+        [statusItem setImage:[NSImage imageNamed:@"MenuBarIconDisabled"]];
     }
 }
 
@@ -36,7 +38,6 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:self];
     [statusItem setHighlightMode:YES];
-    [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
 }
 
 - (IBAction)toggleUse:(id)sender {
