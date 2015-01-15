@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>SUFeedURL</key>
-	<string>https://langyupdates.herokuapp.com</string>
+	<string>https://langyupdates.herokuapp.com/appcast.xml</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
