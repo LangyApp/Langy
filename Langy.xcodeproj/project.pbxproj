@@ -82,10 +82,8 @@
 
 /* Begin PBXFileReference section */
 		2B4939B4A1AF4330A21E4EB2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		38C9E3552D594685FD22B86B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		98204B2A1A6730A300B49515 /* PrefsGeneral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PrefsGeneral.png; path = Assets/PrefsGeneral.png; sourceTree = "<group>"; };
 		98204B2B1A6730A300B49515 /* PrefsLanguages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PrefsLanguages.png; path = Assets/PrefsLanguages.png; sourceTree = "<group>"; };
-		BA03FA16C6DAEDF0C9C6A1B6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EE011D661A4C804400CE4DE7 /* LanguagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguagesViewController.h; sourceTree = "<group>"; };
 		EE011D671A4C804400CE4DE7 /* LanguagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagesViewController.m; sourceTree = "<group>"; };
 		EE011D681A4C804400CE4DE7 /* LanguagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanguagesViewController.xib; sourceTree = "<group>"; };
@@ -110,6 +108,7 @@
 		EE57E5101A4E0E0E003EEC88 /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindowController.xib; sourceTree = "<group>"; };
 		EE68C7301A3AACF7005378B4 /* RememberLast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberLast.h; sourceTree = "<group>"; };
 		EE68C7311A3AACF7005378B4 /* RememberLast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberLast.m; sourceTree = "<group>"; };
+		EE718E2F1A675F1000DEA551 /* Pods.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		EE74E77A19E0419400E16C82 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
 		EE74E77B19E0419400E16C82 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		EE85868919DB9C8400F9B375 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
@@ -186,15 +185,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		25176424E700802BB6351E03 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				38C9E3552D594685FD22B86B /* Pods.debug.xcconfig */,
-				BA03FA16C6DAEDF0C9C6A1B6 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		EE3C40481A4DBBF600FF51E3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +210,7 @@
 				EEA4F4C219927BD500A4DF95 /* LangyTests */,
 				EEA4F49D19927BD500A4DF95 /* Frameworks */,
 				EEA4F49C19927BD500A4DF95 /* Products */,
-				25176424E700802BB6351E03 /* Pods */,
+				EE718E2F1A675F1000DEA551 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -413,7 +403,7 @@
 		EEA4F49319927BD500A4DF95 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Nicolas Santangelo";
 				TargetAttributes = {
 					EEA4F4BB19927BD500A4DF95 = {
@@ -503,7 +493,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -593,6 +583,7 @@
 /* Begin XCBuildConfiguration section */
 		EEA4F4CA19927BD500A4DF95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE718E2F1A675F1000DEA551 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -663,7 +654,6 @@
 		};
 		EEA4F4CD19927BD500A4DF95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38C9E3552D594685FD22B86B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -683,7 +673,7 @@
 		};
 		EEA4F4CE19927BD500A4DF95 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA03FA16C6DAEDF0C9C6A1B6 /* Pods.release.xcconfig */;
+			baseConfigurationReference = EE718E2F1A675F1000DEA551 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
