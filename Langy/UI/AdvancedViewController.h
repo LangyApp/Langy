@@ -13,6 +13,6 @@
 
 @interface AdvancedViewController : NSViewController<ApplicationStateManaging>
 
-@property (weak) IBOutlet NSButton *appStateCheckbox;
+@property (weak) IBOutlet NSSegmentedControl *appStateSegementedControl;
 
 @end

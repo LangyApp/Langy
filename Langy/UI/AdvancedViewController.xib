@@ -7,7 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AdvancedViewController">
             <connections>
-                <outlet property="appStateCheckbox" destination="Qgo-1a-kC5" id="NvE-ob-wWO"/>
+                <outlet property="appStateSegementedControl" destination="zo5-EJ-lbI" id="lWU-Lt-zh7"/>
                 <outlet property="view" destination="nT3-Ib-RBE" id="ihy-Bz-5Xd"/>
             </connections>
         </customObject>
@@ -39,16 +39,27 @@
                                     <binding destination="FkZ-Rt-C9Z" name="value" keyPath="launchAtLogin" id="X8G-2y-p0X"/>
                                 </connections>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qgo-1a-kC5">
-                                <rect key="frame" x="214" y="22" width="136" height="18"/>
-                                <buttonCell key="cell" type="check" title="Activated (turn off)" bezelStyle="regularSquare" imagePosition="left" inset="2" id="VAV-4N-OhE">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zo5-EJ-lbI">
+                                <rect key="frame" x="321" y="19" width="93" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="zBf-iS-vmY">
                                     <font key="font" metaFont="system"/>
-                                </buttonCell>
+                                    <segments>
+                                        <segment label="ON" selected="YES"/>
+                                        <segment label="OFF" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
                                 <connections>
-                                    <action selector="appStateChanged:" target="-2" id="bha-L1-eKb"/>
+                                    <action selector="changeState:" target="-2" id="Uj9-RZ-JAd"/>
                                 </connections>
-                            </button>
+                            </segmentedControl>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="882-z5-QJd">
+                                <rect key="frame" x="254" y="23" width="59" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Turn app" id="7Ex-VO-y2d">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -62,7 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHU-fM-oQ4">
-                                <rect key="frame" x="254" y="14" width="163" height="32"/>
+                                <rect key="frame" x="248" y="14" width="169" height="32"/>
                                 <buttonCell key="cell" type="push" title="Check updates now" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r2p-6E-QFn">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>

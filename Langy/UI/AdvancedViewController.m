@@ -25,9 +25,9 @@
 
 - (void)appStateChanged:(BOOL)isOn {
     if (isOn) {
-        [self.appStateCheckbox setState:NSOnState];
+        [self.appStateSegementedControl selectSegmentWithTag:1];
     } else {
-        [self.appStateCheckbox setState:NSOffState];
+        [self.appStateSegementedControl selectSegmentWithTag:0];
     }
 }
 
