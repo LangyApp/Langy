@@ -55,7 +55,10 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
 }
 
 - (IBAction)showAbout:(id)sender {
-    aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindowController"];
+    if(!aboutWindowController) {
+        aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindowController"];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(aboutClosed) name:NSWindowWillCloseNotification object:aboutWindowController.window];
+    }
     [aboutWindowController showWindow:self];
     [NSApp activateIgnoringOtherApps:YES];
 }
@@ -72,6 +75,11 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
         [self.toggleUseMenuItem setTitle:@"Turn Off"];
         [statusItem setImage:[NSImage imageNamed:@"MenuBarIcon"]];
     }
+}
+
+- (void)aboutClosed {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowWillCloseNotification object:aboutWindowController.window];
+    aboutWindowController = nil;
 }
 
 #pragma GCC diagnostic push
