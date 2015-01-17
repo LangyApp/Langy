@@ -62,5 +62,21 @@
     currentTag = tag;
 }
 
+-(void)keyDown:(NSEvent *)theEvent {
+    NSString *deleteKey = [NSString stringWithFormat:@"%c", NSDeleteCharacter];
+    NSString *key = [theEvent characters];
+    
+    if(currentTag == 0 && [key isEqualToString:deleteKey]) {
+        [languagesViewController removePreference:nil];
+    } else if ([theEvent modifierFlags] & NSCommandKeyMask) {
+        if ([key isEqualToString:@"w"]) {
+            [self.window close];
+        } else if ([key isEqualToString:@"q"]) {
+            [NSApp terminate:self];
+        }
+    } else {
+        [super keyDown:theEvent];
+    }
+}
 
 @end
