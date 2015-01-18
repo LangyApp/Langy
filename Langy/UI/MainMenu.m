@@ -31,6 +31,7 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
     } else {
         [preferenceMenuItem setAction:NULL];
         [statusItem setImage:[NSImage imageNamed:@"MenuBarIconDisabled"]];
+        [self accessibilityPrompt];
     }
 }
 
@@ -82,16 +83,47 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
     aboutWindowController = nil;
 }
 
+- (void)accessibilityPrompt {
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Authorization Required"
+                                     defaultButton:@"Recheck"
+                                   alternateButton:@"Open System Preferences"
+                                       otherButton:@"Quit"
+                         informativeTextWithFormat:@"Langy needs to be authorized to use an Accessibility Servicea in order to be able to detect application changes."
+                      "\n\n"
+                      "You can do this in System Preferences > Security & Privacy > Privacy > Accessibility. Please make sure the checkbox is on. Sorry for the inconvenience."
+                      ];
+    
+    BOOL recheck = true;
+    while (recheck) {
+        switch ([alert runModal]) {
+            case NSAlertDefaultReturn:
+                recheck = ![self isAccesibilityEnabled];
+                break;
+            case NSAlertOtherReturn:
+                [NSApp terminate:self];
+                break;
+            case NSAlertAlternateReturn: {
+                static NSString* script = @"tell application \"System Preferences\"\nactivate\nset current pane to pane \"com.apple.preference.security\"\n reveal anchor \"Privacy_Accessibility\" of pane id \"com.apple.preference.security\"\nend tell";
+                [[[NSAppleScript alloc] initWithSource:script] executeAndReturnError:nil];
+            }
+                break;
+            default:
+                break;
+        }
+        
+    }
+    
+    [self toggleUse:nil];
+}
+
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 - (BOOL)isAccesibilityEnabled {
     if (AXIsProcessTrustedWithOptions != NULL) {
-        NSDictionary* options = @{ (__bridge id) kAXTrustedCheckOptionPrompt : @YES };
+        NSDictionary* options = @{ (__bridge id) kAXTrustedCheckOptionPrompt : @NO };
         return AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef) options);
-    } else if (!AXAPIEnabled()) {
-        static NSString* script = @"tell application \"System Preferences\"\nactivate\nset current pane to pane \"com.apple.preference.universalaccess\"\nend tell";
-        [[[NSAppleScript alloc] initWithSource:script] executeAndReturnError:nil];
-        return NO;
+    } else {
+        return AXAPIEnabled();
     }
     return NO;
 }
