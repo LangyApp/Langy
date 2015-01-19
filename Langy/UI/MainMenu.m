@@ -88,9 +88,9 @@ extern CFStringRef kAXTrustedCheckOptionPrompt __attribute__((weak_import));
                                      defaultButton:@"Recheck"
                                    alternateButton:@"Open System Preferences"
                                        otherButton:@"Quit"
-                         informativeTextWithFormat:@"Langy needs to be authorized to use an Accessibility Servicea in order to be able to detect application changes."
+                         informativeTextWithFormat:@"Langy needs to be authorized to use an Accessibility Service in order to be able to detect application changes."
                       "\n\n"
-                      "You can do this in System Preferences > Security & Privacy > Privacy > Accessibility. Please make sure the checkbox is on. Sorry for the inconvenience."
+                      "You can do this in System Preferences > Security & Privacy > Privacy > Accessibility. Please make sure the checkbox is on.\n\nSorry for the inconvenience."
                       ];
     
     BOOL recheck = true;
