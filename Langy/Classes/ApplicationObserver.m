@@ -83,7 +83,8 @@
             [UserDefaultsManager updateLastUsedLayout:_currentAppName];
             
             if([RememberLast isEnabledOn:app]) {
-                status = [inputSource set:app[@"last_layout"]];
+                NSString *layout = app[@"last_layout"] ? app[@"last_layout"] : [UserDefaultsManager getDefaultLayout];
+                status = [inputSource set:layout];
             } else {
                 status = [inputSource set:app[@"layout"]];
             }
