@@ -53,8 +53,11 @@
     
     OSStatus status = TISSelectInputSource(source);
     
-    CFRelease(sourceList);
-    
+    if(source) {
+        CFRelease(sourceList);
+    } else {
+        CFBridgingRelease(sourceList);
+    }
     return status;
 }
 
