@@ -1,4 +1,4 @@
-![](Langy/Assets/AppIcon.icns)
+![](Langy/Assets/AppIcon.png)
 
 # Langy
 
