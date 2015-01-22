@@ -8,26 +8,9 @@
 
 #import "AppFinder.h"
 
-@interface AppFinder() {
-    NSString *sourcePath;
-}
-@end
+#define SOURCEPATH @"/Applications"
 
 @implementation AppFinder
-
--(id)init {
-    if (self = [super init])  {
-        sourcePath = @"/Applications";
-    }
-    return self;
-}
-
--(id)initWithSourcePath:(NSString *)anotherSourcePath {
-    if (self = [super init])  {
-        sourcePath = anotherSourcePath;
-    }
-    return self;
-}
 
 - (void)openDialog:(void (^)(NSDictionary *app))fn {
     NSOpenPanel* openDialog = [NSOpenPanel openPanel];
@@ -43,19 +26,24 @@
 }
 
 - (void)forEachInstalledApp:(void (^)(NSDictionary *app))fn {
+    NSString *finderPath = [[NSWorkspace sharedWorkspace] fullPathForApplication:@"Finder"];
+    [self passAppToFn:finderPath callback:fn];
+
     [[self sourcePathContents] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *filename = (NSString *)obj;
-        [self passAppToFn:[sourcePath stringByAppendingPathComponent:filename] callback:fn];
+        NSString *fullPath = [SOURCEPATH stringByAppendingPathComponent:filename];
+        [self passAppToFn:fullPath callback:fn];
     }];
 }
 
 - (NSArray *)sourcePathContents {
-    return [[NSFileManager defaultManager] contentsOfDirectoryAtPath:sourcePath error:NULL];
+    return [[NSFileManager defaultManager] contentsOfDirectoryAtPath:SOURCEPATH error:NULL];
 }
 
 - (void)passAppToFn:(NSString *)path callback:(void (^)(NSDictionary *app))fn {
     if ([self pathIsApp:path]) {
-        fn(@{ @"name": [[path lastPathComponent] stringByDeletingPathExtension], @"path":path });
+        NSString *filename = [[path lastPathComponent] stringByDeletingPathExtension];
+        fn(@{ @"name": filename, @"path":path });
     }
 }
 

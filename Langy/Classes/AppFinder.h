@@ -10,8 +10,6 @@
 
 @interface AppFinder : NSObject
 
--(id)initWithSourcePath:(NSString *)anotherSourcePath;
-
 - (void)forEachInstalledApp:(void (^)(NSDictionary *app))fn;
 
 - (void)openDialog:(void (^)(NSDictionary *app))fn;
