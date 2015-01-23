@@ -20,11 +20,11 @@
             </connections>
         </customObject>
         <customView id="nT3-Ib-RBE">
-            <rect key="frame" x="0.0" y="0.0" width="466" height="369"/>
+            <rect key="frame" x="0.0" y="0.0" width="466" height="330"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box autoresizesSubviews="NO" fixedFrame="YES" title="Preferences" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="KgE-ej-Bu1">
-                    <rect key="frame" x="17" y="200" width="432" height="77"/>
+                    <rect key="frame" x="17" y="181" width="432" height="77"/>
                     <view key="contentView">
                         <rect key="frame" x="1" y="1" width="430" height="58"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
                     <font key="titleFont" metaFont="system"/>
                 </box>
                 <box autoresizesSubviews="NO" fixedFrame="YES" title="Updates" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="vry-v4-vbv">
-                    <rect key="frame" x="17" y="97" width="432" height="77"/>
+                    <rect key="frame" x="17" y="78" width="432" height="77"/>
                     <view key="contentView">
                         <rect key="frame" x="1" y="1" width="430" height="58"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
